@@ -59,6 +59,12 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Income.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Income.Designer.cs">
+      <DependentUpon>Income.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="DashBoardForm.resx">
