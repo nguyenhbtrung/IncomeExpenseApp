@@ -96,6 +96,8 @@
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
             this.dataGridView1.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Sunken;
@@ -116,6 +118,7 @@
             this.Detail});
             this.dataGridView1.Location = new System.Drawing.Point(199, 285);
             this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.Size = new System.Drawing.Size(1004, 423);
             this.dataGridView1.TabIndex = 33;
@@ -172,10 +175,10 @@
             dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             this.Detail.DefaultCellStyle = dataGridViewCellStyle5;
             this.Detail.HeaderText = "Chi tiết";
-            this.Detail.MinimumWidth = 300;
+            this.Detail.MinimumWidth = 376;
             this.Detail.Name = "Detail";
             this.Detail.ReadOnly = true;
-            this.Detail.Width = 300;
+            this.Detail.Width = 376;
             // 
             // ViewIncome
             // 
