@@ -15,6 +15,5 @@ namespace IncomeExpenseApp
             InitializeComponent();
         }
 
-
     }
 }
