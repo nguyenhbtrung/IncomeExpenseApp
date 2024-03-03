@@ -8,13 +8,16 @@ using System.Windows.Forms;
 
 namespace IncomeExpenseApp
 {
-    public partial class Income : IncomeExpenseApp.Form1
+    public partial class ViewIncome : IncomeExpenseApp.Form1
     {
-        public Income()
+        public ViewIncome()
         {
             InitializeComponent();
         }
 
-        
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

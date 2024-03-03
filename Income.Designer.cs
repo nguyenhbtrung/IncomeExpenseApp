@@ -76,7 +76,7 @@
             // 
             this.incomeAmountLabel.AutoSize = true;
             this.incomeAmountLabel.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.incomeAmountLabel.Location = new System.Drawing.Point(388, 369);
+            this.incomeAmountLabel.Location = new System.Drawing.Point(388, 361);
             this.incomeAmountLabel.Name = "incomeAmountLabel";
             this.incomeAmountLabel.Size = new System.Drawing.Size(74, 23);
             this.incomeAmountLabel.TabIndex = 20;
@@ -86,7 +86,7 @@
             // 
             this.incomeDateLabel.AutoSize = true;
             this.incomeDateLabel.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.incomeDateLabel.Location = new System.Drawing.Point(791, 369);
+            this.incomeDateLabel.Location = new System.Drawing.Point(791, 361);
             this.incomeDateLabel.Name = "incomeDateLabel";
             this.incomeDateLabel.Size = new System.Drawing.Size(103, 23);
             this.incomeDateLabel.TabIndex = 21;
@@ -103,7 +103,7 @@
             // incomeAmountText
             // 
             this.incomeAmountText.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.incomeAmountText.Location = new System.Drawing.Point(392, 395);
+            this.incomeAmountText.Location = new System.Drawing.Point(392, 387);
             this.incomeAmountText.Name = "incomeAmountText";
             this.incomeAmountText.Size = new System.Drawing.Size(250, 32);
             this.incomeAmountText.TabIndex = 23;
@@ -111,7 +111,7 @@
             // incomeDatePicker
             // 
             this.incomeDatePicker.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.incomeDatePicker.Location = new System.Drawing.Point(795, 395);
+            this.incomeDatePicker.Location = new System.Drawing.Point(795, 387);
             this.incomeDatePicker.Name = "incomeDatePicker";
             this.incomeDatePicker.Size = new System.Drawing.Size(250, 32);
             this.incomeDatePicker.TabIndex = 24;
