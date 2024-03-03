@@ -16,7 +16,7 @@ namespace IncomeExpenseApp
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new DashBoardForm());
+            Application.Run(new ViewIncome());
         }
     }
 }

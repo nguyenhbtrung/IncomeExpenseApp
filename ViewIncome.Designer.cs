@@ -30,6 +30,9 @@
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             this.nameLabel = new System.Windows.Forms.Label();
             this.incomeCategoryComboBox = new System.Windows.Forms.ComboBox();
             this.incomeNameText = new System.Windows.Forms.TextBox();
@@ -94,7 +97,7 @@
             // dataGridView1
             // 
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
-            this.dataGridView1.BackgroundColor = System.Drawing.Color.WhiteSmoke;
+            this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
             this.dataGridView1.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Sunken;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
@@ -113,54 +116,66 @@
             this.Detail});
             this.dataGridView1.Location = new System.Drawing.Point(199, 285);
             this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.Size = new System.Drawing.Size(1004, 423);
             this.dataGridView1.TabIndex = 33;
-            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // STT
             // 
             this.STT.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.STT.DefaultCellStyle = dataGridViewCellStyle2;
             this.STT.HeaderText = "STT";
+            this.STT.MinimumWidth = 75;
             this.STT.Name = "STT";
             this.STT.ReadOnly = true;
             this.STT.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.STT.Width = 73;
+            this.STT.Width = 75;
             // 
             // IncomeName
             // 
             this.IncomeName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Times New Roman", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.IncomeName.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Times New Roman", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.IncomeName.DefaultCellStyle = dataGridViewCellStyle3;
             this.IncomeName.HeaderText = "Tên khoản thu";
+            this.IncomeName.MinimumWidth = 250;
             this.IncomeName.Name = "IncomeName";
             this.IncomeName.ReadOnly = true;
             this.IncomeName.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.IncomeName.Width = 163;
+            this.IncomeName.Width = 250;
             // 
             // Amount
             // 
             this.Amount.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.Amount.HeaderText = "Số tiền";
+            this.Amount.MinimumWidth = 150;
             this.Amount.Name = "Amount";
             this.Amount.ReadOnly = true;
             this.Amount.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.Amount.Width = 96;
+            this.Amount.Width = 150;
             // 
             // Date
             // 
             this.Date.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.Date.DefaultCellStyle = dataGridViewCellStyle4;
             this.Date.HeaderText = "Ngày nhận";
+            this.Date.MinimumWidth = 150;
             this.Date.Name = "Date";
             this.Date.ReadOnly = true;
-            this.Date.Width = 131;
+            this.Date.Width = 150;
             // 
             // Detail
             // 
             this.Detail.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            this.Detail.DefaultCellStyle = dataGridViewCellStyle5;
             this.Detail.HeaderText = "Chi tiết";
+            this.Detail.MinimumWidth = 300;
             this.Detail.Name = "Detail";
             this.Detail.ReadOnly = true;
+            this.Detail.Width = 300;
             // 
             // ViewIncome
             // 
