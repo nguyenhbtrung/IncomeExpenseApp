@@ -63,6 +63,16 @@ namespace IncomeExpenseApp.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap appLogo {
+            get {
+                object obj = ResourceManager.GetObject("appLogo", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap ChiTieu {
             get {
                 object obj = ResourceManager.GetObject("ChiTieu", resourceCulture);
