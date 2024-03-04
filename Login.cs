@@ -15,11 +15,20 @@ namespace IncomeExpenseApp
         public Login()
         {
             InitializeComponent();
+            this.FormBorderStyle = FormBorderStyle.None;
+            Region = Region.FromHrgn(RoundedCornerGenerator.CreateRoundRectRgn(0, 0, Width, Height, 20, 20));
         }
 
         private void CloseLogin_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        private void loginButton_Click(object sender, EventArgs e)
+        {
+            DashBoardForm obj = new DashBoardForm();
+            obj.Show();
+            this.Hide();
         }
     }
 }

@@ -33,6 +33,7 @@ namespace IncomeExpenseApp
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Login));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.registerButton = new System.Windows.Forms.Button();
             this.registerLabel = new System.Windows.Forms.Label();
             this.appNameLabel = new System.Windows.Forms.Label();
             this.appLogo = new System.Windows.Forms.PictureBox();
@@ -43,7 +44,6 @@ namespace IncomeExpenseApp
             this.password = new System.Windows.Forms.Label();
             this.CloseLogin = new System.Windows.Forms.Button();
             this.loginButton = new System.Windows.Forms.Button();
-            this.registerButton = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.appLogo)).BeginInit();
             this.SuspendLayout();
@@ -59,6 +59,20 @@ namespace IncomeExpenseApp
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(292, 461);
             this.panel1.TabIndex = 1;
+            // 
+            // registerButton
+            // 
+            this.registerButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.registerButton.FlatAppearance.BorderSize = 0;
+            this.registerButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.registerButton.Font = new System.Drawing.Font("Times New Roman", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.registerButton.ForeColor = System.Drawing.Color.White;
+            this.registerButton.Location = new System.Drawing.Point(51, 410);
+            this.registerButton.Name = "registerButton";
+            this.registerButton.Size = new System.Drawing.Size(190, 32);
+            this.registerButton.TabIndex = 3;
+            this.registerButton.Text = "ĐĂNG KÍ NGAY";
+            this.registerButton.UseVisualStyleBackColor = false;
             // 
             // registerLabel
             // 
@@ -169,20 +183,7 @@ namespace IncomeExpenseApp
             this.loginButton.TabIndex = 7;
             this.loginButton.Text = "Đăng nhập";
             this.loginButton.UseVisualStyleBackColor = false;
-            // 
-            // registerButton
-            // 
-            this.registerButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.registerButton.FlatAppearance.BorderSize = 0;
-            this.registerButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.registerButton.Font = new System.Drawing.Font("Times New Roman", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.registerButton.ForeColor = System.Drawing.Color.White;
-            this.registerButton.Location = new System.Drawing.Point(51, 410);
-            this.registerButton.Name = "registerButton";
-            this.registerButton.Size = new System.Drawing.Size(190, 32);
-            this.registerButton.TabIndex = 3;
-            this.registerButton.Text = "ĐĂNG KÍ NGAY";
-            this.registerButton.UseVisualStyleBackColor = false;
+            this.loginButton.Click += new System.EventHandler(this.loginButton_Click);
             // 
             // Login
             // 
