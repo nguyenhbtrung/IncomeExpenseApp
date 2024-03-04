@@ -40,8 +40,8 @@
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.label3 = new System.Windows.Forms.Label();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.dashBoardLabel = new System.Windows.Forms.Label();
+            this.dashBoardImage = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
@@ -49,18 +49,18 @@
             this.label9 = new System.Windows.Forms.Label();
             this.pictureBox9 = new System.Windows.Forms.PictureBox();
             this.pictureBox8 = new System.Windows.Forms.PictureBox();
-            this.pictureBox11 = new System.Windows.Forms.PictureBox();
+            this.exitPictureBox = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dashBoardImage)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.exitPictureBox)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -76,8 +76,8 @@
             this.panel1.Controls.Add(this.pictureBox4);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.pictureBox3);
-            this.panel1.Controls.Add(this.label2);
-            this.panel1.Controls.Add(this.pictureBox2);
+            this.panel1.Controls.Add(this.dashBoardLabel);
+            this.panel1.Controls.Add(this.dashBoardImage);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
@@ -89,11 +89,11 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Font = new System.Drawing.Font("Arial Unicode MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.SystemColors.Desktop;
             this.label7.Location = new System.Drawing.Point(51, 678);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(91, 18);
+            this.label7.Size = new System.Drawing.Size(92, 21);
             this.label7.TabIndex = 13;
             this.label7.Text = "Đăng xuất";
             this.label7.Click += new System.EventHandler(this.label7_Click);
@@ -112,13 +112,14 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Font = new System.Drawing.Font("Arial Unicode MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.SystemColors.Desktop;
             this.label6.Location = new System.Drawing.Point(51, 458);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(112, 18);
+            this.label6.Size = new System.Drawing.Size(108, 21);
             this.label6.TabIndex = 11;
             this.label6.Text = "Xem chi tiêu";
+            this.label6.Click += new System.EventHandler(this.OpenViewExpense);
             // 
             // pictureBox6
             // 
@@ -129,18 +130,19 @@
             this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox6.TabIndex = 10;
             this.pictureBox6.TabStop = false;
+            this.pictureBox6.Click += new System.EventHandler(this.OpenViewExpense);
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Font = new System.Drawing.Font("Arial Unicode MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.SystemColors.Desktop;
             this.label5.Location = new System.Drawing.Point(51, 388);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(124, 18);
+            this.label5.Size = new System.Drawing.Size(121, 21);
             this.label5.TabIndex = 9;
             this.label5.Text = "Xem thu nhập";
-            this.label5.Click += new System.EventHandler(this.label5_Click);
+            this.label5.Click += new System.EventHandler(this.OpenViewIncome);
             // 
             // pictureBox5
             // 
@@ -151,17 +153,19 @@
             this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox5.TabIndex = 8;
             this.pictureBox5.TabStop = false;
+            this.pictureBox5.Click += new System.EventHandler(this.OpenViewIncome);
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Font = new System.Drawing.Font("Arial Unicode MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.SystemColors.Desktop;
             this.label4.Location = new System.Drawing.Point(51, 322);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(73, 18);
+            this.label4.Size = new System.Drawing.Size(71, 21);
             this.label4.TabIndex = 7;
             this.label4.Text = "Chi tiêu";
+            this.label4.Click += new System.EventHandler(this.OpenExpense);
             // 
             // pictureBox4
             // 
@@ -172,17 +176,19 @@
             this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox4.TabIndex = 6;
             this.pictureBox4.TabStop = false;
+            this.pictureBox4.Click += new System.EventHandler(this.OpenExpense);
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Font = new System.Drawing.Font("Arial Unicode MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.SystemColors.Desktop;
             this.label3.Location = new System.Drawing.Point(51, 253);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(88, 18);
+            this.label3.Size = new System.Drawing.Size(86, 21);
             this.label3.TabIndex = 5;
             this.label3.Text = "Thu nhập";
+            this.label3.Click += new System.EventHandler(this.OpenIncome);
             // 
             // pictureBox3
             // 
@@ -193,27 +199,30 @@
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox3.TabIndex = 4;
             this.pictureBox3.TabStop = false;
+            this.pictureBox3.Click += new System.EventHandler(this.OpenIncome);
             // 
-            // label2
+            // dashBoardLabel
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.Indigo;
-            this.label2.Location = new System.Drawing.Point(51, 176);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(83, 18);
-            this.label2.TabIndex = 3;
-            this.label2.Text = "Thống kê";
+            this.dashBoardLabel.AutoSize = true;
+            this.dashBoardLabel.Font = new System.Drawing.Font("Arial Unicode MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dashBoardLabel.ForeColor = System.Drawing.Color.Indigo;
+            this.dashBoardLabel.Location = new System.Drawing.Point(51, 176);
+            this.dashBoardLabel.Name = "dashBoardLabel";
+            this.dashBoardLabel.Size = new System.Drawing.Size(85, 21);
+            this.dashBoardLabel.TabIndex = 3;
+            this.dashBoardLabel.Text = "Thống kê";
+            this.dashBoardLabel.Click += new System.EventHandler(this.OpenDashBoard);
             // 
-            // pictureBox2
+            // dashBoardImage
             // 
-            this.pictureBox2.Image = global::IncomeExpenseApp.Properties.Resources.output_onlinepngtools;
-            this.pictureBox2.Location = new System.Drawing.Point(12, 157);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(35, 50);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox2.TabIndex = 2;
-            this.pictureBox2.TabStop = false;
+            this.dashBoardImage.Image = global::IncomeExpenseApp.Properties.Resources.output_onlinepngtools;
+            this.dashBoardImage.Location = new System.Drawing.Point(12, 157);
+            this.dashBoardImage.Name = "dashBoardImage";
+            this.dashBoardImage.Size = new System.Drawing.Size(35, 50);
+            this.dashBoardImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.dashBoardImage.TabIndex = 2;
+            this.dashBoardImage.TabStop = false;
+            this.dashBoardImage.Click += new System.EventHandler(this.OpenDashBoard);
             // 
             // label1
             // 
@@ -278,15 +287,16 @@
             this.pictureBox8.TabIndex = 14;
             this.pictureBox8.TabStop = false;
             // 
-            // pictureBox11
+            // exitPictureBox
             // 
-            this.pictureBox11.Image = global::IncomeExpenseApp.Properties.Resources.close1;
-            this.pictureBox11.Location = new System.Drawing.Point(1178, 12);
-            this.pictureBox11.Name = "pictureBox11";
-            this.pictureBox11.Size = new System.Drawing.Size(25, 25);
-            this.pictureBox11.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox11.TabIndex = 27;
-            this.pictureBox11.TabStop = false;
+            this.exitPictureBox.Image = global::IncomeExpenseApp.Properties.Resources.close1;
+            this.exitPictureBox.Location = new System.Drawing.Point(1178, 12);
+            this.exitPictureBox.Name = "exitPictureBox";
+            this.exitPictureBox.Size = new System.Drawing.Size(25, 25);
+            this.exitPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.exitPictureBox.TabIndex = 27;
+            this.exitPictureBox.TabStop = false;
+            this.exitPictureBox.Click += new System.EventHandler(this.exitPictureBox_Click);
             // 
             // Form1
             // 
@@ -294,7 +304,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLight;
             this.ClientSize = new System.Drawing.Size(1215, 720);
-            this.Controls.Add(this.pictureBox11);
+            this.Controls.Add(this.exitPictureBox);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.pictureBox9);
@@ -312,11 +322,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dashBoardImage)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.exitPictureBox)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -327,8 +337,8 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.PictureBox dashBoardImage;
+        private System.Windows.Forms.Label dashBoardLabel;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.Label label4;
@@ -344,7 +354,7 @@
         private System.Windows.Forms.PictureBox pictureBox9;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.PictureBox pictureBox11;
+        private System.Windows.Forms.PictureBox exitPictureBox;
     }
 }
 

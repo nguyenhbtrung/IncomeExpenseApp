@@ -13,27 +13,13 @@ namespace IncomeExpenseApp
 {
     public partial class Form1 : Form
     {
-        [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
-        private static extern IntPtr CreateRoundRectRgn
-        (
-            int nLeftRect,     // x-coordinate of upper-left corner
-            int nTopRect,      // y-coordinate of upper-left corner
-            int nRightRect,    // x-coordinate of lower-right corner
-            int nBottomRect,   // y-coordinate of lower-right corner
-            int nWidthEllipse, // width of ellipse
-            int nHeightEllipse // height of ellipse
-        );
+        
 
         public Form1()
         {
             InitializeComponent();
             this.FormBorderStyle = FormBorderStyle.None;
-            Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 20, 20));
-        }
-
-        private void label5_Click(object sender, EventArgs e)
-        {
-
+            Region = Region.FromHrgn(RoundedCornerGenerator.CreateRoundRectRgn(0, 0, Width, Height, 20, 20));
         }
 
         private void label7_Click(object sender, EventArgs e)
@@ -44,6 +30,51 @@ namespace IncomeExpenseApp
         private void pictureBox7_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void exitPictureBox_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        protected void OpenDashBoard(object sender, EventArgs e)
+        {
+            DashBoardForm form = new DashBoardForm();
+            form.Show();
+            this.Close();
+        }
+
+        protected void OpenIncome(object sender, EventArgs e)
+        {
+            Income form = new Income();
+            form.Show();
+            this.Close();
+        }
+
+        protected void OpenExpense(object sender, EventArgs e)
+        {
+            Expense form = new Expense();
+            form.Show();
+            this.Close();
+        }
+
+        protected void OpenViewIncome(object sender, EventArgs e)
+        {
+            ViewIncome form = new ViewIncome();
+            form.Show();
+            this.Close();
+        }
+
+        protected void OpenViewExpense(object sender, EventArgs e)
+        {
+            ViewExpense form = new ViewExpense();
+            form.Show();
+            this.Close();
+        }
+
+        public void ChangeTheSelectionDisPlay(int oldIndex, int newIndex)
+        {
+            
         }
     }
 }
