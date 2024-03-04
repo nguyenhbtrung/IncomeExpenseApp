@@ -50,7 +50,7 @@ namespace IncomeExpenseApp
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.panel1.BackColor = System.Drawing.Color.Green;
             this.panel1.Controls.Add(this.registerButton);
             this.panel1.Controls.Add(this.registerLabel);
             this.panel1.Controls.Add(this.appNameLabel);
@@ -62,14 +62,14 @@ namespace IncomeExpenseApp
             // 
             // registerButton
             // 
-            this.registerButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.registerButton.BackColor = System.Drawing.Color.Green;
             this.registerButton.FlatAppearance.BorderSize = 0;
             this.registerButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.registerButton.Font = new System.Drawing.Font("Times New Roman", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.registerButton.ForeColor = System.Drawing.Color.White;
-            this.registerButton.Location = new System.Drawing.Point(51, 410);
+            this.registerButton.Location = new System.Drawing.Point(79, 410);
             this.registerButton.Name = "registerButton";
-            this.registerButton.Size = new System.Drawing.Size(190, 32);
+            this.registerButton.Size = new System.Drawing.Size(134, 32);
             this.registerButton.TabIndex = 3;
             this.registerButton.Text = "ĐĂNG KÍ NGAY";
             this.registerButton.UseVisualStyleBackColor = false;
@@ -174,7 +174,7 @@ namespace IncomeExpenseApp
             // 
             // loginButton
             // 
-            this.loginButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.loginButton.BackColor = System.Drawing.Color.Green;
             this.loginButton.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.loginButton.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.loginButton.Location = new System.Drawing.Point(373, 370);
