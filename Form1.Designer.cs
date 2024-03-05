@@ -31,36 +31,36 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.panel1 = new System.Windows.Forms.Panel();
             this.label7 = new System.Windows.Forms.Label();
-            this.pictureBox7 = new System.Windows.Forms.PictureBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.pictureBox6 = new System.Windows.Forms.PictureBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.pictureBox5 = new System.Windows.Forms.PictureBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.dashBoardLabel = new System.Windows.Forms.Label();
-            this.dashBoardImage = new System.Windows.Forms.PictureBox();
+            this.menuViewExpenseLabel = new System.Windows.Forms.Label();
+            this.menuViewIncomeLabel = new System.Windows.Forms.Label();
+            this.menuExpenseLabel = new System.Windows.Forms.Label();
+            this.menuIncomeLabel = new System.Windows.Forms.Label();
+            this.menuDashBoardLabel = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
+            this.exitPictureBox = new System.Windows.Forms.PictureBox();
             this.pictureBox9 = new System.Windows.Forms.PictureBox();
             this.pictureBox8 = new System.Windows.Forms.PictureBox();
-            this.exitPictureBox = new System.Windows.Forms.PictureBox();
+            this.pictureBox7 = new System.Windows.Forms.PictureBox();
+            this.menuViewExpenseImage = new System.Windows.Forms.PictureBox();
+            this.menuViewIncomeImage = new System.Windows.Forms.PictureBox();
+            this.menuExpenseImage = new System.Windows.Forms.PictureBox();
+            this.menuIncomeImage = new System.Windows.Forms.PictureBox();
+            this.menuDashBoardImage = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dashBoardImage)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.exitPictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.exitPictureBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.menuViewExpenseImage)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.menuViewIncomeImage)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.menuExpenseImage)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.menuIncomeImage)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.menuDashBoardImage)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -68,16 +68,16 @@
             this.panel1.BackColor = System.Drawing.Color.White;
             this.panel1.Controls.Add(this.label7);
             this.panel1.Controls.Add(this.pictureBox7);
-            this.panel1.Controls.Add(this.label6);
-            this.panel1.Controls.Add(this.pictureBox6);
-            this.panel1.Controls.Add(this.label5);
-            this.panel1.Controls.Add(this.pictureBox5);
-            this.panel1.Controls.Add(this.label4);
-            this.panel1.Controls.Add(this.pictureBox4);
-            this.panel1.Controls.Add(this.label3);
-            this.panel1.Controls.Add(this.pictureBox3);
-            this.panel1.Controls.Add(this.dashBoardLabel);
-            this.panel1.Controls.Add(this.dashBoardImage);
+            this.panel1.Controls.Add(this.menuViewExpenseLabel);
+            this.panel1.Controls.Add(this.menuViewExpenseImage);
+            this.panel1.Controls.Add(this.menuViewIncomeLabel);
+            this.panel1.Controls.Add(this.menuViewIncomeImage);
+            this.panel1.Controls.Add(this.menuExpenseLabel);
+            this.panel1.Controls.Add(this.menuExpenseImage);
+            this.panel1.Controls.Add(this.menuIncomeLabel);
+            this.panel1.Controls.Add(this.menuIncomeImage);
+            this.panel1.Controls.Add(this.menuDashBoardLabel);
+            this.panel1.Controls.Add(this.menuDashBoardImage);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
@@ -98,131 +98,65 @@
             this.label7.Text = "Đăng xuất";
             this.label7.Click += new System.EventHandler(this.label7_Click);
             // 
-            // pictureBox7
+            // menuViewExpenseLabel
             // 
-            this.pictureBox7.Image = global::IncomeExpenseApp.Properties.Resources.Logout;
-            this.pictureBox7.Location = new System.Drawing.Point(12, 659);
-            this.pictureBox7.Name = "pictureBox7";
-            this.pictureBox7.Size = new System.Drawing.Size(35, 50);
-            this.pictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox7.TabIndex = 12;
-            this.pictureBox7.TabStop = false;
-            this.pictureBox7.Click += new System.EventHandler(this.pictureBox7_Click);
+            this.menuViewExpenseLabel.AutoSize = true;
+            this.menuViewExpenseLabel.Font = new System.Drawing.Font("Arial Unicode MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.menuViewExpenseLabel.ForeColor = System.Drawing.SystemColors.Desktop;
+            this.menuViewExpenseLabel.Location = new System.Drawing.Point(51, 458);
+            this.menuViewExpenseLabel.Name = "menuViewExpenseLabel";
+            this.menuViewExpenseLabel.Size = new System.Drawing.Size(108, 21);
+            this.menuViewExpenseLabel.TabIndex = 11;
+            this.menuViewExpenseLabel.Text = "Xem chi tiêu";
+            this.menuViewExpenseLabel.Click += new System.EventHandler(this.OpenViewExpense);
             // 
-            // label6
+            // menuViewIncomeLabel
             // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Arial Unicode MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.SystemColors.Desktop;
-            this.label6.Location = new System.Drawing.Point(51, 458);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(108, 21);
-            this.label6.TabIndex = 11;
-            this.label6.Text = "Xem chi tiêu";
-            this.label6.Click += new System.EventHandler(this.OpenViewExpense);
+            this.menuViewIncomeLabel.AutoSize = true;
+            this.menuViewIncomeLabel.Font = new System.Drawing.Font("Arial Unicode MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.menuViewIncomeLabel.ForeColor = System.Drawing.SystemColors.Desktop;
+            this.menuViewIncomeLabel.Location = new System.Drawing.Point(51, 388);
+            this.menuViewIncomeLabel.Name = "menuViewIncomeLabel";
+            this.menuViewIncomeLabel.Size = new System.Drawing.Size(121, 21);
+            this.menuViewIncomeLabel.TabIndex = 9;
+            this.menuViewIncomeLabel.Text = "Xem thu nhập";
+            this.menuViewIncomeLabel.Click += new System.EventHandler(this.OpenViewIncome);
             // 
-            // pictureBox6
+            // menuExpenseLabel
             // 
-            this.pictureBox6.Image = global::IncomeExpenseApp.Properties.Resources.XemChiTieu;
-            this.pictureBox6.Location = new System.Drawing.Point(12, 439);
-            this.pictureBox6.Name = "pictureBox6";
-            this.pictureBox6.Size = new System.Drawing.Size(35, 50);
-            this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox6.TabIndex = 10;
-            this.pictureBox6.TabStop = false;
-            this.pictureBox6.Click += new System.EventHandler(this.OpenViewExpense);
+            this.menuExpenseLabel.AutoSize = true;
+            this.menuExpenseLabel.Font = new System.Drawing.Font("Arial Unicode MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.menuExpenseLabel.ForeColor = System.Drawing.SystemColors.Desktop;
+            this.menuExpenseLabel.Location = new System.Drawing.Point(51, 322);
+            this.menuExpenseLabel.Name = "menuExpenseLabel";
+            this.menuExpenseLabel.Size = new System.Drawing.Size(71, 21);
+            this.menuExpenseLabel.TabIndex = 7;
+            this.menuExpenseLabel.Text = "Chi tiêu";
+            this.menuExpenseLabel.Click += new System.EventHandler(this.OpenExpense);
             // 
-            // label5
+            // menuIncomeLabel
             // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Arial Unicode MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.SystemColors.Desktop;
-            this.label5.Location = new System.Drawing.Point(51, 388);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(121, 21);
-            this.label5.TabIndex = 9;
-            this.label5.Text = "Xem thu nhập";
-            this.label5.Click += new System.EventHandler(this.OpenViewIncome);
+            this.menuIncomeLabel.AutoSize = true;
+            this.menuIncomeLabel.Font = new System.Drawing.Font("Arial Unicode MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.menuIncomeLabel.ForeColor = System.Drawing.SystemColors.Desktop;
+            this.menuIncomeLabel.Location = new System.Drawing.Point(51, 253);
+            this.menuIncomeLabel.Name = "menuIncomeLabel";
+            this.menuIncomeLabel.Size = new System.Drawing.Size(86, 21);
+            this.menuIncomeLabel.TabIndex = 5;
+            this.menuIncomeLabel.Text = "Thu nhập";
+            this.menuIncomeLabel.Click += new System.EventHandler(this.OpenIncome);
             // 
-            // pictureBox5
+            // menuDashBoardLabel
             // 
-            this.pictureBox5.Image = global::IncomeExpenseApp.Properties.Resources.XemThuNhap;
-            this.pictureBox5.Location = new System.Drawing.Point(12, 369);
-            this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(35, 50);
-            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox5.TabIndex = 8;
-            this.pictureBox5.TabStop = false;
-            this.pictureBox5.Click += new System.EventHandler(this.OpenViewIncome);
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Arial Unicode MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.SystemColors.Desktop;
-            this.label4.Location = new System.Drawing.Point(51, 322);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(71, 21);
-            this.label4.TabIndex = 7;
-            this.label4.Text = "Chi tiêu";
-            this.label4.Click += new System.EventHandler(this.OpenExpense);
-            // 
-            // pictureBox4
-            // 
-            this.pictureBox4.Image = global::IncomeExpenseApp.Properties.Resources.ChiTieu;
-            this.pictureBox4.Location = new System.Drawing.Point(12, 303);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(35, 50);
-            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox4.TabIndex = 6;
-            this.pictureBox4.TabStop = false;
-            this.pictureBox4.Click += new System.EventHandler(this.OpenExpense);
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Arial Unicode MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.SystemColors.Desktop;
-            this.label3.Location = new System.Drawing.Point(51, 253);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(86, 21);
-            this.label3.TabIndex = 5;
-            this.label3.Text = "Thu nhập";
-            this.label3.Click += new System.EventHandler(this.OpenIncome);
-            // 
-            // pictureBox3
-            // 
-            this.pictureBox3.Image = global::IncomeExpenseApp.Properties.Resources.ThuNhap;
-            this.pictureBox3.Location = new System.Drawing.Point(12, 234);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(35, 50);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox3.TabIndex = 4;
-            this.pictureBox3.TabStop = false;
-            this.pictureBox3.Click += new System.EventHandler(this.OpenIncome);
-            // 
-            // dashBoardLabel
-            // 
-            this.dashBoardLabel.AutoSize = true;
-            this.dashBoardLabel.Font = new System.Drawing.Font("Arial Unicode MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dashBoardLabel.ForeColor = System.Drawing.Color.Indigo;
-            this.dashBoardLabel.Location = new System.Drawing.Point(51, 176);
-            this.dashBoardLabel.Name = "dashBoardLabel";
-            this.dashBoardLabel.Size = new System.Drawing.Size(85, 21);
-            this.dashBoardLabel.TabIndex = 3;
-            this.dashBoardLabel.Text = "Thống kê";
-            this.dashBoardLabel.Click += new System.EventHandler(this.OpenDashBoard);
-            // 
-            // dashBoardImage
-            // 
-            this.dashBoardImage.Image = global::IncomeExpenseApp.Properties.Resources.output_onlinepngtools;
-            this.dashBoardImage.Location = new System.Drawing.Point(12, 157);
-            this.dashBoardImage.Name = "dashBoardImage";
-            this.dashBoardImage.Size = new System.Drawing.Size(35, 50);
-            this.dashBoardImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.dashBoardImage.TabIndex = 2;
-            this.dashBoardImage.TabStop = false;
-            this.dashBoardImage.Click += new System.EventHandler(this.OpenDashBoard);
+            this.menuDashBoardLabel.AutoSize = true;
+            this.menuDashBoardLabel.Font = new System.Drawing.Font("Arial Unicode MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.menuDashBoardLabel.ForeColor = System.Drawing.Color.Indigo;
+            this.menuDashBoardLabel.Location = new System.Drawing.Point(51, 176);
+            this.menuDashBoardLabel.Name = "menuDashBoardLabel";
+            this.menuDashBoardLabel.Size = new System.Drawing.Size(85, 21);
+            this.menuDashBoardLabel.TabIndex = 3;
+            this.menuDashBoardLabel.Text = "Thống kê";
+            this.menuDashBoardLabel.Click += new System.EventHandler(this.OpenDashBoard);
             // 
             // label1
             // 
@@ -234,16 +168,6 @@
             this.label1.Size = new System.Drawing.Size(139, 18);
             this.label1.TabIndex = 1;
             this.label1.Text = "QLTaiChinh 1.0";
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::IncomeExpenseApp.Properties.Resources.Untitled_1;
-            this.pictureBox1.Location = new System.Drawing.Point(12, 12);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(35, 50);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
             // 
             // label8
             // 
@@ -267,6 +191,17 @@
             this.label9.TabIndex = 16;
             this.label9.Text = "Khoa Công nghệ thông tin";
             // 
+            // exitPictureBox
+            // 
+            this.exitPictureBox.Image = global::IncomeExpenseApp.Properties.Resources.close1;
+            this.exitPictureBox.Location = new System.Drawing.Point(1178, 12);
+            this.exitPictureBox.Name = "exitPictureBox";
+            this.exitPictureBox.Size = new System.Drawing.Size(25, 25);
+            this.exitPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.exitPictureBox.TabIndex = 27;
+            this.exitPictureBox.TabStop = false;
+            this.exitPictureBox.Click += new System.EventHandler(this.exitPictureBox_Click);
+            // 
             // pictureBox9
             // 
             this.pictureBox9.Image = global::IncomeExpenseApp.Properties.Resources.logo;
@@ -287,16 +222,81 @@
             this.pictureBox8.TabIndex = 14;
             this.pictureBox8.TabStop = false;
             // 
-            // exitPictureBox
+            // pictureBox7
             // 
-            this.exitPictureBox.Image = global::IncomeExpenseApp.Properties.Resources.close1;
-            this.exitPictureBox.Location = new System.Drawing.Point(1178, 12);
-            this.exitPictureBox.Name = "exitPictureBox";
-            this.exitPictureBox.Size = new System.Drawing.Size(25, 25);
-            this.exitPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.exitPictureBox.TabIndex = 27;
-            this.exitPictureBox.TabStop = false;
-            this.exitPictureBox.Click += new System.EventHandler(this.exitPictureBox_Click);
+            this.pictureBox7.Image = global::IncomeExpenseApp.Properties.Resources.Logout;
+            this.pictureBox7.Location = new System.Drawing.Point(12, 659);
+            this.pictureBox7.Name = "pictureBox7";
+            this.pictureBox7.Size = new System.Drawing.Size(35, 50);
+            this.pictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox7.TabIndex = 12;
+            this.pictureBox7.TabStop = false;
+            this.pictureBox7.Click += new System.EventHandler(this.pictureBox7_Click);
+            // 
+            // menuViewExpenseImage
+            // 
+            this.menuViewExpenseImage.Image = global::IncomeExpenseApp.Properties.Resources.XemChiTieu;
+            this.menuViewExpenseImage.Location = new System.Drawing.Point(12, 439);
+            this.menuViewExpenseImage.Name = "menuViewExpenseImage";
+            this.menuViewExpenseImage.Size = new System.Drawing.Size(35, 50);
+            this.menuViewExpenseImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.menuViewExpenseImage.TabIndex = 10;
+            this.menuViewExpenseImage.TabStop = false;
+            this.menuViewExpenseImage.Click += new System.EventHandler(this.OpenViewExpense);
+            // 
+            // menuViewIncomeImage
+            // 
+            this.menuViewIncomeImage.Image = global::IncomeExpenseApp.Properties.Resources.XemThuNhap;
+            this.menuViewIncomeImage.Location = new System.Drawing.Point(12, 369);
+            this.menuViewIncomeImage.Name = "menuViewIncomeImage";
+            this.menuViewIncomeImage.Size = new System.Drawing.Size(35, 50);
+            this.menuViewIncomeImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.menuViewIncomeImage.TabIndex = 8;
+            this.menuViewIncomeImage.TabStop = false;
+            this.menuViewIncomeImage.Click += new System.EventHandler(this.OpenViewIncome);
+            // 
+            // menuExpenseImage
+            // 
+            this.menuExpenseImage.Image = global::IncomeExpenseApp.Properties.Resources.ChiTieu;
+            this.menuExpenseImage.Location = new System.Drawing.Point(12, 303);
+            this.menuExpenseImage.Name = "menuExpenseImage";
+            this.menuExpenseImage.Size = new System.Drawing.Size(35, 50);
+            this.menuExpenseImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.menuExpenseImage.TabIndex = 6;
+            this.menuExpenseImage.TabStop = false;
+            this.menuExpenseImage.Click += new System.EventHandler(this.OpenExpense);
+            // 
+            // menuIncomeImage
+            // 
+            this.menuIncomeImage.Image = global::IncomeExpenseApp.Properties.Resources.ThuNhap;
+            this.menuIncomeImage.Location = new System.Drawing.Point(12, 234);
+            this.menuIncomeImage.Name = "menuIncomeImage";
+            this.menuIncomeImage.Size = new System.Drawing.Size(35, 50);
+            this.menuIncomeImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.menuIncomeImage.TabIndex = 4;
+            this.menuIncomeImage.TabStop = false;
+            this.menuIncomeImage.Click += new System.EventHandler(this.OpenIncome);
+            // 
+            // menuDashBoardImage
+            // 
+            this.menuDashBoardImage.Image = global::IncomeExpenseApp.Properties.Resources.output_onlinepngtools;
+            this.menuDashBoardImage.Location = new System.Drawing.Point(12, 157);
+            this.menuDashBoardImage.Name = "menuDashBoardImage";
+            this.menuDashBoardImage.Size = new System.Drawing.Size(35, 50);
+            this.menuDashBoardImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.menuDashBoardImage.TabIndex = 2;
+            this.menuDashBoardImage.TabStop = false;
+            this.menuDashBoardImage.Click += new System.EventHandler(this.OpenDashBoard);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::IncomeExpenseApp.Properties.Resources.Untitled_1;
+            this.pictureBox1.Location = new System.Drawing.Point(12, 12);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(35, 50);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
             // 
             // Form1
             // 
@@ -317,16 +317,16 @@
             this.Text = "Quản lý tài chính";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dashBoardImage)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.exitPictureBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.exitPictureBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.menuViewExpenseImage)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.menuViewIncomeImage)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.menuExpenseImage)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.menuIncomeImage)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.menuDashBoardImage)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -337,16 +337,16 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.PictureBox dashBoardImage;
-        private System.Windows.Forms.Label dashBoardLabel;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.PictureBox pictureBox3;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.PictureBox pictureBox4;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.PictureBox pictureBox5;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.PictureBox pictureBox6;
+        private System.Windows.Forms.PictureBox menuDashBoardImage;
+        private System.Windows.Forms.Label menuDashBoardLabel;
+        private System.Windows.Forms.Label menuIncomeLabel;
+        private System.Windows.Forms.PictureBox menuIncomeImage;
+        private System.Windows.Forms.Label menuExpenseLabel;
+        private System.Windows.Forms.PictureBox menuExpenseImage;
+        private System.Windows.Forms.Label menuViewIncomeLabel;
+        private System.Windows.Forms.PictureBox menuViewIncomeImage;
+        private System.Windows.Forms.Label menuViewExpenseLabel;
+        private System.Windows.Forms.PictureBox menuViewExpenseImage;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.PictureBox pictureBox7;
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
