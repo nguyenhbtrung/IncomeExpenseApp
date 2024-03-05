@@ -13,6 +13,7 @@ namespace IncomeExpenseApp
         public Expense()
         {
             InitializeComponent();
+            FormIndex = 2;
         }
 
         private void Form6_Load(object sender, EventArgs e)

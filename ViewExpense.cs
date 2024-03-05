@@ -13,6 +13,7 @@ namespace IncomeExpenseApp
         public ViewExpense()
         {
             InitializeComponent();
+            FormIndex = 4;
         }
     }
 }

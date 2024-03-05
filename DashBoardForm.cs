@@ -13,6 +13,7 @@ namespace IncomeExpenseApp
         public DashBoardForm()
         {
             InitializeComponent();
+            FormIndex = 0;
         }
 
         private void DashBoardForm_Load(object sender, EventArgs e)

@@ -19,20 +19,22 @@ namespace IncomeExpenseApp
         private List<Label> menuLabels = new List<Label>();
         private List<Bitmap> purpleImageResources = new List<Bitmap>();
         private List<Bitmap> blackImageResources = new List<Bitmap>();
+
+        private int formIndex = 0;
+
+        public int FormIndex { get => formIndex; set => formIndex = value; }
+
         public Form1()
         {
             InitializeComponent();
-            purpleImageResources.Add(Resources.output_onlinepngtools);
-            purpleImageResources.Add(Resources.output_onlinepngtools__7_);
-            purpleImageResources.Add(Resources.output_onlinepngtools__3_);
-            purpleImageResources.Add(Resources.output_onlinepngtools__8_);
-            purpleImageResources.Add(Resources.output_onlinepngtools__6_);
+            AddMenuImageResourcesToList();
+            AddMenuLabelsAndImageToList();
+            this.FormBorderStyle = FormBorderStyle.None;
+            Region = Region.FromHrgn(RoundedCornerGenerator.CreateRoundRectRgn(0, 0, Width, Height, 20, 20));
+        }
 
-            blackImageResources.Add(Resources.DashBoard);
-            blackImageResources.Add(Resources.ThuNhap);
-            blackImageResources.Add(Resources.ChiTieu);
-            blackImageResources.Add(Resources.XemThuNhap);
-            blackImageResources.Add(Resources.XemChiTieu);
+        private void AddMenuLabelsAndImageToList()
+        {
             foreach (Control control in panel1.Controls)
             {
                 if (control is Label && control.Name.StartsWith("menu"))
@@ -46,20 +48,21 @@ namespace IncomeExpenseApp
             }
             menuLabels.Reverse();
             menuPictureBoxes.Reverse();
-            //foreach (Label label in menuLabels)
-            //{
-            //    Debug.WriteLine(label.Text);
-            //}
-            //for (int i = 0; i < menuLabels.Count; i++)
-            //{
-            //    Debug.WriteLine(menuLabels[i].Text);
-            //}
-            //foreach(PictureBox picture in menuPictureBoxes)
-            //{
-            //    Debug.WriteLine(picture.Name);
-            //}
-            this.FormBorderStyle = FormBorderStyle.None;
-            Region = Region.FromHrgn(RoundedCornerGenerator.CreateRoundRectRgn(0, 0, Width, Height, 20, 20));
+        }
+
+        private void AddMenuImageResourcesToList()
+        {
+            purpleImageResources.Add(Resources.output_onlinepngtools);
+            purpleImageResources.Add(Resources.output_onlinepngtools__7_);
+            purpleImageResources.Add(Resources.output_onlinepngtools__3_);
+            purpleImageResources.Add(Resources.output_onlinepngtools__8_);
+            purpleImageResources.Add(Resources.output_onlinepngtools__6_);
+
+            blackImageResources.Add(Resources.DashBoard);
+            blackImageResources.Add(Resources.ThuNhap);
+            blackImageResources.Add(Resources.ChiTieu);
+            blackImageResources.Add(Resources.XemThuNhap);
+            blackImageResources.Add(Resources.XemChiTieu);
         }
 
         private void label7_Click(object sender, EventArgs e)
@@ -81,6 +84,7 @@ namespace IncomeExpenseApp
         {
             DashBoardForm form = new DashBoardForm();
             form.Show();
+            form.ChangeTheSelectionDisplay(this.FormIndex, form.FormIndex);
             this.Close();
         }
 
@@ -88,6 +92,7 @@ namespace IncomeExpenseApp
         {
             Income form = new Income();
             form.Show();
+            form.ChangeTheSelectionDisplay(this.FormIndex, form.FormIndex);
             this.Close();
         }
 
@@ -95,6 +100,7 @@ namespace IncomeExpenseApp
         {
             Expense form = new Expense();
             form.Show();
+            form.ChangeTheSelectionDisplay(this.FormIndex, form.FormIndex);
             this.Close();
         }
 
@@ -102,6 +108,7 @@ namespace IncomeExpenseApp
         {
             ViewIncome form = new ViewIncome();
             form.Show();
+            form.ChangeTheSelectionDisplay(this.FormIndex, form.FormIndex);
             this.Close();
         }
 
@@ -109,12 +116,17 @@ namespace IncomeExpenseApp
         {
             ViewExpense form = new ViewExpense();
             form.Show();
+            form.ChangeTheSelectionDisplay(this.FormIndex, form.FormIndex);
             this.Close();
         }
 
         public void ChangeTheSelectionDisplay(int oldIndex, int newIndex)
         {
+            menuPictureBoxes[oldIndex].Image = blackImageResources[oldIndex];
+            menuPictureBoxes[newIndex].Image = purpleImageResources[newIndex];
 
+            menuLabels[oldIndex].ForeColor = SystemColors.Desktop;
+            menuLabels[newIndex].ForeColor = Color.Indigo;
         }
     }
 }
