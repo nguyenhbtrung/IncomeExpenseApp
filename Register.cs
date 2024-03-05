@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace IncomeExpenseApp
 {
-    public partial class Login : Form
+    public partial class Register : Form
     {
-        public Login()
+        public Register()
         {
             InitializeComponent();
             this.FormBorderStyle = FormBorderStyle.None;
@@ -26,19 +26,13 @@ namespace IncomeExpenseApp
 
         private void loginButton_Click(object sender, EventArgs e)
         {
-            if (usernameField.Text == "")
-            {
-                DashBoardForm obj = new DashBoardForm();
-                obj.Show();
-                this.Hide();
-            }
-            else notification.Visible = true;
+
         }
 
-        private void registerButton_Click(object sender, EventArgs e)
+        private void loginButton_Click_1(object sender, EventArgs e)
         {
             this.Hide();
-            Register obj = new Register();
+            Login obj = new Login();
             obj.Show();
         }
     }

@@ -3,7 +3,7 @@ using System.Windows.Forms;
 
 namespace IncomeExpenseApp
 {
-    partial class Login
+    partial class Register
     {
         /// <summary>
         /// Required designer variable.
@@ -31,19 +31,19 @@ namespace IncomeExpenseApp
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Login));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Register));
             this.panel1 = new System.Windows.Forms.Panel();
-            this.registerButton = new System.Windows.Forms.Button();
-            this.registerLabel = new System.Windows.Forms.Label();
+            this.loginButton = new System.Windows.Forms.Button();
+            this.loginNotiLabel = new System.Windows.Forms.Label();
             this.appNameLabel = new System.Windows.Forms.Label();
             this.appLogo = new System.Windows.Forms.PictureBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.usernameLabel = new System.Windows.Forms.Label();
+            this.registerLabel = new System.Windows.Forms.Label();
+            this.registerUsernameLabel = new System.Windows.Forms.Label();
             this.usernameField = new System.Windows.Forms.TextBox();
             this.passwordField = new System.Windows.Forms.TextBox();
-            this.passwordLabel = new System.Windows.Forms.Label();
-            this.loginButton = new System.Windows.Forms.Button();
+            this.registerPasswordLabel = new System.Windows.Forms.Label();
             this.CloseLogin = new System.Windows.Forms.Button();
+            this.registerButton = new System.Windows.Forms.Button();
             this.notification = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.appLogo)).BeginInit();
@@ -52,8 +52,8 @@ namespace IncomeExpenseApp
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Green;
-            this.panel1.Controls.Add(this.registerButton);
-            this.panel1.Controls.Add(this.registerLabel);
+            this.panel1.Controls.Add(this.loginButton);
+            this.panel1.Controls.Add(this.loginNotiLabel);
             this.panel1.Controls.Add(this.appNameLabel);
             this.panel1.Controls.Add(this.appLogo);
             this.panel1.Location = new System.Drawing.Point(0, 0);
@@ -61,31 +61,31 @@ namespace IncomeExpenseApp
             this.panel1.Size = new System.Drawing.Size(292, 461);
             this.panel1.TabIndex = 1;
             // 
-            // registerButton
+            // loginButton
             // 
-            this.registerButton.BackColor = System.Drawing.Color.Green;
-            this.registerButton.FlatAppearance.BorderSize = 0;
-            this.registerButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.registerButton.Font = new System.Drawing.Font("Times New Roman", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.registerButton.ForeColor = System.Drawing.Color.White;
-            this.registerButton.Location = new System.Drawing.Point(79, 410);
-            this.registerButton.Name = "registerButton";
-            this.registerButton.Size = new System.Drawing.Size(134, 32);
-            this.registerButton.TabIndex = 3;
-            this.registerButton.Text = "ĐĂNG KÍ NGAY";
-            this.registerButton.UseVisualStyleBackColor = false;
-            this.registerButton.Click += new System.EventHandler(this.registerButton_Click);
+            this.loginButton.BackColor = System.Drawing.Color.Green;
+            this.loginButton.FlatAppearance.BorderSize = 0;
+            this.loginButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.loginButton.Font = new System.Drawing.Font("Times New Roman", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.loginButton.ForeColor = System.Drawing.Color.White;
+            this.loginButton.Location = new System.Drawing.Point(62, 417);
+            this.loginButton.Name = "loginButton";
+            this.loginButton.Size = new System.Drawing.Size(167, 32);
+            this.loginButton.TabIndex = 3;
+            this.loginButton.Text = "ĐĂNG NHẬP NGAY";
+            this.loginButton.UseVisualStyleBackColor = false;
+            this.loginButton.Click += new System.EventHandler(this.loginButton_Click_1);
             // 
-            // registerLabel
+            // loginNotiLabel
             // 
-            this.registerLabel.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.registerLabel.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.registerLabel.Location = new System.Drawing.Point(55, 370);
-            this.registerLabel.Name = "registerLabel";
-            this.registerLabel.Size = new System.Drawing.Size(182, 60);
-            this.registerLabel.TabIndex = 2;
-            this.registerLabel.Text = "Chưa có tài khoản?";
-            this.registerLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.loginNotiLabel.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.loginNotiLabel.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.loginNotiLabel.Location = new System.Drawing.Point(55, 370);
+            this.loginNotiLabel.Name = "loginNotiLabel";
+            this.loginNotiLabel.Size = new System.Drawing.Size(182, 60);
+            this.loginNotiLabel.TabIndex = 2;
+            this.loginNotiLabel.Text = "Đã có tài khoản?";
+            this.loginNotiLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // appNameLabel
             // 
@@ -107,27 +107,27 @@ namespace IncomeExpenseApp
             this.appLogo.TabIndex = 0;
             this.appLogo.TabStop = false;
             // 
-            // label1
+            // registerLabel
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label1.Location = new System.Drawing.Point(318, 59);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(236, 47);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "ĐĂNG NHẬP";
+            this.registerLabel.AutoSize = true;
+            this.registerLabel.Font = new System.Drawing.Font("Segoe UI", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.registerLabel.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.registerLabel.Location = new System.Drawing.Point(354, 59);
+            this.registerLabel.Name = "registerLabel";
+            this.registerLabel.Size = new System.Drawing.Size(168, 47);
+            this.registerLabel.TabIndex = 2;
+            this.registerLabel.Text = "ĐĂNG KÍ";
             // 
-            // usernameLabel
+            // registerUsernameLabel
             // 
-            this.usernameLabel.AutoSize = true;
-            this.usernameLabel.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.usernameLabel.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.usernameLabel.Location = new System.Drawing.Point(322, 153);
-            this.usernameLabel.Name = "usernameLabel";
-            this.usernameLabel.Size = new System.Drawing.Size(125, 21);
-            this.usernameLabel.TabIndex = 3;
-            this.usernameLabel.Text = "Tên đăng nhập:";
+            this.registerUsernameLabel.AutoSize = true;
+            this.registerUsernameLabel.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.registerUsernameLabel.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.registerUsernameLabel.Location = new System.Drawing.Point(322, 153);
+            this.registerUsernameLabel.Name = "registerUsernameLabel";
+            this.registerUsernameLabel.Size = new System.Drawing.Size(125, 21);
+            this.registerUsernameLabel.TabIndex = 3;
+            this.registerUsernameLabel.Text = "Tên đăng nhập:";
             // 
             // usernameField
             // 
@@ -145,29 +145,16 @@ namespace IncomeExpenseApp
             this.passwordField.Size = new System.Drawing.Size(228, 29);
             this.passwordField.TabIndex = 6;
             // 
-            // passwordLabel
+            // registerPasswordLabel
             // 
-            this.passwordLabel.AutoSize = true;
-            this.passwordLabel.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.passwordLabel.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.passwordLabel.Location = new System.Drawing.Point(322, 249);
-            this.passwordLabel.Name = "passwordLabel";
-            this.passwordLabel.Size = new System.Drawing.Size(83, 21);
-            this.passwordLabel.TabIndex = 5;
-            this.passwordLabel.Text = "Mật khẩu:";
-            // 
-            // loginButton
-            // 
-            this.loginButton.BackColor = System.Drawing.Color.Green;
-            this.loginButton.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.loginButton.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.loginButton.Location = new System.Drawing.Point(373, 370);
-            this.loginButton.Name = "loginButton";
-            this.loginButton.Size = new System.Drawing.Size(130, 44);
-            this.loginButton.TabIndex = 7;
-            this.loginButton.Text = "Đăng nhập";
-            this.loginButton.UseVisualStyleBackColor = false;
-            this.loginButton.Click += new System.EventHandler(this.loginButton_Click);
+            this.registerPasswordLabel.AutoSize = true;
+            this.registerPasswordLabel.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.registerPasswordLabel.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.registerPasswordLabel.Location = new System.Drawing.Point(322, 249);
+            this.registerPasswordLabel.Name = "registerPasswordLabel";
+            this.registerPasswordLabel.Size = new System.Drawing.Size(83, 21);
+            this.registerPasswordLabel.TabIndex = 5;
+            this.registerPasswordLabel.Text = "Mật khẩu:";
             // 
             // CloseLogin
             // 
@@ -187,36 +174,49 @@ namespace IncomeExpenseApp
             this.CloseLogin.UseVisualStyleBackColor = true;
             this.CloseLogin.Click += new System.EventHandler(this.CloseLogin_Click);
             // 
+            // registerButton
+            // 
+            this.registerButton.BackColor = System.Drawing.Color.Green;
+            this.registerButton.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.registerButton.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.registerButton.Location = new System.Drawing.Point(373, 370);
+            this.registerButton.Name = "registerButton";
+            this.registerButton.Size = new System.Drawing.Size(130, 44);
+            this.registerButton.TabIndex = 7;
+            this.registerButton.Text = "Đăng kí";
+            this.registerButton.UseVisualStyleBackColor = false;
+            this.registerButton.Click += new System.EventHandler(this.loginButton_Click);
+            // 
             // notification
             // 
             this.notification.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.notification.ForeColor = System.Drawing.Color.Red;
-            this.notification.Location = new System.Drawing.Point(326, 315);
+            this.notification.Location = new System.Drawing.Point(326, 314);
             this.notification.Name = "notification";
             this.notification.Size = new System.Drawing.Size(228, 43);
-            this.notification.TabIndex = 8;
-            this.notification.Text = "Tài khoản hoặc mật khẩu không đúng";
+            this.notification.TabIndex = 9;
+            this.notification.Text = "Tên tài khoản bị trùng";
             this.notification.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.notification.Visible = false;
             // 
-            // Login
+            // Register
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(584, 461);
             this.Controls.Add(this.notification);
-            this.Controls.Add(this.loginButton);
+            this.Controls.Add(this.registerButton);
             this.Controls.Add(this.passwordField);
-            this.Controls.Add(this.passwordLabel);
+            this.Controls.Add(this.registerPasswordLabel);
             this.Controls.Add(this.usernameField);
-            this.Controls.Add(this.usernameLabel);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.registerUsernameLabel);
+            this.Controls.Add(this.registerLabel);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.CloseLogin);
             this.ForeColor = System.Drawing.SystemColors.ActiveBorder;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "Login";
+            this.Name = "Register";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Đăng nhập";
             this.panel1.ResumeLayout(false);
@@ -230,16 +230,16 @@ namespace IncomeExpenseApp
 
         private System.Windows.Forms.Button CloseLogin;
         private Panel panel1;
-        private Label label1;
-        private Label usernameLabel;
+        private Label registerLabel;
+        private Label registerUsernameLabel;
         private TextBox usernameField;
         private TextBox passwordField;
-        private Label passwordLabel;
+        private Label registerPasswordLabel;
         private PictureBox appLogo;
         private Label appNameLabel;
-        private Button loginButton;
-        private Label registerLabel;
         private Button registerButton;
+        private Label loginNotiLabel;
+        private Button loginButton;
         private Label notification;
     }
 }
