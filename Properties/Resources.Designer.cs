@@ -143,26 +143,6 @@ namespace IncomeExpenseApp.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap output_onlinepngtools {
-            get {
-                object obj = ResourceManager.GetObject("output-onlinepngtools", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap output_onlinepngtools__3_ {
-            get {
-                object obj = ResourceManager.GetObject("output-onlinepngtools (3)", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap output_onlinepngtools__6_ {
             get {
                 object obj = ResourceManager.GetObject("output-onlinepngtools (6)", resourceCulture);
@@ -173,9 +153,9 @@ namespace IncomeExpenseApp.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap output_onlinepngtools__7_ {
+        internal static System.Drawing.Bitmap output_onlinepngtools__8_ {
             get {
-                object obj = ResourceManager.GetObject("output-onlinepngtools (7)", resourceCulture);
+                object obj = ResourceManager.GetObject("output-onlinepngtools (8)", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -183,9 +163,29 @@ namespace IncomeExpenseApp.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap output_onlinepngtools__8_ {
+        internal static System.Drawing.Bitmap PurpleChiTieu {
             get {
-                object obj = ResourceManager.GetObject("output-onlinepngtools (8)", resourceCulture);
+                object obj = ResourceManager.GetObject("PurpleChiTieu", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap PurpleDashBoard {
+            get {
+                object obj = ResourceManager.GetObject("PurpleDashBoard", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap PurpleThuNhap {
+            get {
+                object obj = ResourceManager.GetObject("PurpleThuNhap", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

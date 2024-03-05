@@ -127,7 +127,7 @@
   <data name="XemThuNhap" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\XemThuNhap.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="output-onlinepngtools (3)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="PurpleChiTieu" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\output-onlinepngtools (3).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="close1" type="System.Resources.ResXFileRef, System.Windows.Forms">
@@ -151,7 +151,7 @@
   <data name="output-onlinepngtools (8)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\output-onlinepngtools (8).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="output-onlinepngtools (7)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="PurpleThuNhap" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\output-onlinepngtools (7).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="close" type="System.Resources.ResXFileRef, System.Windows.Forms">
@@ -166,7 +166,7 @@
   <data name="ChiTieu" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ChiTieu.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="output-onlinepngtools" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="PurpleDashBoard" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\output-onlinepngtools.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="XemChiTieu" type="System.Resources.ResXFileRef, System.Windows.Forms">

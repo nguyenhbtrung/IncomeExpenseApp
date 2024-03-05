@@ -33,6 +33,30 @@ namespace IncomeExpenseApp
             Region = Region.FromHrgn(RoundedCornerGenerator.CreateRoundRectRgn(0, 0, Width, Height, 20, 20));
         }
 
+        //int originalExStyle = -1;
+        //bool enableFormLevelDoubleBuffering = true;
+
+        //protected override CreateParams CreateParams
+        //{
+        //    get
+        //    {
+        //        if (originalExStyle == -1)
+        //            originalExStyle = base.CreateParams.ExStyle;
+        //        CreateParams handleParams = base.CreateParams;
+        //        if (enableFormLevelDoubleBuffering)
+        //            handleParams.ExStyle |= 0x02000000;
+        //        else
+        //            handleParams.ExStyle = originalExStyle;
+        //        return handleParams;
+        //    }
+        //}
+
+        //private void TurnOffFormLevelDoubleBuffering()
+        //{
+        //    enableFormLevelDoubleBuffering = false;
+        //    this.MaximizeBox = true;
+        //}
+
         private void AddMenuLabelsAndImageToList()
         {
             foreach (Control control in panel1.Controls)
@@ -52,9 +76,9 @@ namespace IncomeExpenseApp
 
         private void AddMenuImageResourcesToList()
         {
-            purpleImageResources.Add(Resources.output_onlinepngtools);
-            purpleImageResources.Add(Resources.output_onlinepngtools__7_);
-            purpleImageResources.Add(Resources.output_onlinepngtools__3_);
+            purpleImageResources.Add(Resources.PurpleDashBoard);
+            purpleImageResources.Add(Resources.PurpleThuNhap);
+            purpleImageResources.Add(Resources.PurpleChiTieu);
             purpleImageResources.Add(Resources.output_onlinepngtools__8_);
             purpleImageResources.Add(Resources.output_onlinepngtools__6_);
 
