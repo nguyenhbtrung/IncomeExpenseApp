@@ -149,16 +149,16 @@
     <None Include="Resources\Untitled-1.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\output-onlinepngtools %283%29.png" />
+    <None Include="Resources\ChiTieu2.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\output-onlinepngtools %286%29.png" />
+    <None Include="Resources\XemChiTieu2.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\output-onlinepngtools %287%29.png" />
+    <None Include="Resources\ThuNhap2.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\output-onlinepngtools %288%29.png" />
+    <None Include="Resources\XemThuNhap2.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\ThuNhap.png" />
