@@ -130,9 +130,6 @@
   <data name="output-onlinepngtools (3)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\output-onlinepngtools (3).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="output-onlinepngtools (5)" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\output-onlinepngtools (5).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="close1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\close1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -166,17 +163,11 @@
   <data name="vnd_and_usd3" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\vnd_and_usd3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="output-onlinepngtools (2)" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\output-onlinepngtools (2).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="ChiTieu" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ChiTieu.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="output-onlinepngtools" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\output-onlinepngtools.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="output-onlinepngtools (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\output-onlinepngtools (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="XemChiTieu" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\XemChiTieu.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>

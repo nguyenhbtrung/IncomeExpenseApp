@@ -153,39 +153,9 @@ namespace IncomeExpenseApp.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap output_onlinepngtools__1_ {
-            get {
-                object obj = ResourceManager.GetObject("output-onlinepngtools (1)", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap output_onlinepngtools__2_ {
-            get {
-                object obj = ResourceManager.GetObject("output-onlinepngtools (2)", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap output_onlinepngtools__3_ {
             get {
                 object obj = ResourceManager.GetObject("output-onlinepngtools (3)", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap output_onlinepngtools__5_ {
-            get {
-                object obj = ResourceManager.GetObject("output-onlinepngtools (5)", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

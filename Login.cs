@@ -29,6 +29,7 @@ namespace IncomeExpenseApp
             if (usernameField.Text == "")
             {
                 DashBoardForm obj = new DashBoardForm();
+                obj.ChangeTheSelectionDisplay(obj.FormIndex, obj.FormIndex);
                 obj.Show();
                 this.Hide();
             }
