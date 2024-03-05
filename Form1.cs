@@ -65,9 +65,10 @@ namespace IncomeExpenseApp
             blackImageResources.Add(Resources.XemChiTieu);
         }
 
-        private void label7_Click(object sender, EventArgs e)
+        private void Logout(object sender, EventArgs e)
         {
-
+            Program.loginForm.Show();
+            this.Close();
         }
 
         private void pictureBox7_Click(object sender, EventArgs e)

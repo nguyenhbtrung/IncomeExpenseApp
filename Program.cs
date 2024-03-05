@@ -7,8 +7,10 @@ using System.Windows.Forms;
 
 namespace IncomeExpenseApp
 {
+
     internal static class Program
     {
+        public static Login loginForm;
         /// <summary>
         /// The main entry point for the application.
         /// </summary>
@@ -17,7 +19,8 @@ namespace IncomeExpenseApp
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Login());
+            loginForm = new Login();
+            Application.Run(loginForm);
         }
     }
 }
