@@ -8,7 +8,7 @@ using System.Windows.Forms;
 
 namespace IncomeExpenseApp
 {
-    public partial class ViewExpense : IncomeExpenseApp.Form1
+    public partial class ViewExpense : IncomeExpenseApp.MainForm
     {
         public ViewExpense()
         {

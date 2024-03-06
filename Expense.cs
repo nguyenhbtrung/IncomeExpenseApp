@@ -8,7 +8,7 @@ using System.Windows.Forms;
 
 namespace IncomeExpenseApp
 {
-    public partial class Expense : IncomeExpenseApp.Form1
+    public partial class Expense : IncomeExpenseApp.MainForm
     {
         public Expense()
         {
