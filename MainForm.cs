@@ -147,11 +147,15 @@ namespace IncomeExpenseApp
 
         public void ChangeTheSelectionDisplay(int oldIndex, int newIndex)
         {
+            if (blackImageResources == null || purpleImageResources == null)
+                return;
             menuPictureBoxes[oldIndex].Image = blackImageResources[oldIndex];
             menuPictureBoxes[newIndex].Image = purpleImageResources[newIndex];
 
             menuLabels[oldIndex].ForeColor = SystemColors.Desktop;
             menuLabels[newIndex].ForeColor = Color.Indigo;
+            blackImageResources = null;
+            purpleImageResources = null;
         }
     }
 }
