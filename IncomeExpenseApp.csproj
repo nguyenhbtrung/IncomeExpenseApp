@@ -191,9 +191,6 @@
     <None Include="Resources\close1.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\vnd_and_usd.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\vnd_and_usd3.png" />
   </ItemGroup>
   <ItemGroup>

@@ -213,16 +213,6 @@ namespace IncomeExpenseApp.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap vnd_and_usd {
-            get {
-                object obj = ResourceManager.GetObject("vnd_and_usd", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap vnd_and_usd3 {
             get {
                 object obj = ResourceManager.GetObject("vnd_and_usd3", resourceCulture);
