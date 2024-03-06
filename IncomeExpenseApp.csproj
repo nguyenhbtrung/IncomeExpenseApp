@@ -59,6 +59,11 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="Register.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -121,14 +126,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-    </Compile>
     <EmbeddedResource Include="ViewIncome.resx">
       <DependentUpon>ViewIncome.cs</DependentUpon>
     </EmbeddedResource>
@@ -149,16 +149,16 @@
     <None Include="Resources\Untitled-1.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\output-onlinepngtools %283%29.png" />
+    <None Include="Resources\PurpleChiTieu.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\output-onlinepngtools %286%29.png" />
+    <None Include="Resources\PurpleXemChiTieu.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\output-onlinepngtools %287%29.png" />
+    <None Include="Resources\PurpleThuNhap.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\output-onlinepngtools %288%29.png" />
+    <None Include="Resources\PurpleXemThuNhap.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\ThuNhap.png" />
@@ -198,6 +198,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\DashBoard.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\PurpleDashBoard.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

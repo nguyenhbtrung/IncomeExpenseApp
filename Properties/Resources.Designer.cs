@@ -143,26 +143,6 @@ namespace IncomeExpenseApp.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap output_onlinepngtools__6_ {
-            get {
-                object obj = ResourceManager.GetObject("output-onlinepngtools (6)", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap output_onlinepngtools__8_ {
-            get {
-                object obj = ResourceManager.GetObject("output-onlinepngtools (8)", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap PurpleChiTieu {
             get {
                 object obj = ResourceManager.GetObject("PurpleChiTieu", resourceCulture);
@@ -186,6 +166,26 @@ namespace IncomeExpenseApp.Properties {
         internal static System.Drawing.Bitmap PurpleThuNhap {
             get {
                 object obj = ResourceManager.GetObject("PurpleThuNhap", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap PurpleXemChiTieu {
+            get {
+                object obj = ResourceManager.GetObject("PurpleXemChiTieu", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap PurpleXemThuNhap {
+            get {
+                object obj = ResourceManager.GetObject("PurpleXemThuNhap", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
