@@ -79,8 +79,8 @@ namespace IncomeExpenseApp
             purpleImageResources.Add(Resources.PurpleDashBoard);
             purpleImageResources.Add(Resources.PurpleThuNhap);
             purpleImageResources.Add(Resources.PurpleChiTieu);
-            purpleImageResources.Add(Resources.XemThuNhap);
-            purpleImageResources.Add(Resources.XemChiTieu);
+            purpleImageResources.Add(Resources.PurpleXemThuNhap);
+            purpleImageResources.Add(Resources.PurpleXemChiTieu);
 
             blackImageResources.Add(Resources.DashBoard);
             blackImageResources.Add(Resources.ThuNhap);
