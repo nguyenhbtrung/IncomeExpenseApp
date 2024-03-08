@@ -71,13 +71,13 @@ namespace IncomeExpenseApp
         {
             foreach (Control control in panel1.Controls)
             {
-                if (control is Label && control.Name.StartsWith("menu"))
+                if (control is Label label && control.Name.StartsWith("menu"))
                 {
-                    menuLabels.Add((Label)control);
+                    menuLabels.Add(label);
                 }
-                if (control is PictureBox && control.Name.StartsWith("menu"))
+                if (control is PictureBox box && control.Name.StartsWith("menu"))
                 {
-                    menuPictureBoxes.Add((PictureBox)control);
+                    menuPictureBoxes.Add(box);
                 }
             }
             menuLabels.Reverse();
@@ -101,7 +101,7 @@ namespace IncomeExpenseApp
 
         private void Logout(object sender, EventArgs e)
         {
-            Program.loginForm.Show();
+            Program.LoginForm.Show();
             this.Close();
         }
 

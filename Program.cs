@@ -10,7 +10,7 @@ namespace IncomeExpenseApp
 
     internal static class Program
     {
-        public static Login loginForm;
+        public static Login LoginForm { get; private set; }
         /// <summary>
         /// The main entry point for the application.
         /// </summary>
@@ -19,8 +19,8 @@ namespace IncomeExpenseApp
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            loginForm = new Login();
-            Application.Run(loginForm);
+            LoginForm = new Login();
+            Application.Run(LoginForm);
         }
     }
 }
