@@ -54,6 +54,12 @@
       <DependentUpon>DashBoardForm.cs</DependentUpon>
     </Compile>
     <Compile Include="EmailSender.cs" />
+    <Compile Include="Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Login.Designer.cs">
+      <DependentUpon>Login.cs</DependentUpon>
+    </Compile>
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -77,11 +83,11 @@
     <Compile Include="ViewExpense.Designer.cs">
       <DependentUpon>ViewExpense.cs</DependentUpon>
     </Compile>
-    <Compile Include="Login.cs">
+    <Compile Include="SecondaryForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Login.Designer.cs">
-      <DependentUpon>Login.cs</DependentUpon>
+    <Compile Include="SecondaryForm.Designer.cs">
+      <DependentUpon>SecondaryForm.cs</DependentUpon>
     </Compile>
     <Compile Include="RoundedCornerGenerator.cs" />
     <Compile Include="Expense.cs">
@@ -107,6 +113,9 @@
     <EmbeddedResource Include="DashBoardForm.resx">
       <DependentUpon>DashBoardForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Login.resx">
+      <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -116,8 +125,8 @@
     <EmbeddedResource Include="ViewExpense.resx">
       <DependentUpon>ViewExpense.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Login.resx">
-      <DependentUpon>Login.cs</DependentUpon>
+    <EmbeddedResource Include="SecondaryForm.resx">
+      <DependentUpon>SecondaryForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Expense.resx">
       <DependentUpon>Expense.cs</DependentUpon>

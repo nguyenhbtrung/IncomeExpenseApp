@@ -3,36 +3,26 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace IncomeExpenseApp
 {
-    public partial class Register : Form
+    public partial class Register : IncomeExpenseApp.SecondaryForm
     {
         public Register()
         {
             InitializeComponent();
-            this.FormBorderStyle = FormBorderStyle.None;
-            Region = Region.FromHrgn(RoundedCornerGenerator.CreateRoundRectRgn(0, 0, Width, Height, 20, 20));
         }
-
-        private void CloseRegister_Click(object sender, EventArgs e)
-        {
-            Application.Exit();
-        }
-
         private void registerButton_Click(object sender, EventArgs e)
         {
-            if(emailField.Text == "")
+            if (emailField.Text == "")
             {
                 notification.Text = "Không được để trống Email!!";
                 notification.Visible = true;
                 return;
             }
-            else if(usernameField.Text == "")
+            else if (usernameField.Text == "")
             {
                 notification.Text = "Không được để trống\ntên đăng nhập!!";
                 notification.Visible = true;
@@ -73,8 +63,8 @@ namespace IncomeExpenseApp
                 notification.Text = "Tài khoản được tạo\nthành công!!";
                 notification.Visible = true;
                 return;
-            } 
-                
+            }
+
         }
 
         private void loginButton_Click(object sender, EventArgs e)
@@ -84,6 +74,5 @@ namespace IncomeExpenseApp
             obj.Show();
         }
 
-        
     }
 }
