@@ -163,7 +163,7 @@ namespace IncomeExpenseApp
             menuPictureBoxes[newIndex].Image = purpleImageResources[newIndex];
 
             menuLabels[oldIndex].ForeColor = SystemColors.Desktop;
-            menuLabels[newIndex].ForeColor = Color.Indigo;
+            menuLabels[newIndex].ForeColor = Color.LimeGreen;
             blackImageResources = null;
             purpleImageResources = null;
         }
