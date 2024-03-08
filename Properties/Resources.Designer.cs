@@ -143,9 +143,9 @@ namespace IncomeExpenseApp.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap PurpleChiTieu {
+        internal static System.Drawing.Bitmap SelectedChiTieu {
             get {
-                object obj = ResourceManager.GetObject("PurpleChiTieu", resourceCulture);
+                object obj = ResourceManager.GetObject("SelectedChiTieu", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -153,9 +153,9 @@ namespace IncomeExpenseApp.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap PurpleDashBoard {
+        internal static System.Drawing.Bitmap SelectedDashBoard {
             get {
-                object obj = ResourceManager.GetObject("PurpleDashBoard", resourceCulture);
+                object obj = ResourceManager.GetObject("SelectedDashBoard", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -163,9 +163,9 @@ namespace IncomeExpenseApp.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap PurpleThuNhap {
+        internal static System.Drawing.Bitmap SelectedThuNhap {
             get {
-                object obj = ResourceManager.GetObject("PurpleThuNhap", resourceCulture);
+                object obj = ResourceManager.GetObject("SelectedThuNhap", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -173,9 +173,9 @@ namespace IncomeExpenseApp.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap PurpleXemChiTieu {
+        internal static System.Drawing.Bitmap SelectedXemChiTieu {
             get {
-                object obj = ResourceManager.GetObject("PurpleXemChiTieu", resourceCulture);
+                object obj = ResourceManager.GetObject("SelectedXemChiTieu", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -183,9 +183,9 @@ namespace IncomeExpenseApp.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap PurpleXemThuNhap {
+        internal static System.Drawing.Bitmap SelectedXemThuNhap {
             get {
-                object obj = ResourceManager.GetObject("PurpleXemThuNhap", resourceCulture);
+                object obj = ResourceManager.GetObject("SelectedXemThuNhap", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

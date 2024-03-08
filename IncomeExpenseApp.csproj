@@ -150,18 +150,6 @@
     <None Include="Resources\Untitled-1.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\PurpleChiTieu.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\PurpleXemChiTieu.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\PurpleThuNhap.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\PurpleXemThuNhap.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\ThuNhap.png" />
   </ItemGroup>
   <ItemGroup>
@@ -198,7 +186,11 @@
     <None Include="Resources\DashBoard.png" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Resources\PurpleDashBoard.png" />
+    <Content Include="Resources\SelectedChiTieu.png" />
+    <Content Include="Resources\SelectedDashBoard.png" />
+    <Content Include="Resources\SelectedThuNhap.png" />
+    <Content Include="Resources\SelectedXemChiTieu.png" />
+    <Content Include="Resources\SelectedXemThuNhap.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

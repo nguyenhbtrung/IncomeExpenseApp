@@ -86,11 +86,11 @@ namespace IncomeExpenseApp
 
         private void AddMenuImageResourcesToList()
         {
-            purpleImageResources.Add(Resources.PurpleDashBoard);
-            purpleImageResources.Add(Resources.PurpleThuNhap);
-            purpleImageResources.Add(Resources.PurpleChiTieu);
-            purpleImageResources.Add(Resources.PurpleXemThuNhap);
-            purpleImageResources.Add(Resources.PurpleXemChiTieu);
+            purpleImageResources.Add(Resources.SelectedDashBoard);
+            purpleImageResources.Add(Resources.SelectedThuNhap);
+            purpleImageResources.Add(Resources.SelectedChiTieu);
+            purpleImageResources.Add(Resources.SelectedXemThuNhap);
+            purpleImageResources.Add(Resources.SelectedXemChiTieu);
 
             blackImageResources.Add(Resources.DashBoard);
             blackImageResources.Add(Resources.ThuNhap);
