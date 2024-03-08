@@ -101,7 +101,7 @@ namespace IncomeExpenseApp
 
         private void Logout(object sender, EventArgs e)
         {
-            Program.loginForm.Show();
+            Program.LoginForm.Show();
             this.Close();
         }
 
