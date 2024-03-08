@@ -45,6 +45,10 @@ namespace IncomeExpenseApp
             this.CloseLogin = new System.Windows.Forms.Button();
             this.registerButton = new System.Windows.Forms.Button();
             this.notification = new System.Windows.Forms.Label();
+            this.emailField = new System.Windows.Forms.TextBox();
+            this.emailLabel = new System.Windows.Forms.Label();
+            this.password2Field = new System.Windows.Forms.TextBox();
+            this.password2Label = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.appLogo)).BeginInit();
             this.SuspendLayout();
@@ -74,7 +78,7 @@ namespace IncomeExpenseApp
             this.loginButton.TabIndex = 3;
             this.loginButton.Text = "ĐĂNG NHẬP NGAY";
             this.loginButton.UseVisualStyleBackColor = false;
-            this.loginButton.Click += new System.EventHandler(this.loginButton_Click_1);
+            this.loginButton.Click += new System.EventHandler(this.loginButton_Click);
             // 
             // loginNotiLabel
             // 
@@ -123,7 +127,7 @@ namespace IncomeExpenseApp
             this.registerUsernameLabel.AutoSize = true;
             this.registerUsernameLabel.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.registerUsernameLabel.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.registerUsernameLabel.Location = new System.Drawing.Point(322, 153);
+            this.registerUsernameLabel.Location = new System.Drawing.Point(322, 170);
             this.registerUsernameLabel.Name = "registerUsernameLabel";
             this.registerUsernameLabel.Size = new System.Drawing.Size(125, 21);
             this.registerUsernameLabel.TabIndex = 3;
@@ -132,7 +136,7 @@ namespace IncomeExpenseApp
             // usernameField
             // 
             this.usernameField.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.usernameField.Location = new System.Drawing.Point(326, 177);
+            this.usernameField.Location = new System.Drawing.Point(326, 194);
             this.usernameField.Name = "usernameField";
             this.usernameField.Size = new System.Drawing.Size(228, 29);
             this.usernameField.TabIndex = 4;
@@ -140,7 +144,7 @@ namespace IncomeExpenseApp
             // passwordField
             // 
             this.passwordField.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.passwordField.Location = new System.Drawing.Point(326, 273);
+            this.passwordField.Location = new System.Drawing.Point(326, 250);
             this.passwordField.Name = "passwordField";
             this.passwordField.Size = new System.Drawing.Size(228, 29);
             this.passwordField.TabIndex = 6;
@@ -150,7 +154,7 @@ namespace IncomeExpenseApp
             this.registerPasswordLabel.AutoSize = true;
             this.registerPasswordLabel.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.registerPasswordLabel.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.registerPasswordLabel.Location = new System.Drawing.Point(322, 249);
+            this.registerPasswordLabel.Location = new System.Drawing.Point(322, 226);
             this.registerPasswordLabel.Name = "registerPasswordLabel";
             this.registerPasswordLabel.Size = new System.Drawing.Size(83, 21);
             this.registerPasswordLabel.TabIndex = 5;
@@ -172,39 +176,81 @@ namespace IncomeExpenseApp
             this.CloseLogin.Size = new System.Drawing.Size(29, 26);
             this.CloseLogin.TabIndex = 0;
             this.CloseLogin.UseVisualStyleBackColor = true;
-            this.CloseLogin.Click += new System.EventHandler(this.CloseLogin_Click);
+            this.CloseLogin.Click += new System.EventHandler(this.CloseRegister_Click);
             // 
             // registerButton
             // 
             this.registerButton.BackColor = System.Drawing.Color.Green;
             this.registerButton.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.registerButton.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.registerButton.Location = new System.Drawing.Point(373, 370);
+            this.registerButton.Location = new System.Drawing.Point(373, 385);
             this.registerButton.Name = "registerButton";
             this.registerButton.Size = new System.Drawing.Size(130, 44);
             this.registerButton.TabIndex = 7;
             this.registerButton.Text = "Đăng kí";
             this.registerButton.UseVisualStyleBackColor = false;
-            this.registerButton.Click += new System.EventHandler(this.loginButton_Click);
+            this.registerButton.Click += new System.EventHandler(this.registerButton_Click);
             // 
             // notification
             // 
+            this.notification.BackColor = System.Drawing.Color.Transparent;
             this.notification.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.notification.ForeColor = System.Drawing.Color.Red;
-            this.notification.Location = new System.Drawing.Point(326, 314);
+            this.notification.Location = new System.Drawing.Point(325, 340);
             this.notification.Name = "notification";
-            this.notification.Size = new System.Drawing.Size(228, 43);
+            this.notification.Size = new System.Drawing.Size(230, 43);
             this.notification.TabIndex = 9;
-            this.notification.Text = "Tên tài khoản bị trùng";
+            this.notification.Text = "Thông báo";
             this.notification.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.notification.Visible = false;
+            // 
+            // emailField
+            // 
+            this.emailField.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.emailField.Location = new System.Drawing.Point(326, 138);
+            this.emailField.Name = "emailField";
+            this.emailField.Size = new System.Drawing.Size(228, 29);
+            this.emailField.TabIndex = 11;
+            // 
+            // emailLabel
+            // 
+            this.emailLabel.AutoSize = true;
+            this.emailLabel.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.emailLabel.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.emailLabel.Location = new System.Drawing.Point(322, 114);
+            this.emailLabel.Name = "emailLabel";
+            this.emailLabel.Size = new System.Drawing.Size(55, 21);
+            this.emailLabel.TabIndex = 10;
+            this.emailLabel.Text = "Email:";
+            // 
+            // password2Field
+            // 
+            this.password2Field.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.password2Field.Location = new System.Drawing.Point(326, 306);
+            this.password2Field.Name = "password2Field";
+            this.password2Field.Size = new System.Drawing.Size(228, 29);
+            this.password2Field.TabIndex = 13;
+            // 
+            // password2Label
+            // 
+            this.password2Label.AutoSize = true;
+            this.password2Label.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.password2Label.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.password2Label.Location = new System.Drawing.Point(322, 282);
+            this.password2Label.Name = "password2Label";
+            this.password2Label.Size = new System.Drawing.Size(147, 21);
+            this.password2Label.TabIndex = 12;
+            this.password2Label.Text = "Nhập lại mật khẩu:";
             // 
             // Register
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(584, 461);
-            this.Controls.Add(this.notification);
+            this.Controls.Add(this.password2Field);
+            this.Controls.Add(this.password2Label);
+            this.Controls.Add(this.emailField);
+            this.Controls.Add(this.emailLabel);
             this.Controls.Add(this.registerButton);
             this.Controls.Add(this.passwordField);
             this.Controls.Add(this.registerPasswordLabel);
@@ -213,6 +259,7 @@ namespace IncomeExpenseApp
             this.Controls.Add(this.registerLabel);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.CloseLogin);
+            this.Controls.Add(this.notification);
             this.ForeColor = System.Drawing.SystemColors.ActiveBorder;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -241,5 +288,9 @@ namespace IncomeExpenseApp
         private Label loginNotiLabel;
         private Button loginButton;
         private Label notification;
+        private TextBox emailField;
+        private Label emailLabel;
+        private TextBox password2Field;
+        private Label password2Label;
     }
 }

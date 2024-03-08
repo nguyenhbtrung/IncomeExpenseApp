@@ -45,6 +45,7 @@ namespace IncomeExpenseApp
             this.loginButton = new System.Windows.Forms.Button();
             this.CloseLogin = new System.Windows.Forms.Button();
             this.notification = new System.Windows.Forms.Label();
+            this.forgotPassButton = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.appLogo)).BeginInit();
             this.SuspendLayout();
@@ -199,11 +200,27 @@ namespace IncomeExpenseApp
             this.notification.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.notification.Visible = false;
             // 
+            // forgotPassButton
+            // 
+            this.forgotPassButton.BackColor = System.Drawing.Color.Transparent;
+            this.forgotPassButton.FlatAppearance.BorderSize = 0;
+            this.forgotPassButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.forgotPassButton.Font = new System.Drawing.Font("Times New Roman", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.forgotPassButton.ForeColor = System.Drawing.Color.Green;
+            this.forgotPassButton.Location = new System.Drawing.Point(373, 420);
+            this.forgotPassButton.Name = "forgotPassButton";
+            this.forgotPassButton.Size = new System.Drawing.Size(130, 32);
+            this.forgotPassButton.TabIndex = 4;
+            this.forgotPassButton.Text = "Quên mật khẩu?";
+            this.forgotPassButton.UseVisualStyleBackColor = false;
+            this.forgotPassButton.Click += new System.EventHandler(this.forgotPassButton_Click);
+            // 
             // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(584, 461);
+            this.Controls.Add(this.forgotPassButton);
             this.Controls.Add(this.notification);
             this.Controls.Add(this.loginButton);
             this.Controls.Add(this.passwordField);
@@ -241,5 +258,6 @@ namespace IncomeExpenseApp
         private Label registerLabel;
         private Button registerButton;
         private Label notification;
+        private Button forgotPassButton;
     }
 }
