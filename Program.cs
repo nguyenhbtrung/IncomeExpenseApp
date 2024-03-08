@@ -10,7 +10,7 @@ namespace IncomeExpenseApp
 
     internal static class Program
     {
-        public static Login loginForm;
+        public static Login loginForm { get; private set; }
         /// <summary>
         /// The main entry point for the application.
         /// </summary>
