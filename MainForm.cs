@@ -118,38 +118,35 @@ namespace IncomeExpenseApp
         protected void OpenDashBoard(object sender, EventArgs e)
         {
             DashBoardForm form = new DashBoardForm();
-            form.Show();
-            form.ChangeTheSelectionDisplay(this.FormIndex, form.FormIndex);
-            this.Close();
+            SwitchToForm(form);
         }
 
         protected void OpenIncome(object sender, EventArgs e)
         {
             Income form = new Income();
-            form.Show();
-            form.ChangeTheSelectionDisplay(this.FormIndex, form.FormIndex);
-            this.Close();
+            SwitchToForm(form);
         }
 
         protected void OpenExpense(object sender, EventArgs e)
         {
             Expense form = new Expense();
-            form.Show();
-            form.ChangeTheSelectionDisplay(this.FormIndex, form.FormIndex);
-            this.Close();
+            SwitchToForm(form);
         }
 
         protected void OpenViewIncome(object sender, EventArgs e)
         {
             ViewIncome form = new ViewIncome();
-            form.Show();
-            form.ChangeTheSelectionDisplay(this.FormIndex, form.FormIndex);
-            this.Close();
+            SwitchToForm(form);
         }
 
         protected void OpenViewExpense(object sender, EventArgs e)
         {
             ViewExpense form = new ViewExpense();
+            SwitchToForm(form);
+        }
+
+        private void SwitchToForm(MainForm form)
+        {
             form.Show();
             form.ChangeTheSelectionDisplay(this.FormIndex, form.FormIndex);
             this.Close();
