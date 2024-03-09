@@ -28,5 +28,33 @@ namespace IncomeExpenseApp
         {
             Application.Exit();
         }
+
+        public void ShowLogin()
+        {
+            this.Hide();
+            Login obj = new Login();
+            obj.Show();
+        }
+
+        public void ShowRegister()
+        {
+            this.Hide();
+            Register obj = new Register();
+            obj.Show();
+        }
+        public void ShowAuthenticaon()
+        {
+            Authentication obj = new Authentication();
+            obj.ShowDialog();
+        }
+
+        public bool IsEmpty(string textBox)
+        {
+            if (textBox == "")
+            {
+                return true;
+            }
+            else return false;
+        }
     }
 }

@@ -35,9 +35,7 @@ namespace IncomeExpenseApp
 
         private void registerButton_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            Register obj = new Register();
-            obj.Show();
+            ShowRegister();
         }
 
         private void forgotPassButton_Click(object sender, EventArgs e)

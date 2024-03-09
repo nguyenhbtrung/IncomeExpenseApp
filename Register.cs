@@ -16,25 +16,25 @@ namespace IncomeExpenseApp
         }
         private void registerButton_Click(object sender, EventArgs e)
         {
-            if (emailField.Text == "")
+            if (IsEmpty(emailField.Text))
             {
                 notification.Text = "Không được để trống Email!!";
                 notification.Visible = true;
                 return;
             }
-            else if (usernameField.Text == "")
+            else if (IsEmpty(usernameField.Text))
             {
                 notification.Text = "Không được để trống\ntên đăng nhập!!";
                 notification.Visible = true;
                 return;
             }
-            else if (passwordField.Text == "")
+            else if (IsEmpty(passwordField.Text))
             {
                 notification.Text = "Không được để trống\nmật khẩu!!";
                 notification.Visible = true;
                 return;
             }
-            else if (password2Field.Text == "")
+            else if (IsEmpty(password2Field.Text))
             {
                 notification.Text = "Chưa nhập lại mật khẩu!!";
                 notification.Visible = true;
@@ -60,18 +60,14 @@ namespace IncomeExpenseApp
             }
             else
             {
-                notification.Text = "Tài khoản được tạo\nthành công!!";
-                notification.Visible = true;
-                return;
+                ShowAuthenticaon();
             }
 
         }
 
         private void loginButton_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            Login obj = new Login();
-            obj.Show();
+            ShowLogin();
         }
 
     }
