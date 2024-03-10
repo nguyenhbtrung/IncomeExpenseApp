@@ -22,8 +22,9 @@ namespace WindowsFormsApp1
         /// </summary>
         public static string SendAuthenticationEmail(string toAddress, int sampleIndex)
         {
-            string fromAddress = "trungdzlhp@gmail.com";
-            string password = "eqnb amki ojds dbvp";
+            string fromAddress = "incomeexpenseapp123@gmail.com";
+            //string password = "eqnb amki ojds dbvp";
+            string password = "yfvm wzyc edqo fhcd";
             MailAddress to = new MailAddress(toAddress);
             MailAddress from = new MailAddress(fromAddress);
             MailMessage email = new MailMessage(from, to);
