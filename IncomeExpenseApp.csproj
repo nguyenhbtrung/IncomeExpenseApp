@@ -89,6 +89,24 @@
     <Compile Include="TestSendEmail.designer.cs">
       <DependentUpon>TestSendEmail.cs</DependentUpon>
     </Compile>
+    <Compile Include="TestUserControl\Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TestUserControl\Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TestUserControl\UserControl2.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="TestUserControl\UserControl2.Designer.cs">
+      <DependentUpon>UserControl2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TestUserControl\UserControl3.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="TestUserControl\UserControl3.Designer.cs">
+      <DependentUpon>UserControl3.cs</DependentUpon>
+    </Compile>
     <Compile Include="ViewExpense.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -139,6 +157,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="TestSendEmail.resx">
       <DependentUpon>TestSendEmail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TestUserControl\Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TestUserControl\UserControl2.resx">
+      <DependentUpon>UserControl2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TestUserControl\UserControl3.resx">
+      <DependentUpon>UserControl3.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ViewExpense.resx">
       <DependentUpon>ViewExpense.cs</DependentUpon>

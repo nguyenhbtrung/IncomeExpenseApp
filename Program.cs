@@ -1,4 +1,5 @@
-﻿using System;
+﻿using IncomeExpenseApp.TestUserControl;
+using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
@@ -20,7 +21,7 @@ namespace IncomeExpenseApp
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             LoginForm = new Login();
-            Application.Run( new TestSendEmail());
+            Application.Run(new Form1());
         }
     }
 }
