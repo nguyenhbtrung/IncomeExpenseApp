@@ -83,6 +83,12 @@
     <Compile Include="Register.Designer.cs">
       <DependentUpon>Register.cs</DependentUpon>
     </Compile>
+    <Compile Include="TestSendEmail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TestSendEmail.designer.cs">
+      <DependentUpon>TestSendEmail.cs</DependentUpon>
+    </Compile>
     <Compile Include="ViewExpense.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -130,6 +136,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Register.resx">
       <DependentUpon>Register.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TestSendEmail.resx">
+      <DependentUpon>TestSendEmail.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ViewExpense.resx">
       <DependentUpon>ViewExpense.cs</DependentUpon>
