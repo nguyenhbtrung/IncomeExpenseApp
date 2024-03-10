@@ -29,27 +29,27 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Authentication));
-            this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textLabel = new System.Windows.Forms.Label();
+            this.codeField = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // label1
+            // textLabel
             // 
-            this.label1.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(12, 9);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(360, 50);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Hãy nhập mã vừa được gửi vào Email của bạn để xác thực Email:";
+            this.textLabel.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textLabel.Location = new System.Drawing.Point(12, 9);
+            this.textLabel.Name = "textLabel";
+            this.textLabel.Size = new System.Drawing.Size(360, 50);
+            this.textLabel.TabIndex = 0;
+            this.textLabel.Text = "Hãy nhập mã vừa được gửi vào Email của bạn để xác thực Email:";
             // 
-            // textBox1
+            // codeField
             // 
-            this.textBox1.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(16, 62);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(356, 32);
-            this.textBox1.TabIndex = 1;
+            this.codeField.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.codeField.Location = new System.Drawing.Point(16, 62);
+            this.codeField.Name = "codeField";
+            this.codeField.Size = new System.Drawing.Size(356, 32);
+            this.codeField.TabIndex = 1;
             // 
             // button1
             // 
@@ -68,8 +68,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(384, 161);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.codeField);
+            this.Controls.Add(this.textLabel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Authentication";
@@ -82,8 +82,8 @@
 
         #endregion
 
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Label textLabel;
+        private System.Windows.Forms.TextBox codeField;
         private System.Windows.Forms.Button button1;
     }
 }

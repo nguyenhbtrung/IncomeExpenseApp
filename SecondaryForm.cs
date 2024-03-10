@@ -12,6 +12,7 @@ namespace IncomeExpenseApp
 {
     public partial class SecondaryForm : Form
     {
+
         public SecondaryForm()
         {
             InitializeComponent();
@@ -26,12 +27,11 @@ namespace IncomeExpenseApp
 
         private void SecondaryForm_FormClosed(object sender, FormClosedEventArgs e)
         {
-            Application.Exit();
         }
 
         public void ShowLogin()
         {
-            this.Hide();
+            this.Close();
             Login obj = new Login();
             obj.Show();
         }

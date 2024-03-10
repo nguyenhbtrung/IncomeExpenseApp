@@ -2,14 +2,18 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
+using WindowsFormsApp1;
 
 namespace IncomeExpenseApp
 {
+    
     public partial class Register : IncomeExpenseApp.SecondaryForm
     {
+        public static string maXacThuc;
         public Register()
         {
             InitializeComponent();
@@ -40,7 +44,7 @@ namespace IncomeExpenseApp
                 notification.Visible = true;
                 return;
             }
-            if (emailField.Text == "huydangdo2003@gmail.com")
+            if (emailField.Text == "incomeexpenseapp123@gmail.com")
             {
                 notification.Text = "Email đã được dùng!!";
                 notification.Visible = true;
@@ -60,7 +64,9 @@ namespace IncomeExpenseApp
             }
             else
             {
+                maXacThuc = EmailSender.SendAuthenticationEmail(emailField.Text, 0);
                 ShowAuthenticaon();
+                this.Hide();
             }
 
         }

@@ -20,7 +20,7 @@ namespace IncomeExpenseApp
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             LoginForm = new Login();
-            Application.Run( new TestSendEmail());
+            Application.Run( new Login());
         }
     }
 }

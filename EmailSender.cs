@@ -43,7 +43,7 @@ namespace WindowsFormsApp1
         {
             SmtpClient smtp = new SmtpClient();
             smtp.Host = "smtp.gmail.com";
-            smtp.Port = 25;
+            smtp.Port = 587;
             smtp.Credentials = new NetworkCredential(fromAddress, password);
             smtp.DeliveryMethod = SmtpDeliveryMethod.Network;
             smtp.EnableSsl = true;
@@ -51,7 +51,6 @@ namespace WindowsFormsApp1
             try
             {
                 smtp.Send(email);
-                MessageBox.Show("Successfully");
             }
             catch (SmtpException ex)
             {
