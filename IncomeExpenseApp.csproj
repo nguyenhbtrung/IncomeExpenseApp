@@ -53,6 +53,42 @@
     <Compile Include="Authentication.Designer.cs">
       <DependentUpon>Authentication.cs</DependentUpon>
     </Compile>
+    <Compile Include="Controls\DashBoardControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\DashBoardControl.Designer.cs">
+      <DependentUpon>DashBoardControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ExpenseControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\ExpenseControl.Designer.cs">
+      <DependentUpon>ExpenseControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\IncomeControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\IncomeControl.Designer.cs">
+      <DependentUpon>IncomeControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\PlanControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\PlanControl.Designer.cs">
+      <DependentUpon>PlanControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ViewExpenseControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\ViewExpenseControl.Designer.cs">
+      <DependentUpon>ViewExpenseControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ViewIncomeControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\ViewIncomeControl.Designer.cs">
+      <DependentUpon>ViewIncomeControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="DashBoardForm.cs">
       <SubType>Form</SubType>
     </Compile>
