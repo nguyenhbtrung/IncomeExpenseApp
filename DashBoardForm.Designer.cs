@@ -37,6 +37,12 @@
             System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
             System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
             System.Windows.Forms.DataVisualization.Charting.Title title2 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea4 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend4 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series4 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series5 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label15 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
@@ -72,6 +78,7 @@
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.profitChart = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).BeginInit();
             this.panel3.SuspendLayout();
@@ -83,6 +90,7 @@
             this.panel8.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.incomeExpendChart)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.profitChart)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel2
@@ -534,6 +542,55 @@
             title2.Text = "Thu nhập / Chi tiêu";
             this.profitChart.Titles.Add(title2);
             // 
+            // chart1
+            // 
+            chartArea3.Name = "ChartArea1";
+            chartArea3.Position.Auto = false;
+            chartArea3.Position.Height = 50F;
+            chartArea3.Position.Width = 40F;
+            chartArea3.Position.Y = 3F;
+            chartArea4.Name = "ChartArea2";
+            chartArea4.Position.Auto = false;
+            chartArea4.Position.Height = 50F;
+            chartArea4.Position.Width = 40F;
+            chartArea4.Position.X = 50F;
+            chartArea4.Position.Y = 3F;
+            this.chart1.ChartAreas.Add(chartArea3);
+            this.chart1.ChartAreas.Add(chartArea4);
+            legend3.Name = "Legend1";
+            legend3.Position.Auto = false;
+            legend3.Position.Height = 50F;
+            legend3.Position.Width = 10F;
+            legend3.Position.X = 40F;
+            legend3.Position.Y = 3F;
+            legend4.Name = "Legend2";
+            legend4.Position.Auto = false;
+            legend4.Position.Height = 50F;
+            legend4.Position.Width = 10F;
+            legend4.Position.X = 90F;
+            legend4.Position.Y = 3F;
+            this.chart1.Legends.Add(legend3);
+            this.chart1.Legends.Add(legend4);
+            this.chart1.Location = new System.Drawing.Point(611, 369);
+            this.chart1.Name = "chart1";
+            series4.BorderColor = System.Drawing.Color.White;
+            series4.BorderWidth = 5;
+            series4.ChartArea = "ChartArea1";
+            series4.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Doughnut;
+            series4.Legend = "Legend1";
+            series4.Name = "Thu nhập";
+            series5.BorderColor = System.Drawing.Color.White;
+            series5.BorderWidth = 5;
+            series5.ChartArea = "ChartArea2";
+            series5.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Doughnut;
+            series5.Legend = "Legend2";
+            series5.Name = "Chi tiêu";
+            this.chart1.Series.Add(series4);
+            this.chart1.Series.Add(series5);
+            this.chart1.Size = new System.Drawing.Size(566, 308);
+            this.chart1.TabIndex = 37;
+            this.chart1.Text = "chart1";
+            // 
             // DashBoardForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -549,12 +606,14 @@
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.panel2);
-            this.Controls.Add(this.incomeExpendChart);
+            this.Controls.Add(this.chart1);
             this.Controls.Add(this.profitChart);
+            this.Controls.Add(this.incomeExpendChart);
             this.Name = "DashBoardForm";
             this.Load += new System.EventHandler(this.DashBoardForm_Load);
-            this.Controls.SetChildIndex(this.profitChart, 0);
             this.Controls.SetChildIndex(this.incomeExpendChart, 0);
+            this.Controls.SetChildIndex(this.profitChart, 0);
+            this.Controls.SetChildIndex(this.chart1, 0);
             this.Controls.SetChildIndex(this.panel2, 0);
             this.Controls.SetChildIndex(this.label10, 0);
             this.Controls.SetChildIndex(this.panel3, 0);
@@ -584,6 +643,7 @@
             this.panel8.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.incomeExpendChart)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.profitChart)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -626,5 +686,6 @@
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.DataVisualization.Charting.Chart profitChart;
+        private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
     }
 }
