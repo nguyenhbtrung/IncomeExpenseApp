@@ -115,34 +115,60 @@ namespace IncomeExpenseApp
             Application.Exit();
         }
 
+        //protected void OpenDashBoard(object sender, EventArgs e)
+        //{
+        //    DashBoardForm form = new DashBoardForm();
+        //    SwitchToForm(form);
+        //}
+
+        //protected void OpenIncome(object sender, EventArgs e)
+        //{
+        //    Income form = new Income();
+        //    SwitchToForm(form);
+        //}
+
+        //protected void OpenExpense(object sender, EventArgs e)
+        //{
+        //    Expense form = new Expense();
+        //    SwitchToForm(form);
+        //}
+
+        //protected void OpenViewIncome(object sender, EventArgs e)
+        //{
+        //    ViewIncome form = new ViewIncome();
+        //    SwitchToForm(form);
+        //}
+
+        //protected void OpenViewExpense(object sender, EventArgs e)
+        //{
+        //    ViewExpense form = new ViewExpense();
+        //    SwitchToForm(form);
+        //}
         protected void OpenDashBoard(object sender, EventArgs e)
         {
-            DashBoardForm form = new DashBoardForm();
-            SwitchToForm(form);
+            dashBoardControl1.BringToFront();
+            //menuDashBoardPanel.BackColor = Color.FromArgb(128, 128, 255);
+
         }
 
         protected void OpenIncome(object sender, EventArgs e)
         {
-            Income form = new Income();
-            SwitchToForm(form);
+            incomeControl1.BringToFront();
         }
 
         protected void OpenExpense(object sender, EventArgs e)
         {
-            Expense form = new Expense();
-            SwitchToForm(form);
+            expenseControl1.BringToFront();
         }
 
         protected void OpenViewIncome(object sender, EventArgs e)
         {
-            ViewIncome form = new ViewIncome();
-            SwitchToForm(form);
+            viewIncomeControl1.BringToFront();
         }
 
         protected void OpenViewExpense(object sender, EventArgs e)
         {
-            ViewExpense form = new ViewExpense();
-            SwitchToForm(form);
+            viewExpenseControl1.BringToFront();
         }
 
         private void SwitchToForm(MainForm form)
