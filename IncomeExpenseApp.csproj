@@ -179,6 +179,21 @@
     <EmbeddedResource Include="Authentication.resx">
       <DependentUpon>Authentication.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Controls\DashBoardControl.resx">
+      <DependentUpon>DashBoardControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\ExpenseControl.resx">
+      <DependentUpon>ExpenseControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\IncomeControl.resx">
+      <DependentUpon>IncomeControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\ViewExpenseControl.resx">
+      <DependentUpon>ViewExpenseControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\ViewIncomeControl.resx">
+      <DependentUpon>ViewIncomeControl.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="DashBoardForm.resx">
       <DependentUpon>DashBoardForm.cs</DependentUpon>
     </EmbeddedResource>

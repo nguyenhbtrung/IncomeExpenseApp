@@ -21,7 +21,7 @@ namespace IncomeExpenseApp
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             LoginForm = new Login();
-            Application.Run(new DashBoardForm());
+            Application.Run(new MainForm());
         }
     }
 }
