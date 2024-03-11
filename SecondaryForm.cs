@@ -32,8 +32,7 @@ namespace IncomeExpenseApp
         public void ShowLogin()
         {
             this.Close();
-            Login obj = new Login();
-            obj.Show();
+            Program.LoginForm.Show();
         }
 
         public void ShowRegister()
