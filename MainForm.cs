@@ -57,15 +57,15 @@ namespace IncomeExpenseApp
         //    this.MaximizeBox = true;
         //}
 
-        protected override CreateParams CreateParams
-        {
-            get
-            {
-                CreateParams handleParams = base.CreateParams;
-                handleParams.ExStyle |= 0x02000000;
-                return handleParams;
-            }
-        }
+        //protected override CreateParams CreateParams
+        //{
+        //    get
+        //    {
+        //        CreateParams handleParams = base.CreateParams;
+        //        handleParams.ExStyle |= 0x02000000;
+        //        return handleParams;
+        //    }
+        //}
 
         private void AddMenuLabelsAndImageToList()
         {

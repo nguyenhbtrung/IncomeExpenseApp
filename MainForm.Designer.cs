@@ -50,6 +50,11 @@
             this.menuIncomeImage = new System.Windows.Forms.PictureBox();
             this.menuDashBoardImage = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.viewIncomeControl1 = new IncomeExpenseApp.Controls.ViewIncomeControl();
+            this.expenseControl1 = new IncomeExpenseApp.Controls.ExpenseControl();
+            this.incomeControl1 = new IncomeExpenseApp.Controls.IncomeControl();
+            this.dashBoardControl1 = new IncomeExpenseApp.Controls.DashBoardControl();
+            this.viewExpenseControl1 = new IncomeExpenseApp.Controls.ViewExpenseControl();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.exitPictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).BeginInit();
@@ -103,7 +108,7 @@
             this.menuViewExpenseLabel.AutoSize = true;
             this.menuViewExpenseLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.menuViewExpenseLabel.ForeColor = System.Drawing.SystemColors.Desktop;
-            this.menuViewExpenseLabel.Location = new System.Drawing.Point(51, 458);
+            this.menuViewExpenseLabel.Location = new System.Drawing.Point(51, 400);
             this.menuViewExpenseLabel.Name = "menuViewExpenseLabel";
             this.menuViewExpenseLabel.Size = new System.Drawing.Size(108, 20);
             this.menuViewExpenseLabel.TabIndex = 11;
@@ -115,7 +120,7 @@
             this.menuViewIncomeLabel.AutoSize = true;
             this.menuViewIncomeLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.menuViewIncomeLabel.ForeColor = System.Drawing.SystemColors.Desktop;
-            this.menuViewIncomeLabel.Location = new System.Drawing.Point(51, 388);
+            this.menuViewIncomeLabel.Location = new System.Drawing.Point(51, 344);
             this.menuViewIncomeLabel.Name = "menuViewIncomeLabel";
             this.menuViewIncomeLabel.Size = new System.Drawing.Size(121, 20);
             this.menuViewIncomeLabel.TabIndex = 9;
@@ -127,7 +132,7 @@
             this.menuExpenseLabel.AutoSize = true;
             this.menuExpenseLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.menuExpenseLabel.ForeColor = System.Drawing.SystemColors.Desktop;
-            this.menuExpenseLabel.Location = new System.Drawing.Point(51, 322);
+            this.menuExpenseLabel.Location = new System.Drawing.Point(51, 288);
             this.menuExpenseLabel.Name = "menuExpenseLabel";
             this.menuExpenseLabel.Size = new System.Drawing.Size(70, 20);
             this.menuExpenseLabel.TabIndex = 7;
@@ -139,7 +144,7 @@
             this.menuIncomeLabel.AutoSize = true;
             this.menuIncomeLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.menuIncomeLabel.ForeColor = System.Drawing.SystemColors.Desktop;
-            this.menuIncomeLabel.Location = new System.Drawing.Point(51, 253);
+            this.menuIncomeLabel.Location = new System.Drawing.Point(51, 232);
             this.menuIncomeLabel.Name = "menuIncomeLabel";
             this.menuIncomeLabel.Size = new System.Drawing.Size(84, 20);
             this.menuIncomeLabel.TabIndex = 5;
@@ -215,7 +220,7 @@
             // pictureBox8
             // 
             this.pictureBox8.Image = global::IncomeExpenseApp.Properties.Resources.Logo_HAU;
-            this.pictureBox8.Location = new System.Drawing.Point(340, 58);
+            this.pictureBox8.Location = new System.Drawing.Point(340, 55);
             this.pictureBox8.Name = "pictureBox8";
             this.pictureBox8.Size = new System.Drawing.Size(34, 36);
             this.pictureBox8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -236,7 +241,7 @@
             // menuViewExpenseImage
             // 
             this.menuViewExpenseImage.Image = global::IncomeExpenseApp.Properties.Resources.XemChiTieu;
-            this.menuViewExpenseImage.Location = new System.Drawing.Point(12, 439);
+            this.menuViewExpenseImage.Location = new System.Drawing.Point(12, 381);
             this.menuViewExpenseImage.Name = "menuViewExpenseImage";
             this.menuViewExpenseImage.Size = new System.Drawing.Size(35, 50);
             this.menuViewExpenseImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -247,7 +252,7 @@
             // menuViewIncomeImage
             // 
             this.menuViewIncomeImage.Image = global::IncomeExpenseApp.Properties.Resources.XemThuNhap;
-            this.menuViewIncomeImage.Location = new System.Drawing.Point(12, 369);
+            this.menuViewIncomeImage.Location = new System.Drawing.Point(12, 325);
             this.menuViewIncomeImage.Name = "menuViewIncomeImage";
             this.menuViewIncomeImage.Size = new System.Drawing.Size(35, 50);
             this.menuViewIncomeImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -258,7 +263,7 @@
             // menuExpenseImage
             // 
             this.menuExpenseImage.Image = global::IncomeExpenseApp.Properties.Resources.ChiTieu;
-            this.menuExpenseImage.Location = new System.Drawing.Point(12, 303);
+            this.menuExpenseImage.Location = new System.Drawing.Point(12, 269);
             this.menuExpenseImage.Name = "menuExpenseImage";
             this.menuExpenseImage.Size = new System.Drawing.Size(35, 50);
             this.menuExpenseImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -269,7 +274,7 @@
             // menuIncomeImage
             // 
             this.menuIncomeImage.Image = global::IncomeExpenseApp.Properties.Resources.ThuNhap;
-            this.menuIncomeImage.Location = new System.Drawing.Point(12, 234);
+            this.menuIncomeImage.Location = new System.Drawing.Point(12, 213);
             this.menuIncomeImage.Name = "menuIncomeImage";
             this.menuIncomeImage.Size = new System.Drawing.Size(35, 50);
             this.menuIncomeImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -298,18 +303,58 @@
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
+            // viewIncomeControl1
+            // 
+            this.viewIncomeControl1.Location = new System.Drawing.Point(193, 97);
+            this.viewIncomeControl1.Name = "viewIncomeControl1";
+            this.viewIncomeControl1.Size = new System.Drawing.Size(1022, 623);
+            this.viewIncomeControl1.TabIndex = 31;
+            // 
+            // expenseControl1
+            // 
+            this.expenseControl1.Location = new System.Drawing.Point(193, 97);
+            this.expenseControl1.Name = "expenseControl1";
+            this.expenseControl1.Size = new System.Drawing.Size(1022, 623);
+            this.expenseControl1.TabIndex = 30;
+            // 
+            // incomeControl1
+            // 
+            this.incomeControl1.Location = new System.Drawing.Point(193, 97);
+            this.incomeControl1.Name = "incomeControl1";
+            this.incomeControl1.Size = new System.Drawing.Size(1022, 623);
+            this.incomeControl1.TabIndex = 29;
+            // 
+            // dashBoardControl1
+            // 
+            this.dashBoardControl1.Location = new System.Drawing.Point(193, 97);
+            this.dashBoardControl1.Name = "dashBoardControl1";
+            this.dashBoardControl1.Size = new System.Drawing.Size(1022, 623);
+            this.dashBoardControl1.TabIndex = 28;
+            // 
+            // viewExpenseControl1
+            // 
+            this.viewExpenseControl1.Location = new System.Drawing.Point(193, 97);
+            this.viewExpenseControl1.Name = "viewExpenseControl1";
+            this.viewExpenseControl1.Size = new System.Drawing.Size(1022, 623);
+            this.viewExpenseControl1.TabIndex = 32;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLight;
             this.ClientSize = new System.Drawing.Size(1215, 720);
+            this.Controls.Add(this.viewExpenseControl1);
+            this.Controls.Add(this.viewIncomeControl1);
+            this.Controls.Add(this.expenseControl1);
             this.Controls.Add(this.exitPictureBox);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.pictureBox9);
             this.Controls.Add(this.pictureBox8);
             this.Controls.Add(this.panel1);
+            this.Controls.Add(this.incomeControl1);
+            this.Controls.Add(this.dashBoardControl1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "MainForm";
@@ -355,6 +400,11 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.PictureBox exitPictureBox;
+        private Controls.DashBoardControl dashBoardControl1;
+        private Controls.IncomeControl incomeControl1;
+        private Controls.ExpenseControl expenseControl1;
+        private Controls.ViewIncomeControl viewIncomeControl1;
+        private Controls.ViewExpenseControl viewExpenseControl1;
     }
 }
 

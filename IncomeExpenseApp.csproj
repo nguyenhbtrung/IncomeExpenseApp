@@ -53,6 +53,42 @@
     <Compile Include="Authentication.Designer.cs">
       <DependentUpon>Authentication.cs</DependentUpon>
     </Compile>
+    <Compile Include="Controls\DashBoardControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\DashBoardControl.Designer.cs">
+      <DependentUpon>DashBoardControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ExpenseControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\ExpenseControl.Designer.cs">
+      <DependentUpon>ExpenseControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\IncomeControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\IncomeControl.Designer.cs">
+      <DependentUpon>IncomeControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\PlanControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\PlanControl.Designer.cs">
+      <DependentUpon>PlanControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ViewExpenseControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\ViewExpenseControl.Designer.cs">
+      <DependentUpon>ViewExpenseControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ViewIncomeControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\ViewIncomeControl.Designer.cs">
+      <DependentUpon>ViewIncomeControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="DashBoardForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -82,6 +118,30 @@
     </Compile>
     <Compile Include="Register.Designer.cs">
       <DependentUpon>Register.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TestSendEmail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TestSendEmail.designer.cs">
+      <DependentUpon>TestSendEmail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TestUserControl\Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TestUserControl\Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TestUserControl\UserControl2.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="TestUserControl\UserControl2.Designer.cs">
+      <DependentUpon>UserControl2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TestUserControl\UserControl3.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="TestUserControl\UserControl3.Designer.cs">
+      <DependentUpon>UserControl3.cs</DependentUpon>
     </Compile>
     <Compile Include="ViewExpense.cs">
       <SubType>Form</SubType>
@@ -119,6 +179,21 @@
     <EmbeddedResource Include="Authentication.resx">
       <DependentUpon>Authentication.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Controls\DashBoardControl.resx">
+      <DependentUpon>DashBoardControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\ExpenseControl.resx">
+      <DependentUpon>ExpenseControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\IncomeControl.resx">
+      <DependentUpon>IncomeControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\ViewExpenseControl.resx">
+      <DependentUpon>ViewExpenseControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\ViewIncomeControl.resx">
+      <DependentUpon>ViewIncomeControl.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="DashBoardForm.resx">
       <DependentUpon>DashBoardForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -130,6 +205,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Register.resx">
       <DependentUpon>Register.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TestSendEmail.resx">
+      <DependentUpon>TestSendEmail.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ViewExpense.resx">
       <DependentUpon>ViewExpense.cs</DependentUpon>
