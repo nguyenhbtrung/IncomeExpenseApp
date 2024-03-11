@@ -59,17 +59,15 @@
             this.label20 = new System.Windows.Forms.Label();
             this.pictureBox12 = new System.Windows.Forms.PictureBox();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.label25 = new System.Windows.Forms.Label();
             this.label22 = new System.Windows.Forms.Label();
+            this.label26 = new System.Windows.Forms.Label();
             this.label21 = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
-            this.label23 = new System.Windows.Forms.Label();
-            this.label24 = new System.Windows.Forms.Label();
-            this.panel6 = new System.Windows.Forms.Panel();
-            this.label25 = new System.Windows.Forms.Label();
-            this.label26 = new System.Windows.Forms.Label();
-            this.panel7 = new System.Windows.Forms.Panel();
             this.label27 = new System.Windows.Forms.Label();
             this.label28 = new System.Windows.Forms.Label();
+            this.label23 = new System.Windows.Forms.Label();
+            this.label24 = new System.Windows.Forms.Label();
             this.panel8 = new System.Windows.Forms.Panel();
             this.label29 = new System.Windows.Forms.Label();
             this.label30 = new System.Windows.Forms.Label();
@@ -85,8 +83,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).BeginInit();
             this.panel4.SuspendLayout();
             this.panel5.SuspendLayout();
-            this.panel6.SuspendLayout();
-            this.panel7.SuspendLayout();
             this.panel8.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.incomeExpendChart)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.profitChart)).BeginInit();
@@ -265,12 +261,25 @@
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(239)))), ((int)(((byte)(196)))));
+            this.panel4.Controls.Add(this.label25);
             this.panel4.Controls.Add(this.label22);
+            this.panel4.Controls.Add(this.label26);
             this.panel4.Controls.Add(this.label21);
-            this.panel4.Location = new System.Drawing.Point(611, 135);
+            this.panel4.Location = new System.Drawing.Point(611, 369);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(232, 90);
+            this.panel4.Size = new System.Drawing.Size(283, 205);
             this.panel4.TabIndex = 28;
+            // 
+            // label25
+            // 
+            this.label25.AutoSize = true;
+            this.label25.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label25.ForeColor = System.Drawing.Color.Indigo;
+            this.label25.Location = new System.Drawing.Point(14, 155);
+            this.label25.Name = "label25";
+            this.label25.Size = new System.Drawing.Size(140, 26);
+            this.label25.TabIndex = 26;
+            this.label25.Text = "Tính bằng VNĐ";
             // 
             // label22
             // 
@@ -282,6 +291,17 @@
             this.label22.Size = new System.Drawing.Size(140, 26);
             this.label22.TabIndex = 26;
             this.label22.Text = "Tính bằng VNĐ";
+            // 
+            // label26
+            // 
+            this.label26.AutoSize = true;
+            this.label26.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label26.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(31)))), ((int)(((byte)(151)))));
+            this.label26.Location = new System.Drawing.Point(14, 114);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(172, 26);
+            this.label26.TabIndex = 26;
+            this.label26.Text = "Thu nhập gần nhất";
             // 
             // label21
             // 
@@ -297,12 +317,36 @@
             // panel5
             // 
             this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(132)))), ((int)(((byte)(227)))));
+            this.panel5.Controls.Add(this.label27);
+            this.panel5.Controls.Add(this.label28);
             this.panel5.Controls.Add(this.label23);
             this.panel5.Controls.Add(this.label24);
-            this.panel5.Location = new System.Drawing.Point(945, 135);
+            this.panel5.Location = new System.Drawing.Point(894, 369);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(232, 90);
+            this.panel5.Size = new System.Drawing.Size(283, 205);
             this.panel5.TabIndex = 29;
+            // 
+            // label27
+            // 
+            this.label27.AutoSize = true;
+            this.label27.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label27.ForeColor = System.Drawing.Color.Indigo;
+            this.label27.Location = new System.Drawing.Point(16, 155);
+            this.label27.Name = "label27";
+            this.label27.Size = new System.Drawing.Size(140, 26);
+            this.label27.TabIndex = 26;
+            this.label27.Text = "Tính bằng VNĐ";
+            // 
+            // label28
+            // 
+            this.label28.AutoSize = true;
+            this.label28.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label28.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(31)))), ((int)(((byte)(151)))));
+            this.label28.Location = new System.Drawing.Point(15, 114);
+            this.label28.Name = "label28";
+            this.label28.Size = new System.Drawing.Size(157, 26);
+            this.label28.TabIndex = 26;
+            this.label28.Text = "Chi tiêu gần nhất";
             // 
             // label23
             // 
@@ -325,70 +369,6 @@
             this.label24.Size = new System.Drawing.Size(154, 26);
             this.label24.TabIndex = 26;
             this.label24.Text = "Chi tiêu lớn nhất";
-            // 
-            // panel6
-            // 
-            this.panel6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(219)))), ((int)(((byte)(251)))));
-            this.panel6.Controls.Add(this.label25);
-            this.panel6.Controls.Add(this.label26);
-            this.panel6.Location = new System.Drawing.Point(611, 250);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(232, 90);
-            this.panel6.TabIndex = 30;
-            // 
-            // label25
-            // 
-            this.label25.AutoSize = true;
-            this.label25.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label25.ForeColor = System.Drawing.Color.Indigo;
-            this.label25.Location = new System.Drawing.Point(14, 52);
-            this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(140, 26);
-            this.label25.TabIndex = 26;
-            this.label25.Text = "Tính bằng VNĐ";
-            // 
-            // label26
-            // 
-            this.label26.AutoSize = true;
-            this.label26.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label26.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(31)))), ((int)(((byte)(151)))));
-            this.label26.Location = new System.Drawing.Point(13, 11);
-            this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(172, 26);
-            this.label26.TabIndex = 26;
-            this.label26.Text = "Thu nhập gần nhất";
-            // 
-            // panel7
-            // 
-            this.panel7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(206)))), ((int)(((byte)(201)))));
-            this.panel7.Controls.Add(this.label27);
-            this.panel7.Controls.Add(this.label28);
-            this.panel7.Location = new System.Drawing.Point(945, 253);
-            this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(232, 90);
-            this.panel7.TabIndex = 31;
-            // 
-            // label27
-            // 
-            this.label27.AutoSize = true;
-            this.label27.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label27.ForeColor = System.Drawing.Color.Indigo;
-            this.label27.Location = new System.Drawing.Point(14, 52);
-            this.label27.Name = "label27";
-            this.label27.Size = new System.Drawing.Size(140, 26);
-            this.label27.TabIndex = 26;
-            this.label27.Text = "Tính bằng VNĐ";
-            // 
-            // label28
-            // 
-            this.label28.AutoSize = true;
-            this.label28.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label28.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(31)))), ((int)(((byte)(151)))));
-            this.label28.Location = new System.Drawing.Point(13, 11);
-            this.label28.Name = "label28";
-            this.label28.Size = new System.Drawing.Size(157, 26);
-            this.label28.TabIndex = 26;
-            this.label28.Text = "Chi tiêu gần nhất";
             // 
             // panel8
             // 
@@ -523,7 +503,7 @@
             legend2.Position.X = 8F;
             legend2.Position.Y = 85F;
             this.profitChart.Legends.Add(legend2);
-            this.profitChart.Location = new System.Drawing.Point(611, 369);
+            this.profitChart.Location = new System.Drawing.Point(611, 139);
             this.profitChart.Name = "profitChart";
             series3.BackGradientStyle = System.Windows.Forms.DataVisualization.Charting.GradientStyle.LeftRight;
             series3.BackSecondaryColor = System.Drawing.Color.FromArgb(((int)(((byte)(107)))), ((int)(((byte)(83)))), ((int)(((byte)(255)))));
@@ -535,7 +515,7 @@
             series3.MarkerSize = 10;
             series3.Name = "Lợi nhuận";
             this.profitChart.Series.Add(series3);
-            this.profitChart.Size = new System.Drawing.Size(566, 308);
+            this.profitChart.Size = new System.Drawing.Size(566, 201);
             this.profitChart.TabIndex = 36;
             this.profitChart.Text = "chart1";
             title2.Name = "Title1";
@@ -548,27 +528,28 @@
             chartArea3.Position.Auto = false;
             chartArea3.Position.Height = 50F;
             chartArea3.Position.Width = 40F;
+            chartArea3.Position.X = 10F;
             chartArea3.Position.Y = 3F;
             chartArea4.Name = "ChartArea2";
             chartArea4.Position.Auto = false;
             chartArea4.Position.Height = 50F;
             chartArea4.Position.Width = 40F;
-            chartArea4.Position.X = 50F;
+            chartArea4.Position.X = 60F;
             chartArea4.Position.Y = 3F;
             this.chart1.ChartAreas.Add(chartArea3);
             this.chart1.ChartAreas.Add(chartArea4);
             legend3.Name = "Legend1";
             legend3.Position.Auto = false;
-            legend3.Position.Height = 50F;
+            legend3.Position.Height = 25F;
             legend3.Position.Width = 10F;
-            legend3.Position.X = 40F;
-            legend3.Position.Y = 3F;
+            legend3.Position.X = 15F;
+            legend3.Position.Y = 53F;
             legend4.Name = "Legend2";
             legend4.Position.Auto = false;
-            legend4.Position.Height = 50F;
+            legend4.Position.Height = 25F;
             legend4.Position.Width = 10F;
-            legend4.Position.X = 90F;
-            legend4.Position.Y = 3F;
+            legend4.Position.X = 65F;
+            legend4.Position.Y = 53F;
             this.chart1.Legends.Add(legend3);
             this.chart1.Legends.Add(legend4);
             this.chart1.Location = new System.Drawing.Point(611, 369);
@@ -599,28 +580,24 @@
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.panel8);
-            this.Controls.Add(this.panel7);
-            this.Controls.Add(this.panel6);
-            this.Controls.Add(this.panel5);
-            this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.panel2);
-            this.Controls.Add(this.chart1);
             this.Controls.Add(this.profitChart);
+            this.Controls.Add(this.chart1);
             this.Controls.Add(this.incomeExpendChart);
+            this.Controls.Add(this.panel5);
+            this.Controls.Add(this.panel4);
             this.Name = "DashBoardForm";
             this.Load += new System.EventHandler(this.DashBoardForm_Load);
+            this.Controls.SetChildIndex(this.panel4, 0);
+            this.Controls.SetChildIndex(this.panel5, 0);
             this.Controls.SetChildIndex(this.incomeExpendChart, 0);
-            this.Controls.SetChildIndex(this.profitChart, 0);
             this.Controls.SetChildIndex(this.chart1, 0);
+            this.Controls.SetChildIndex(this.profitChart, 0);
             this.Controls.SetChildIndex(this.panel2, 0);
             this.Controls.SetChildIndex(this.label10, 0);
             this.Controls.SetChildIndex(this.panel3, 0);
-            this.Controls.SetChildIndex(this.panel4, 0);
-            this.Controls.SetChildIndex(this.panel5, 0);
-            this.Controls.SetChildIndex(this.panel6, 0);
-            this.Controls.SetChildIndex(this.panel7, 0);
             this.Controls.SetChildIndex(this.panel8, 0);
             this.Controls.SetChildIndex(this.button1, 0);
             this.Controls.SetChildIndex(this.button2, 0);
@@ -635,10 +612,6 @@
             this.panel4.PerformLayout();
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
-            this.panel6.ResumeLayout(false);
-            this.panel6.PerformLayout();
-            this.panel7.ResumeLayout(false);
-            this.panel7.PerformLayout();
             this.panel8.ResumeLayout(false);
             this.panel8.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.incomeExpendChart)).EndInit();
@@ -672,10 +645,8 @@
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Label label23;
         private System.Windows.Forms.Label label24;
-        private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.Label label25;
         private System.Windows.Forms.Label label26;
-        private System.Windows.Forms.Panel panel7;
         private System.Windows.Forms.Label label27;
         private System.Windows.Forms.Label label28;
         private System.Windows.Forms.Panel panel8;
