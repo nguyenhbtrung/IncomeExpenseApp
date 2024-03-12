@@ -28,21 +28,21 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea17 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend17 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series21 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Title title9 = new System.Windows.Forms.DataVisualization.Charting.Title();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea18 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea19 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend18 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend19 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series22 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Series series23 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea20 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend20 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series24 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Series series25 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Title title10 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Title title1 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea4 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend4 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series4 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series5 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Title title2 = new System.Windows.Forms.DataVisualization.Charting.Title();
             this.panel8 = new System.Windows.Forms.Panel();
             this.label29 = new System.Windows.Forms.Label();
             this.label30 = new System.Windows.Forms.Label();
@@ -75,9 +75,9 @@
             this.label21 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel6 = new System.Windows.Forms.Panel();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
             this.radioButton3 = new System.Windows.Forms.RadioButton();
+            this.radioButton2 = new System.Windows.Forms.RadioButton();
+            this.radioButton1 = new System.Windows.Forms.RadioButton();
             this.panel8.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).BeginInit();
@@ -284,146 +284,145 @@
             // 
             // profitChart
             // 
-            chartArea17.AxisX.IsMarginVisible = false;
-            chartArea17.AxisX.LineWidth = 0;
-            chartArea17.AxisX.MajorGrid.LineWidth = 0;
-            chartArea17.AxisX.MajorTickMark.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(75)))), ((int)(((byte)(111)))));
-            chartArea17.AxisX.MajorTickMark.Size = 3F;
-            chartArea17.AxisY.LineWidth = 0;
-            chartArea17.AxisY.MajorGrid.LineColor = System.Drawing.Color.DarkGray;
-            chartArea17.AxisY.MajorTickMark.LineColor = System.Drawing.Color.DarkGray;
-            chartArea17.AxisY.MajorTickMark.LineWidth = 0;
-            chartArea17.Name = "ChartArea1";
-            chartArea17.Position.Auto = false;
-            chartArea17.Position.Height = 70F;
-            chartArea17.Position.Width = 94F;
-            chartArea17.Position.X = 3F;
-            chartArea17.Position.Y = 14F;
-            this.profitChart.ChartAreas.Add(chartArea17);
+            chartArea1.AxisX.IsMarginVisible = false;
+            chartArea1.AxisX.LineWidth = 0;
+            chartArea1.AxisX.MajorGrid.LineWidth = 0;
+            chartArea1.AxisX.MajorTickMark.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(75)))), ((int)(((byte)(111)))));
+            chartArea1.AxisX.MajorTickMark.Size = 3F;
+            chartArea1.AxisY.LineWidth = 0;
+            chartArea1.AxisY.MajorGrid.LineColor = System.Drawing.Color.DarkGray;
+            chartArea1.AxisY.MajorTickMark.LineColor = System.Drawing.Color.DarkGray;
+            chartArea1.AxisY.MajorTickMark.LineWidth = 0;
+            chartArea1.Name = "ChartArea1";
+            chartArea1.Position.Auto = false;
+            chartArea1.Position.Height = 70F;
+            chartArea1.Position.Width = 94F;
+            chartArea1.Position.X = 3F;
+            chartArea1.Position.Y = 14F;
+            this.profitChart.ChartAreas.Add(chartArea1);
             this.profitChart.Cursor = System.Windows.Forms.Cursors.Arrow;
-            legend17.Name = "Legend1";
-            legend17.Position.Auto = false;
-            legend17.Position.Height = 9.448819F;
-            legend17.Position.Width = 17.52212F;
-            legend17.Position.X = 8F;
-            legend17.Position.Y = 85F;
-            this.profitChart.Legends.Add(legend17);
+            legend1.Name = "Legend1";
+            legend1.Position.Auto = false;
+            legend1.Position.Height = 9.448819F;
+            legend1.Position.Width = 17.52212F;
+            legend1.Position.X = 8F;
+            legend1.Position.Y = 85F;
+            this.profitChart.Legends.Add(legend1);
             this.profitChart.Location = new System.Drawing.Point(415, 40);
             this.profitChart.Name = "profitChart";
-            series21.BackGradientStyle = System.Windows.Forms.DataVisualization.Charting.GradientStyle.LeftRight;
-            series21.BackSecondaryColor = System.Drawing.Color.FromArgb(((int)(((byte)(107)))), ((int)(((byte)(83)))), ((int)(((byte)(255)))));
-            series21.BorderWidth = 3;
-            series21.ChartArea = "ChartArea1";
-            series21.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.SplineArea;
-            series21.Color = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(88)))), ((int)(((byte)(127)))));
-            series21.Legend = "Legend1";
-            series21.MarkerSize = 10;
-            series21.Name = "Lợi nhuận";
-            this.profitChart.Series.Add(series21);
+            series1.BackGradientStyle = System.Windows.Forms.DataVisualization.Charting.GradientStyle.LeftRight;
+            series1.BackSecondaryColor = System.Drawing.Color.FromArgb(((int)(((byte)(107)))), ((int)(((byte)(83)))), ((int)(((byte)(255)))));
+            series1.BorderWidth = 3;
+            series1.ChartArea = "ChartArea1";
+            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.SplineArea;
+            series1.Color = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(88)))), ((int)(((byte)(127)))));
+            series1.Legend = "Legend1";
+            series1.MarkerSize = 10;
+            series1.Name = "Lợi nhuận";
+            this.profitChart.Series.Add(series1);
             this.profitChart.Size = new System.Drawing.Size(566, 205);
             this.profitChart.TabIndex = 47;
             this.profitChart.Text = "chart1";
-            title9.Name = "Title1";
-            title9.Text = "Thu nhập / Chi tiêu";
-            this.profitChart.Titles.Add(title9);
+            title1.Name = "Title1";
+            title1.Text = "Thu nhập / Chi tiêu";
+            this.profitChart.Titles.Add(title1);
             // 
             // chart1
             // 
-            chartArea18.Name = "ChartArea1";
-            chartArea18.Position.Auto = false;
-            chartArea18.Position.Height = 50F;
-            chartArea18.Position.Width = 40F;
-            chartArea18.Position.X = 10F;
-            chartArea18.Position.Y = 3F;
-            chartArea19.Name = "ChartArea2";
-            chartArea19.Position.Auto = false;
-            chartArea19.Position.Height = 50F;
-            chartArea19.Position.Width = 40F;
-            chartArea19.Position.X = 60F;
-            chartArea19.Position.Y = 3F;
-            this.chart1.ChartAreas.Add(chartArea18);
-            this.chart1.ChartAreas.Add(chartArea19);
-            legend18.Name = "Legend1";
-            legend18.Position.Auto = false;
-            legend18.Position.Height = 25F;
-            legend18.Position.Width = 10F;
-            legend18.Position.X = 15F;
-            legend18.Position.Y = 53F;
-            legend19.Name = "Legend2";
-            legend19.Position.Auto = false;
-            legend19.Position.Height = 25F;
-            legend19.Position.Width = 10F;
-            legend19.Position.X = 65F;
-            legend19.Position.Y = 53F;
-            this.chart1.Legends.Add(legend18);
-            this.chart1.Legends.Add(legend19);
+            chartArea2.Name = "ChartArea1";
+            chartArea2.Position.Auto = false;
+            chartArea2.Position.Height = 60F;
+            chartArea2.Position.Width = 40F;
+            chartArea2.Position.X = 3F;
+            chartArea2.Position.Y = 3F;
+            chartArea3.Name = "ChartArea2";
+            chartArea3.Position.Auto = false;
+            chartArea3.Position.Height = 60F;
+            chartArea3.Position.Width = 40F;
+            chartArea3.Position.X = 53F;
+            chartArea3.Position.Y = 3F;
+            this.chart1.ChartAreas.Add(chartArea2);
+            this.chart1.ChartAreas.Add(chartArea3);
+            legend2.Name = "Legend1";
+            legend2.Position.Auto = false;
+            legend2.Position.Height = 25F;
+            legend2.Position.Width = 10F;
+            legend2.Position.Y = 70F;
+            legend3.Name = "Legend2";
+            legend3.Position.Auto = false;
+            legend3.Position.Height = 25F;
+            legend3.Position.Width = 10F;
+            legend3.Position.X = 50F;
+            legend3.Position.Y = 70F;
+            this.chart1.Legends.Add(legend2);
+            this.chart1.Legends.Add(legend3);
             this.chart1.Location = new System.Drawing.Point(415, 274);
             this.chart1.Name = "chart1";
-            series22.BorderColor = System.Drawing.Color.White;
-            series22.BorderWidth = 5;
-            series22.ChartArea = "ChartArea1";
-            series22.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Doughnut;
-            series22.Legend = "Legend1";
-            series22.Name = "Thu nhập";
-            series23.BorderColor = System.Drawing.Color.White;
-            series23.BorderWidth = 5;
-            series23.ChartArea = "ChartArea2";
-            series23.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Doughnut;
-            series23.Legend = "Legend2";
-            series23.Name = "Chi tiêu";
-            this.chart1.Series.Add(series22);
-            this.chart1.Series.Add(series23);
+            series2.BorderColor = System.Drawing.Color.White;
+            series2.BorderWidth = 5;
+            series2.ChartArea = "ChartArea1";
+            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Doughnut;
+            series2.Legend = "Legend1";
+            series2.Name = "Thu nhập";
+            series3.BorderColor = System.Drawing.Color.White;
+            series3.BorderWidth = 5;
+            series3.ChartArea = "ChartArea2";
+            series3.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Doughnut;
+            series3.Legend = "Legend2";
+            series3.Name = "Chi tiêu";
+            this.chart1.Series.Add(series2);
+            this.chart1.Series.Add(series3);
             this.chart1.Size = new System.Drawing.Size(566, 308);
             this.chart1.TabIndex = 48;
             this.chart1.Text = "chart1";
             // 
             // incomeExpendChart
             // 
-            chartArea20.AxisX.LineColor = System.Drawing.Color.DarkGray;
-            chartArea20.AxisX.LineWidth = 0;
-            chartArea20.AxisX.MajorGrid.LineColor = System.Drawing.Color.White;
-            chartArea20.AxisX.MajorGrid.LineWidth = 0;
-            chartArea20.AxisX.MajorTickMark.LineColor = System.Drawing.Color.DimGray;
-            chartArea20.AxisX.MajorTickMark.LineWidth = 0;
-            chartArea20.AxisX.MajorTickMark.Size = 3F;
-            chartArea20.AxisY.LineColor = System.Drawing.Color.DarkGray;
-            chartArea20.AxisY.LineWidth = 0;
-            chartArea20.AxisY.MajorGrid.LineColor = System.Drawing.Color.DarkGray;
-            chartArea20.AxisY.MajorTickMark.LineWidth = 0;
-            chartArea20.Name = "ChartArea1";
-            chartArea20.Position.Auto = false;
-            chartArea20.Position.Height = 70F;
-            chartArea20.Position.Width = 94F;
-            chartArea20.Position.X = 3F;
-            chartArea20.Position.Y = 10.36686F;
-            this.incomeExpendChart.ChartAreas.Add(chartArea20);
-            legend20.Name = "Legend1";
-            legend20.Position.Auto = false;
-            legend20.Position.Height = 15F;
-            legend20.Position.Width = 35F;
-            legend20.Position.X = 8F;
-            legend20.Position.Y = 82F;
-            this.incomeExpendChart.Legends.Add(legend20);
+            chartArea4.AxisX.LineColor = System.Drawing.Color.DarkGray;
+            chartArea4.AxisX.LineWidth = 0;
+            chartArea4.AxisX.MajorGrid.LineColor = System.Drawing.Color.White;
+            chartArea4.AxisX.MajorGrid.LineWidth = 0;
+            chartArea4.AxisX.MajorTickMark.LineColor = System.Drawing.Color.DimGray;
+            chartArea4.AxisX.MajorTickMark.LineWidth = 0;
+            chartArea4.AxisX.MajorTickMark.Size = 3F;
+            chartArea4.AxisY.LineColor = System.Drawing.Color.DarkGray;
+            chartArea4.AxisY.LineWidth = 0;
+            chartArea4.AxisY.MajorGrid.LineColor = System.Drawing.Color.DarkGray;
+            chartArea4.AxisY.MajorTickMark.LineWidth = 0;
+            chartArea4.Name = "ChartArea1";
+            chartArea4.Position.Auto = false;
+            chartArea4.Position.Height = 70F;
+            chartArea4.Position.Width = 94F;
+            chartArea4.Position.X = 3F;
+            chartArea4.Position.Y = 10.36686F;
+            this.incomeExpendChart.ChartAreas.Add(chartArea4);
+            legend4.Name = "Legend1";
+            legend4.Position.Auto = false;
+            legend4.Position.Height = 15F;
+            legend4.Position.Width = 35F;
+            legend4.Position.X = 8F;
+            legend4.Position.Y = 82F;
+            this.incomeExpendChart.Legends.Add(legend4);
             this.incomeExpendChart.Location = new System.Drawing.Point(415, 274);
             this.incomeExpendChart.Name = "incomeExpendChart";
-            series24.BackSecondaryColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(81)))), ((int)(((byte)(107)))));
-            series24.ChartArea = "ChartArea1";
-            series24.Color = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(81)))), ((int)(((byte)(107)))));
-            series24.Legend = "Legend1";
-            series24.Name = "Thu nhập";
-            series25.BackSecondaryColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(206)))), ((int)(((byte)(201)))));
-            series25.ChartArea = "ChartArea1";
-            series25.Color = System.Drawing.Color.Aqua;
-            series25.Legend = "Legend1";
-            series25.Name = "Chi tiêu";
-            this.incomeExpendChart.Series.Add(series24);
-            this.incomeExpendChart.Series.Add(series25);
+            series4.BackSecondaryColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(81)))), ((int)(((byte)(107)))));
+            series4.ChartArea = "ChartArea1";
+            series4.Color = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(81)))), ((int)(((byte)(107)))));
+            series4.Legend = "Legend1";
+            series4.Name = "Thu nhập";
+            series5.BackSecondaryColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(206)))), ((int)(((byte)(201)))));
+            series5.ChartArea = "ChartArea1";
+            series5.Color = System.Drawing.Color.Aqua;
+            series5.Legend = "Legend1";
+            series5.Name = "Chi tiêu";
+            this.incomeExpendChart.Series.Add(series4);
+            this.incomeExpendChart.Series.Add(series5);
             this.incomeExpendChart.Size = new System.Drawing.Size(566, 308);
             this.incomeExpendChart.TabIndex = 46;
             this.incomeExpendChart.Text = "chart1";
-            title10.Name = "Title1";
-            title10.Text = "Thu nhập / Chi tiêu";
-            this.incomeExpendChart.Titles.Add(title10);
+            title2.Name = "Title1";
+            title2.Text = "Thu nhập / Chi tiêu";
+            this.incomeExpendChart.Titles.Add(title2);
             // 
             // panel5
             // 
@@ -543,7 +542,7 @@
             this.panel1.Controls.Add(this.panel4);
             this.panel1.Controls.Add(this.panel5);
             this.panel1.Location = new System.Drawing.Point(415, 274);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(566, 308);
             this.panel1.TabIndex = 49;
@@ -554,10 +553,32 @@
             this.panel6.Controls.Add(this.radioButton3);
             this.panel6.Controls.Add(this.radioButton2);
             this.panel6.Controls.Add(this.radioButton1);
-            this.panel6.Location = new System.Drawing.Point(914, 558);
+            this.panel6.Location = new System.Drawing.Point(912, 556);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(67, 24);
             this.panel6.TabIndex = 50;
+            // 
+            // radioButton3
+            // 
+            this.radioButton3.AutoSize = true;
+            this.radioButton3.Location = new System.Drawing.Point(46, 3);
+            this.radioButton3.Name = "radioButton3";
+            this.radioButton3.Size = new System.Drawing.Size(14, 13);
+            this.radioButton3.TabIndex = 53;
+            this.radioButton3.TabStop = true;
+            this.radioButton3.UseVisualStyleBackColor = true;
+            this.radioButton3.CheckedChanged += new System.EventHandler(this.radioButton3_CheckedChanged);
+            // 
+            // radioButton2
+            // 
+            this.radioButton2.AutoSize = true;
+            this.radioButton2.Location = new System.Drawing.Point(26, 3);
+            this.radioButton2.Name = "radioButton2";
+            this.radioButton2.Size = new System.Drawing.Size(14, 13);
+            this.radioButton2.TabIndex = 52;
+            this.radioButton2.TabStop = true;
+            this.radioButton2.UseVisualStyleBackColor = true;
+            this.radioButton2.CheckedChanged += new System.EventHandler(this.radioButton2_CheckedChanged);
             // 
             // radioButton1
             // 
@@ -571,28 +592,6 @@
             this.radioButton1.UseVisualStyleBackColor = true;
             this.radioButton1.CheckedChanged += new System.EventHandler(this.radioButton1_CheckedChanged);
             // 
-            // radioButton2
-            // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Location = new System.Drawing.Point(26, 3);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(14, 13);
-            this.radioButton2.TabIndex = 52;
-            this.radioButton2.TabStop = true;
-            this.radioButton2.UseVisualStyleBackColor = true;
-            this.radioButton2.CheckedChanged += new System.EventHandler(this.radioButton2_CheckedChanged);
-            // 
-            // radioButton3
-            // 
-            this.radioButton3.AutoSize = true;
-            this.radioButton3.Location = new System.Drawing.Point(46, 3);
-            this.radioButton3.Name = "radioButton3";
-            this.radioButton3.Size = new System.Drawing.Size(14, 13);
-            this.radioButton3.TabIndex = 53;
-            this.radioButton3.TabStop = true;
-            this.radioButton3.UseVisualStyleBackColor = true;
-            this.radioButton3.CheckedChanged += new System.EventHandler(this.radioButton3_CheckedChanged);
-            // 
             // DashBoardControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -602,9 +601,9 @@
             this.Controls.Add(this.panel6);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.profitChart);
-            this.Controls.Add(this.incomeExpendChart);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.chart1);
+            this.Controls.Add(this.incomeExpendChart);
             this.Name = "DashBoardControl";
             this.Size = new System.Drawing.Size(1022, 623);
             this.panel8.ResumeLayout(false);
