@@ -21,8 +21,8 @@ namespace IncomeExpenseApp
         {
             if (usernameField.Text == username && passwordField.Text == pass)
             {
-                DashBoardForm obj = new DashBoardForm();
-                obj.ChangeTheSelectionDisplay(obj.FormIndex, obj.FormIndex);
+                MainForm obj = new MainForm();
+                //obj.ChangeTheSelectionDisplay(obj.FormIndex, obj.FormIndex);
                 obj.Show();
                 this.Hide();
             }
