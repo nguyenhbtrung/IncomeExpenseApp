@@ -79,7 +79,7 @@
             dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle6;
-            this.dataGridView1.Location = new System.Drawing.Point(9, 191);
+            this.dataGridView1.Location = new System.Drawing.Point(9, 179);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -91,7 +91,7 @@
             dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle7;
             this.dataGridView1.RowHeadersVisible = false;
-            this.dataGridView1.Size = new System.Drawing.Size(1004, 423);
+            this.dataGridView1.Size = new System.Drawing.Size(1004, 435);
             this.dataGridView1.TabIndex = 70;
             // 
             // STT
@@ -155,7 +155,7 @@
             // 
             this.incomeCategoryComboBox.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.incomeCategoryComboBox.FormattingEnabled = true;
-            this.incomeCategoryComboBox.Location = new System.Drawing.Point(597, 154);
+            this.incomeCategoryComboBox.Location = new System.Drawing.Point(597, 141);
             this.incomeCategoryComboBox.Name = "incomeCategoryComboBox";
             this.incomeCategoryComboBox.Size = new System.Drawing.Size(250, 31);
             this.incomeCategoryComboBox.TabIndex = 69;
@@ -163,7 +163,7 @@
             // incomeNameText
             // 
             this.incomeNameText.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.incomeNameText.Location = new System.Drawing.Point(194, 153);
+            this.incomeNameText.Location = new System.Drawing.Point(194, 141);
             this.incomeNameText.Name = "incomeNameText";
             this.incomeNameText.Size = new System.Drawing.Size(250, 32);
             this.incomeNameText.TabIndex = 68;
@@ -172,7 +172,7 @@
             // 
             this.incomeCategoryLabel.AutoSize = true;
             this.incomeCategoryLabel.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.incomeCategoryLabel.Location = new System.Drawing.Point(593, 127);
+            this.incomeCategoryLabel.Location = new System.Drawing.Point(593, 115);
             this.incomeCategoryLabel.Name = "incomeCategoryLabel";
             this.incomeCategoryLabel.Size = new System.Drawing.Size(101, 23);
             this.incomeCategoryLabel.TabIndex = 67;
@@ -182,7 +182,7 @@
             // 
             this.incomeNameLabel.AutoSize = true;
             this.incomeNameLabel.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.incomeNameLabel.Location = new System.Drawing.Point(190, 127);
+            this.incomeNameLabel.Location = new System.Drawing.Point(190, 115);
             this.incomeNameLabel.Name = "incomeNameLabel";
             this.incomeNameLabel.Size = new System.Drawing.Size(139, 23);
             this.incomeNameLabel.TabIndex = 66;
@@ -192,7 +192,7 @@
             // 
             this.nameLabel.AutoSize = true;
             this.nameLabel.Font = new System.Drawing.Font("Segoe UI", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nameLabel.Location = new System.Drawing.Point(310, 63);
+            this.nameLabel.Location = new System.Drawing.Point(310, 51);
             this.nameLabel.Name = "nameLabel";
             this.nameLabel.Size = new System.Drawing.Size(373, 50);
             this.nameLabel.TabIndex = 65;
