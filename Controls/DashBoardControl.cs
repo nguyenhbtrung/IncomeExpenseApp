@@ -16,5 +16,23 @@ namespace IncomeExpenseApp.Controls
         {
             InitializeComponent();
         }
+
+        private void radioButton2_CheckedChanged(object sender, EventArgs e)
+        {
+            chart1.BringToFront();
+            panel6.BringToFront();
+        }
+
+        private void radioButton1_CheckedChanged(object sender, EventArgs e)
+        {
+            incomeExpendChart.BringToFront();
+            panel6.BringToFront();
+        }
+
+        private void radioButton3_CheckedChanged(object sender, EventArgs e)
+        {
+            panel1.BringToFront();
+            panel6.BringToFront();
+        }
     }
 }
