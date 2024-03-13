@@ -38,11 +38,12 @@
             System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
             System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
             System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Title title2 = new System.Windows.Forms.DataVisualization.Charting.Title();
             System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea4 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
             System.Windows.Forms.DataVisualization.Charting.Legend legend4 = new System.Windows.Forms.DataVisualization.Charting.Legend();
             System.Windows.Forms.DataVisualization.Charting.Series series4 = new System.Windows.Forms.DataVisualization.Charting.Series();
             System.Windows.Forms.DataVisualization.Charting.Series series5 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Title title2 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.DataVisualization.Charting.Title title3 = new System.Windows.Forms.DataVisualization.Charting.Title();
             this.panel8 = new System.Windows.Forms.Panel();
             this.label29 = new System.Windows.Forms.Label();
             this.label30 = new System.Windows.Forms.Label();
@@ -323,8 +324,9 @@
             this.profitChart.Size = new System.Drawing.Size(566, 205);
             this.profitChart.TabIndex = 47;
             this.profitChart.Text = "chart1";
+            title1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             title1.Name = "Title1";
-            title1.Text = "Thu nhập / Chi tiêu";
+            title1.Text = "Lợi nhuận";
             this.profitChart.Titles.Add(title1);
             // 
             // chart1
@@ -334,13 +336,13 @@
             chartArea2.Position.Height = 60F;
             chartArea2.Position.Width = 40F;
             chartArea2.Position.X = 3F;
-            chartArea2.Position.Y = 3F;
+            chartArea2.Position.Y = 10F;
             chartArea3.Name = "ChartArea2";
             chartArea3.Position.Auto = false;
             chartArea3.Position.Height = 60F;
             chartArea3.Position.Width = 40F;
             chartArea3.Position.X = 53F;
-            chartArea3.Position.Y = 3F;
+            chartArea3.Position.Y = 10F;
             this.chart1.ChartAreas.Add(chartArea2);
             this.chart1.ChartAreas.Add(chartArea3);
             legend2.Name = "Legend1";
@@ -375,6 +377,10 @@
             this.chart1.Size = new System.Drawing.Size(566, 308);
             this.chart1.TabIndex = 48;
             this.chart1.Text = "chart1";
+            title2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            title2.Name = "Top 3";
+            title2.Text = "Top 3 Thu nhập/Chi tiêu trong tháng";
+            this.chart1.Titles.Add(title2);
             // 
             // incomeExpendChart
             // 
@@ -420,9 +426,10 @@
             this.incomeExpendChart.Size = new System.Drawing.Size(566, 308);
             this.incomeExpendChart.TabIndex = 46;
             this.incomeExpendChart.Text = "chart1";
-            title2.Name = "Title1";
-            title2.Text = "Thu nhập / Chi tiêu";
-            this.incomeExpendChart.Titles.Add(title2);
+            title3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            title3.Name = "Title1";
+            title3.Text = "Thu nhập / Chi tiêu";
+            this.incomeExpendChart.Titles.Add(title3);
             // 
             // panel5
             // 
@@ -601,9 +608,9 @@
             this.Controls.Add(this.panel6);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.profitChart);
+            this.Controls.Add(this.incomeExpendChart);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.chart1);
-            this.Controls.Add(this.incomeExpendChart);
             this.Name = "DashBoardControl";
             this.Size = new System.Drawing.Size(1022, 623);
             this.panel8.ResumeLayout(false);
