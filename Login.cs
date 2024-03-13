@@ -35,7 +35,6 @@ namespace IncomeExpenseApp
             if (usernameField.Text == username && passwordField.Text == pass)
             {
                 MainForm obj = new MainForm();
-                //obj.ChangeTheSelectionDisplay(obj.FormIndex, obj.FormIndex);
                 obj.Show();
                 this.Hide();
             }
