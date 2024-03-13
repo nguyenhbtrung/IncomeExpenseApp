@@ -8,7 +8,7 @@ using System.Windows.Forms;
 
 namespace IncomeExpenseApp
 {
-    public partial class Login : IncomeExpenseApp.SecondaryForm
+    public partial class Login : IncomeExpenseApp.LoginFrame
     {
         string username = "1";
         string pass = "1";
@@ -19,6 +19,18 @@ namespace IncomeExpenseApp
         }
         private void loginButton_Click(object sender, EventArgs e)
         {
+            if (usernameField.Text == "")
+            {
+                notification.Text = "Chưa điền tài khoản!!";
+                notification.Visible = true;
+                return;
+            }
+            else if (passwordField.Text == "")
+            {
+                notification.Text = "Chưa điền mật khẩu!!";
+                notification.Visible = true;
+                return;
+            }
             if (usernameField.Text == username && passwordField.Text == pass)
             {
                 MainForm obj = new MainForm();
@@ -28,7 +40,7 @@ namespace IncomeExpenseApp
             }
             else
             {
-                notification.Text = "Tài khoản với pass là 1";
+                notification.Text = "Sai tên tài khoản hoặc mật khẩu!!";
                 notification.Visible = true;
             }
         }

@@ -3,7 +3,7 @@ using System.Windows.Forms;
 
 namespace IncomeExpenseApp
 {
-    partial class SecondaryForm
+    partial class LoginFrame
     {
         /// <summary>
         /// Required designer variable.
@@ -31,7 +31,7 @@ namespace IncomeExpenseApp
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SecondaryForm));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LoginFrame));
             this.panel1 = new System.Windows.Forms.Panel();
             this.appNameLabel = new System.Windows.Forms.Label();
             this.appLogo = new System.Windows.Forms.PictureBox();

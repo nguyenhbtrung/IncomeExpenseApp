@@ -10,10 +10,10 @@ using System.Windows.Forms;
 
 namespace IncomeExpenseApp
 {
-    public partial class SecondaryForm : Form
+    public partial class LoginFrame : Form
     {
 
-        public SecondaryForm()
+        public LoginFrame()
         {
             InitializeComponent();
             this.FormBorderStyle = FormBorderStyle.None;

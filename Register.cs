@@ -11,7 +11,7 @@ using WindowsFormsApp1;
 namespace IncomeExpenseApp
 {
     
-    public partial class Register : IncomeExpenseApp.SecondaryForm
+    public partial class Register : IncomeExpenseApp.LoginFrame
     {
         public static string maXacThuc;
         public Register()
