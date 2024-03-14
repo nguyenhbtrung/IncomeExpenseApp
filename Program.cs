@@ -10,7 +10,11 @@ namespace IncomeExpenseApp
 
     internal static class Program
     {
+        private static string dbConnectionString = "Data Source=DESKTOP-V5GHIDA;Initial Catalog=Test;Integrated Security=True";
+
+        public static string DbConnectionString { get => dbConnectionString; }
         public static Login LoginForm { get; private set; }
+
         /// <summary>
         /// The main entry point for the application.
         /// </summary>
@@ -20,7 +24,7 @@ namespace IncomeExpenseApp
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             LoginForm = new Login();
-            Application.Run(LoginForm);
+            Application.Run(new TestDatabase());
         }
     }
 }

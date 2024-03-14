@@ -1,7 +1,7 @@
 ﻿using System.Data;
 using System.Data.SqlClient;
 
-namespace WindowsFormsApp2
+namespace IncomeExpenseApp
 {
     internal class DatabaseConnector
     {
