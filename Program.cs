@@ -24,7 +24,7 @@ namespace IncomeExpenseApp
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             LoginForm = new Login();
-            Application.Run(new TestDatabase());
+            Application.Run(LoginForm);
         }
     }
 }
