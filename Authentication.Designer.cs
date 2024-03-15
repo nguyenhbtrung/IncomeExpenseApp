@@ -33,6 +33,9 @@
             this.codeField = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.Close = new System.Windows.Forms.Button();
+            this.border = new System.Windows.Forms.Panel();
+            this.notification = new System.Windows.Forms.Label();
+            this.border.SuspendLayout();
             this.SuspendLayout();
             // 
             // textLabel
@@ -79,21 +82,46 @@
             this.Close.Size = new System.Drawing.Size(29, 26);
             this.Close.TabIndex = 3;
             this.Close.UseVisualStyleBackColor = true;
+            this.Close.Click += new System.EventHandler(this.Close_Click);
+            // 
+            // border
+            // 
+            this.border.BackgroundImage = global::IncomeExpenseApp.Properties.Resources.border;
+            this.border.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.border.Controls.Add(this.notification);
+            this.border.Location = new System.Drawing.Point(0, 0);
+            this.border.Name = "border";
+            this.border.Size = new System.Drawing.Size(383, 163);
+            this.border.TabIndex = 4;
+            // 
+            // notification
+            // 
+            this.notification.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.notification.ForeColor = System.Drawing.Color.Red;
+            this.notification.Location = new System.Drawing.Point(11, 108);
+            this.notification.Name = "notification";
+            this.notification.Size = new System.Drawing.Size(228, 43);
+            this.notification.TabIndex = 29;
+            this.notification.Text = "Sai mã xác thực";
+            this.notification.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.notification.Visible = false;
             // 
             // Authentication
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(384, 164);
+            this.ClientSize = new System.Drawing.Size(383, 163);
             this.Controls.Add(this.Close);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.codeField);
             this.Controls.Add(this.textLabel);
+            this.Controls.Add(this.border);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Authentication";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Xác thực";
+            this.border.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -105,5 +133,7 @@
         private System.Windows.Forms.TextBox codeField;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button Close;
+        private System.Windows.Forms.Panel border;
+        private System.Windows.Forms.Label notification;
     }
 }

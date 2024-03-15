@@ -25,14 +25,20 @@ namespace IncomeExpenseApp
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Debug.WriteLine(Register.maXacThuc+"    "+textLabel.Text);
-            if (codeField.Text.Equals(Register.maXacThuc)){
+            if (codeField.Text.Equals(Register.maXacThuc))
+            {
                 databaseConnector.ExecuteNonQuery($"insert into UserInfo values (N'{Register.username}', N'{Register.password}', N'{Register.email}')");
                 MessageBox.Show("Tạo tài khoản thành công!!");
                 this.Close();
                 Login obj = new Login();
                 obj.Show();
             }
+            else notification.Visible = true;
+        }
+
+        private void Close_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

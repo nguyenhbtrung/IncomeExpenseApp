@@ -224,6 +224,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\HidePass.png" />
+    <None Include="Resources\border.png" />
     <Content Include="Resources\SelectedChiTieu.png" />
     <Content Include="Resources\SelectedDashBoard.png" />
     <Content Include="Resources\SelectedThuNhap.png" />
