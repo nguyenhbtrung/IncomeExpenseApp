@@ -42,9 +42,13 @@ namespace IncomeExpenseApp
                 string password = rows["userPassword"].ToString();
                 if (usernameField.Text == username && passwordField.Text == password)
                 {
-                    MainForm obj = new MainForm(Convert.ToInt32(rows["userId"]));
-                    obj.Show();
+                    int userId = Convert.ToInt32(rows["userId"]);
+                    MainForm obj = new MainForm(userId);
                     this.Hide();
+                    usernameField.Clear();
+                    passwordField.Clear();
+                    notification.Visible = false;
+                    obj.Show();
                     return;
                 }
 

@@ -14,9 +14,13 @@ namespace IncomeExpenseApp
     public partial class Register : IncomeExpenseApp.LoginFrame
     {
         public static string maXacThuc;
+        private DatabaseConnector databaseConnector;
+        public static string username, password, email;
+
         public Register()
         {
             InitializeComponent();
+            databaseConnector = new DatabaseConnector(Program.DbConnectionString);
         }
         private void registerButton_Click(object sender, EventArgs e)
         {
@@ -44,26 +48,32 @@ namespace IncomeExpenseApp
                 notification.Visible = true;
                 return;
             }
-            if (emailField.Text == "incomeexpenseapp123@gmail.com")
+            DataTable login = databaseConnector.ExecuteDataTableQuery($"select * from UserInfo");
+            foreach (DataRow rows in login.Rows)
             {
-                notification.Text = "Email đã được dùng!!";
-                notification.Visible = true;
-                return;
-            }
-            else if (usernameField.Text == "abc")
-            {
-                notification.Text = "Tên đăng nhập được dùng!!";
-                notification.Visible = true;
-                return;
-            }
-            else if (passwordField.Text != password2Field.Text)
-            {
-                notification.Text = "Mật khẩu nhập lại\nkhông giống!!";
-                notification.Visible = true;
-                return;
-            }
-            else
-            {
+                username = rows["userName"].ToString();
+                email = rows["userEmail"].ToString();
+                if (emailField.Text == email)
+                {
+                    notification.Text = "Email đã được dùng!!";
+                    notification.Visible = true;
+                    return;
+                }
+                else if (usernameField.Text == username)
+                {
+                    notification.Text = "Tên đăng nhập được dùng!!";
+                    notification.Visible = true;
+                    return;
+                }
+                else if (passwordField.Text != password2Field.Text)
+                {
+                    notification.Text = "Mật khẩu nhập lại\nkhông giống!!";
+                    notification.Visible = true;
+                    return;
+                }
+                username = usernameField.Text;
+                password = passwordField.Text;
+                email = emailField.Text;
                 maXacThuc = EmailSender.SendAuthenticationEmail(emailField.Text, 0);
                 ShowAuthenticaon();
                 this.Hide();
