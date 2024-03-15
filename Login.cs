@@ -5,21 +5,23 @@ using System.Data;
 using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
+using System.Xml.Linq;
 using WindowsFormsApp1;
 
 namespace IncomeExpenseApp
 {
     public partial class Login : IncomeExpenseApp.LoginFrame
     {
-        string username = "1";
-        string pass = "1";
+        private DatabaseConnector databaseConnector;
 
         public Login()
         {
             InitializeComponent();
+            databaseConnector = new DatabaseConnector(Program.DbConnectionString);
         }
         private void loginButton_Click(object sender, EventArgs e)
         {
+
             if (usernameField.Text == "")
             {
                 notification.Text = "Chưa điền tài khoản!!";
@@ -32,17 +34,23 @@ namespace IncomeExpenseApp
                 notification.Visible = true;
                 return;
             }
-            if (usernameField.Text == username && passwordField.Text == pass)
+            DataTable login = databaseConnector.ExecuteDataTableQuery($"select * from UserInfo");
+            foreach(DataRow rows in login.Rows)
             {
-                MainForm obj = new MainForm();
-                obj.Show();
-                this.Hide();
+                string username = rows["userName"].ToString();
+                string password = rows["userPassword"].ToString();
+                if (usernameField.Text == username && passwordField.Text == password)
+                {
+                    MainForm obj = new MainForm();
+                    obj.Show();
+                    this.Hide();
+                    return;
+                }
+
             }
-            else
-            {
-                notification.Text = "Sai tên tài khoản hoặc mật khẩu!!";
-                notification.Visible = true;
-            }
+            notification.Text = "Sai tên tài khoản hoặc mật khẩu!!";
+            notification.Visible = true;
+            
         }
 
         private void registerButton_Click(object sender, EventArgs e)
