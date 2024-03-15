@@ -1,4 +1,5 @@
-﻿using IncomeExpenseApp.Properties;
+﻿using IncomeExpenseApp.Controls;
+using IncomeExpenseApp.Properties;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -18,17 +19,62 @@ namespace IncomeExpenseApp
         private List<Bitmap> selectedImageResources = new List<Bitmap>();
         private List<Bitmap> blackImageResources = new List<Bitmap>();
         private Panel menuSelectedPanel;
+        private int userId;
 
-        private int formIndex = 0;
+        public int UserId { get => userId; private set => userId = value; }
 
-        public int FormIndex { get => formIndex; set => formIndex = value; }
+        public MainForm(int userId)
+        {
+            
+            InitializeComponent();
+            AddMenuImageResourcesToList();
+            this.UserId = userId;
+            dashBoardControl1.UserId = userId;
+            incomeControl1.UserId = userId;
+            expenseControl1.UserId = userId;
+            viewIncomeControl1.UserId = userId;
+            viewExpenseControl1.UserId = userId;
+            planControl1.UserId = userId;
+            Debug.WriteLine(this.UserId);
+            Debug.WriteLine(dashBoardControl1.UserId);
+            Debug.WriteLine(incomeControl1.UserId);
+            Debug.WriteLine(expenseControl1.UserId);
+            Debug.WriteLine(viewIncomeControl1.UserId);
+            Debug.WriteLine(viewExpenseControl1.UserId);
+            Debug.WriteLine(planControl1.UserId);
+            //AddMenuLabelsAndImageToList();
+
+            panel1.Controls.SetChildIndex(menuDashBoardPanel, 0);
+            panel1.Controls.SetChildIndex(menuIncomePanel, 1);
+            panel1.Controls.SetChildIndex(menuExpensePanel, 2);
+            panel1.Controls.SetChildIndex(menuViewIncomePanel, 3);
+            panel1.Controls.SetChildIndex(menuViewExpensePanel, 4);
+
+            menuSelectedPanel = menuDashBoardPanel;
+            this.FormBorderStyle = FormBorderStyle.None;
+            Region = Region.FromHrgn(RoundedCornerGenerator.CreateRoundRectRgn(0, 0, Width, Height, 20, 20));
+        }
 
         public MainForm()
         {
             InitializeComponent();
             AddMenuImageResourcesToList();
             //AddMenuLabelsAndImageToList();
-            
+            this.UserId = 1;
+            dashBoardControl1.UserId = userId;
+            incomeControl1.UserId = userId;
+            expenseControl1.UserId = userId;
+            viewIncomeControl1.UserId = userId;
+            viewExpenseControl1.UserId = userId;
+            planControl1.UserId = userId;
+            Debug.WriteLine(this.UserId);
+            Debug.WriteLine(dashBoardControl1.UserId);
+            Debug.WriteLine(incomeControl1.UserId);
+            Debug.WriteLine(expenseControl1.UserId);
+            Debug.WriteLine(viewIncomeControl1.UserId);
+            Debug.WriteLine(viewExpenseControl1.UserId);
+            Debug.WriteLine(planControl1.UserId);
+
             panel1.Controls.SetChildIndex(menuDashBoardPanel, 0);
             panel1.Controls.SetChildIndex(menuIncomePanel, 1);
             panel1.Controls.SetChildIndex(menuExpensePanel, 2);

@@ -12,6 +12,9 @@ namespace IncomeExpenseApp.Controls
 {
     public partial class IncomeControl : UserControl
     {
+        private int userId;
+
+        public int UserId { get => userId; set => userId = value; }
         public IncomeControl()
         {
             InitializeComponent();
