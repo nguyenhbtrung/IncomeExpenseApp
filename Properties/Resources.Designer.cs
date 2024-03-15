@@ -113,6 +113,16 @@ namespace IncomeExpenseApp.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap HidePass {
+            get {
+                object obj = ResourceManager.GetObject("HidePass", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap logo {
             get {
                 object obj = ResourceManager.GetObject("logo", resourceCulture);
@@ -186,6 +196,16 @@ namespace IncomeExpenseApp.Properties {
         internal static System.Drawing.Bitmap SelectedXemThuNhap {
             get {
                 object obj = ResourceManager.GetObject("SelectedXemThuNhap", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap ShowPass {
+            get {
+                object obj = ResourceManager.GetObject("ShowPass", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

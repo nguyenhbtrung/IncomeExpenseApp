@@ -38,6 +38,10 @@
             this.label1 = new System.Windows.Forms.Label();
             this.registerButton = new System.Windows.Forms.Button();
             this.registerLabel = new System.Windows.Forms.Label();
+            this.hidePassBox = new System.Windows.Forms.PictureBox();
+            this.showPassBox = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.hidePassBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.showPassBox)).BeginInit();
             this.SuspendLayout();
             // 
             // forgotPassButton
@@ -156,10 +160,36 @@
             this.registerLabel.Text = "Chưa có tài khoản?";
             this.registerLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // hidePassBox
+            // 
+            this.hidePassBox.BackColor = System.Drawing.Color.Transparent;
+            this.hidePassBox.Image = global::IncomeExpenseApp.Properties.Resources.HidePass;
+            this.hidePassBox.Location = new System.Drawing.Point(524, 247);
+            this.hidePassBox.Name = "hidePassBox";
+            this.hidePassBox.Size = new System.Drawing.Size(27, 27);
+            this.hidePassBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.hidePassBox.TabIndex = 29;
+            this.hidePassBox.TabStop = false;
+            this.hidePassBox.Click += new System.EventHandler(this.hidePassBox_Click);
+            // 
+            // showPassBox
+            // 
+            this.showPassBox.BackColor = System.Drawing.Color.Transparent;
+            this.showPassBox.Image = global::IncomeExpenseApp.Properties.Resources.ShowPass;
+            this.showPassBox.Location = new System.Drawing.Point(524, 247);
+            this.showPassBox.Name = "showPassBox";
+            this.showPassBox.Size = new System.Drawing.Size(27, 27);
+            this.showPassBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.showPassBox.TabIndex = 30;
+            this.showPassBox.TabStop = false;
+            this.showPassBox.Click += new System.EventHandler(this.showPassBox_Click);
+            // 
             // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.ClientSize = new System.Drawing.Size(584, 461);
+            this.Controls.Add(this.showPassBox);
+            this.Controls.Add(this.hidePassBox);
             this.Controls.Add(this.forgotPassButton);
             this.Controls.Add(this.notification);
             this.Controls.Add(this.loginButton);
@@ -181,6 +211,10 @@
             this.Controls.SetChildIndex(this.loginButton, 0);
             this.Controls.SetChildIndex(this.notification, 0);
             this.Controls.SetChildIndex(this.forgotPassButton, 0);
+            this.Controls.SetChildIndex(this.hidePassBox, 0);
+            this.Controls.SetChildIndex(this.showPassBox, 0);
+            ((System.ComponentModel.ISupportInitialize)(this.hidePassBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.showPassBox)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -198,5 +232,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button registerButton;
         private System.Windows.Forms.Label registerLabel;
+        private System.Windows.Forms.PictureBox hidePassBox;
+        private System.Windows.Forms.PictureBox showPassBox;
     }
 }

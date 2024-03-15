@@ -18,6 +18,7 @@ namespace IncomeExpenseApp
         {
             InitializeComponent();
             databaseConnector = new DatabaseConnector(Program.DbConnectionString);
+            passwordField.PasswordChar = '*';
         }
         private void loginButton_Click(object sender, EventArgs e)
         {
@@ -41,7 +42,7 @@ namespace IncomeExpenseApp
                 string password = rows["userPassword"].ToString();
                 if (usernameField.Text == username && passwordField.Text == password)
                 {
-                    MainForm obj = new MainForm();
+                    MainForm obj = new MainForm(Convert.ToInt32(rows["userId"]));
                     obj.Show();
                     this.Hide();
                     return;
@@ -62,5 +63,16 @@ namespace IncomeExpenseApp
         {
         }
 
+        private void hidePassBox_Click(object sender, EventArgs e)
+        {
+            passwordField.PasswordChar = '*';
+            showPassBox.BringToFront();
+        }
+
+        private void showPassBox_Click(object sender, EventArgs e)
+        {
+            passwordField.PasswordChar = '\0';
+            hidePassBox.BringToFront();
+        }
     }
 }
