@@ -28,6 +28,7 @@ namespace IncomeExpenseApp
             
             InitializeComponent();
             AddMenuImageResourcesToList();
+
             this.UserId = userId;
             dashBoardControl1.UserId = userId;
             incomeControl1.UserId = userId;
@@ -35,14 +36,8 @@ namespace IncomeExpenseApp
             viewIncomeControl1.UserId = userId;
             viewExpenseControl1.UserId = userId;
             planControl1.UserId = userId;
-            Debug.WriteLine(this.UserId);
-            Debug.WriteLine(dashBoardControl1.UserId);
-            Debug.WriteLine(incomeControl1.UserId);
-            Debug.WriteLine(expenseControl1.UserId);
-            Debug.WriteLine(viewIncomeControl1.UserId);
-            Debug.WriteLine(viewExpenseControl1.UserId);
-            Debug.WriteLine(planControl1.UserId);
-            //AddMenuLabelsAndImageToList();
+
+            dashBoardControl1.LoadData();
 
             panel1.Controls.SetChildIndex(menuDashBoardPanel, 0);
             panel1.Controls.SetChildIndex(menuIncomePanel, 1);
@@ -59,7 +54,7 @@ namespace IncomeExpenseApp
         {
             InitializeComponent();
             AddMenuImageResourcesToList();
-            //AddMenuLabelsAndImageToList();
+
             this.UserId = 1;
             dashBoardControl1.UserId = userId;
             incomeControl1.UserId = userId;
@@ -67,13 +62,8 @@ namespace IncomeExpenseApp
             viewIncomeControl1.UserId = userId;
             viewExpenseControl1.UserId = userId;
             planControl1.UserId = userId;
-            Debug.WriteLine(this.UserId);
-            Debug.WriteLine(dashBoardControl1.UserId);
-            Debug.WriteLine(incomeControl1.UserId);
-            Debug.WriteLine(expenseControl1.UserId);
-            Debug.WriteLine(viewIncomeControl1.UserId);
-            Debug.WriteLine(viewExpenseControl1.UserId);
-            Debug.WriteLine(planControl1.UserId);
+
+            dashBoardControl1.LoadData();
 
             panel1.Controls.SetChildIndex(menuDashBoardPanel, 0);
             panel1.Controls.SetChildIndex(menuIncomePanel, 1);
