@@ -154,7 +154,7 @@ namespace IncomeExpenseApp
                 return;
 
             oldMenuPanel.BackColor = Color.White;
-            newMenuPanel.BackColor = Color.FromArgb(128, 128, 255);
+            newMenuPanel.BackColor = Color.FromArgb(34, 57, 94);
 
             foreach (Control control in oldMenuPanel.Controls)
             {
