@@ -28,6 +28,7 @@ namespace IncomeExpenseApp
             
             InitializeComponent();
             AddMenuImageResourcesToList();
+
             this.UserId = userId;
             dashBoardControl1.UserId = userId;
             incomeControl1.UserId = userId;
@@ -35,14 +36,8 @@ namespace IncomeExpenseApp
             viewIncomeControl1.UserId = userId;
             viewExpenseControl1.UserId = userId;
             planControl1.UserId = userId;
-            Debug.WriteLine(this.UserId);
-            Debug.WriteLine(dashBoardControl1.UserId);
-            Debug.WriteLine(incomeControl1.UserId);
-            Debug.WriteLine(expenseControl1.UserId);
-            Debug.WriteLine(viewIncomeControl1.UserId);
-            Debug.WriteLine(viewExpenseControl1.UserId);
-            Debug.WriteLine(planControl1.UserId);
-            //AddMenuLabelsAndImageToList();
+
+            dashBoardControl1.LoadData();
 
             panel1.Controls.SetChildIndex(menuDashBoardPanel, 0);
             panel1.Controls.SetChildIndex(menuIncomePanel, 1);
@@ -59,7 +54,7 @@ namespace IncomeExpenseApp
         {
             InitializeComponent();
             AddMenuImageResourcesToList();
-            //AddMenuLabelsAndImageToList();
+
             this.UserId = 1;
             dashBoardControl1.UserId = userId;
             incomeControl1.UserId = userId;
@@ -67,19 +62,15 @@ namespace IncomeExpenseApp
             viewIncomeControl1.UserId = userId;
             viewExpenseControl1.UserId = userId;
             planControl1.UserId = userId;
-            Debug.WriteLine(this.UserId);
-            Debug.WriteLine(dashBoardControl1.UserId);
-            Debug.WriteLine(incomeControl1.UserId);
-            Debug.WriteLine(expenseControl1.UserId);
-            Debug.WriteLine(viewIncomeControl1.UserId);
-            Debug.WriteLine(viewExpenseControl1.UserId);
-            Debug.WriteLine(planControl1.UserId);
+
+            dashBoardControl1.LoadData();
 
             panel1.Controls.SetChildIndex(menuDashBoardPanel, 0);
             panel1.Controls.SetChildIndex(menuIncomePanel, 1);
             panel1.Controls.SetChildIndex(menuExpensePanel, 2);
             panel1.Controls.SetChildIndex(menuViewIncomePanel, 3);
             panel1.Controls.SetChildIndex(menuViewExpensePanel, 4);
+            panel1.Controls.SetChildIndex(menuPlanPanel, 5);
 
             menuSelectedPanel = menuDashBoardPanel;
             this.FormBorderStyle = FormBorderStyle.None;
@@ -93,12 +84,14 @@ namespace IncomeExpenseApp
             selectedImageResources.Add(Resources.SelectedChiTieu);
             selectedImageResources.Add(Resources.SelectedXemThuNhap);
             selectedImageResources.Add(Resources.SelectedXemChiTieu);
+            selectedImageResources.Add(Resources.SelectedKeHoach);
 
             blackImageResources.Add(Resources.DashBoard);
             blackImageResources.Add(Resources.ThuNhap);
             blackImageResources.Add(Resources.ChiTieu);
             blackImageResources.Add(Resources.XemThuNhap);
             blackImageResources.Add(Resources.XemChiTieu);
+            blackImageResources.Add(Resources.KeHoach);
         }
 
         private void Logout(object sender, EventArgs e)
@@ -148,13 +141,20 @@ namespace IncomeExpenseApp
             ChangeTheSelectionDisplay(menuSelectedPanel, newSelectedPanel);
         }
 
+        private void OpenPlan(object sender, EventArgs e)
+        {
+            planControl1.BringToFront();
+            Panel newSelectedPanel = menuPlanPanel;
+            ChangeTheSelectionDisplay(menuSelectedPanel, newSelectedPanel);
+        }
+
         public void ChangeTheSelectionDisplay(Panel oldMenuPanel, Panel newMenuPanel)
         {
             if (blackImageResources == null || selectedImageResources == null)
                 return;
 
             oldMenuPanel.BackColor = Color.White;
-            newMenuPanel.BackColor = Color.FromArgb(128, 128, 255);
+            newMenuPanel.BackColor = Color.FromArgb(34, 57, 94);
 
             foreach (Control control in oldMenuPanel.Controls)
             {

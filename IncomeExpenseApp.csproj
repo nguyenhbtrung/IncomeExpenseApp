@@ -225,9 +225,11 @@
   <ItemGroup>
     <None Include="Resources\HidePass.png" />
     <None Include="Resources\border.png" />
+    <None Include="Resources\KeHoach.png" />
     <None Include="Resources\logo2.png" />
     <Content Include="Resources\SelectedChiTieu.png" />
     <Content Include="Resources\SelectedDashBoard.png" />
+    <None Include="Resources\SelectedKeHoach.png" />
     <Content Include="Resources\SelectedThuNhap.png" />
     <Content Include="Resources\SelectedXemChiTieu.png" />
     <Content Include="Resources\SelectedXemThuNhap.png" />

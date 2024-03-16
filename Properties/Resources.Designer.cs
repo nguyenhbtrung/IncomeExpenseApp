@@ -133,6 +133,16 @@ namespace IncomeExpenseApp.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap KeHoach {
+            get {
+                object obj = ResourceManager.GetObject("KeHoach", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap logo {
             get {
                 object obj = ResourceManager.GetObject("logo", resourceCulture);
@@ -186,6 +196,16 @@ namespace IncomeExpenseApp.Properties {
         internal static System.Drawing.Bitmap SelectedDashBoard {
             get {
                 object obj = ResourceManager.GetObject("SelectedDashBoard", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap SelectedKeHoach {
+            get {
+                object obj = ResourceManager.GetObject("SelectedKeHoach", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

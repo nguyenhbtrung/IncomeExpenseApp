@@ -53,5 +53,19 @@ namespace IncomeExpenseApp
             }
             return dataTable;
         }
+
+        public object ExecuteScalar(string query)
+        {
+            object result = null;
+            using (SqlConnection con = new SqlConnection(connectionString))
+            {
+                using (SqlCommand cmd = new SqlCommand(query, con))
+                {
+                    con.Open();
+                    result = cmd.ExecuteScalar();
+                }
+            }
+            return result;
+        }
     }
 }
