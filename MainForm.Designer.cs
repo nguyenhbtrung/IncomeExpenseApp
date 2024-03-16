@@ -30,6 +30,9 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.menuPlanPanel = new System.Windows.Forms.Panel();
+            this.menuPlanLabel = new System.Windows.Forms.Label();
+            this.menuPlanImage = new System.Windows.Forms.PictureBox();
             this.menuViewIncomePanel = new System.Windows.Forms.Panel();
             this.menuViewIncomeImage = new System.Windows.Forms.PictureBox();
             this.menuViewIncomeLabel = new System.Windows.Forms.Label();
@@ -62,6 +65,8 @@
             this.expenseControl1 = new IncomeExpenseApp.Controls.ExpenseControl();
             this.incomeControl1 = new IncomeExpenseApp.Controls.IncomeControl();
             this.panel1.SuspendLayout();
+            this.menuPlanPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.menuPlanImage)).BeginInit();
             this.menuViewIncomePanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.menuViewIncomeImage)).BeginInit();
             this.menuViewExpensePanel.SuspendLayout();
@@ -82,6 +87,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.White;
+            this.panel1.Controls.Add(this.menuPlanPanel);
             this.panel1.Controls.Add(this.menuViewIncomePanel);
             this.panel1.Controls.Add(this.logoutLabel);
             this.panel1.Controls.Add(this.menuViewExpensePanel);
@@ -96,6 +102,40 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(193, 720);
             this.panel1.TabIndex = 0;
+            // 
+            // menuPlanPanel
+            // 
+            this.menuPlanPanel.BackColor = System.Drawing.Color.White;
+            this.menuPlanPanel.Controls.Add(this.menuPlanLabel);
+            this.menuPlanPanel.Controls.Add(this.menuPlanImage);
+            this.menuPlanPanel.Location = new System.Drawing.Point(0, 431);
+            this.menuPlanPanel.Name = "menuPlanPanel";
+            this.menuPlanPanel.Size = new System.Drawing.Size(193, 50);
+            this.menuPlanPanel.TabIndex = 38;
+            this.menuPlanPanel.Click += new System.EventHandler(this.OpenPlan);
+            // 
+            // menuPlanLabel
+            // 
+            this.menuPlanLabel.AutoSize = true;
+            this.menuPlanLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.menuPlanLabel.ForeColor = System.Drawing.SystemColors.Desktop;
+            this.menuPlanLabel.Location = new System.Drawing.Point(53, 18);
+            this.menuPlanLabel.Name = "menuPlanLabel";
+            this.menuPlanLabel.Size = new System.Drawing.Size(84, 20);
+            this.menuPlanLabel.TabIndex = 11;
+            this.menuPlanLabel.Text = "Kế hoạch";
+            this.menuPlanLabel.Click += new System.EventHandler(this.OpenPlan);
+            // 
+            // menuPlanImage
+            // 
+            this.menuPlanImage.Image = global::IncomeExpenseApp.Properties.Resources.KeHoach;
+            this.menuPlanImage.Location = new System.Drawing.Point(11, 0);
+            this.menuPlanImage.Name = "menuPlanImage";
+            this.menuPlanImage.Size = new System.Drawing.Size(35, 50);
+            this.menuPlanImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.menuPlanImage.TabIndex = 10;
+            this.menuPlanImage.TabStop = false;
+            this.menuPlanImage.Click += new System.EventHandler(this.OpenPlan);
             // 
             // menuViewIncomePanel
             // 
@@ -427,7 +467,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLight;
             this.ClientSize = new System.Drawing.Size(1215, 720);
-            this.Controls.Add(this.planControl1);
             this.Controls.Add(this.exitPictureBox);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label8);
@@ -439,6 +478,7 @@
             this.Controls.Add(this.viewIncomeControl1);
             this.Controls.Add(this.expenseControl1);
             this.Controls.Add(this.incomeControl1);
+            this.Controls.Add(this.planControl1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "MainForm";
@@ -446,6 +486,9 @@
             this.Text = "Quản lý tài chính";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            this.menuPlanPanel.ResumeLayout(false);
+            this.menuPlanPanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.menuPlanImage)).EndInit();
             this.menuViewIncomePanel.ResumeLayout(false);
             this.menuViewIncomePanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.menuViewIncomeImage)).EndInit();
@@ -505,6 +548,9 @@
         private System.Windows.Forms.Panel menuViewExpensePanel;
         private System.Windows.Forms.Panel menuViewIncomePanel;
         private Controls.PlanControl planControl1;
+        private System.Windows.Forms.Panel menuPlanPanel;
+        private System.Windows.Forms.Label menuPlanLabel;
+        private System.Windows.Forms.PictureBox menuPlanImage;
     }
 }
 

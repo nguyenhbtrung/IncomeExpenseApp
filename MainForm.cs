@@ -80,6 +80,7 @@ namespace IncomeExpenseApp
             panel1.Controls.SetChildIndex(menuExpensePanel, 2);
             panel1.Controls.SetChildIndex(menuViewIncomePanel, 3);
             panel1.Controls.SetChildIndex(menuViewExpensePanel, 4);
+            panel1.Controls.SetChildIndex(menuPlanPanel, 5);
 
             menuSelectedPanel = menuDashBoardPanel;
             this.FormBorderStyle = FormBorderStyle.None;
@@ -93,12 +94,14 @@ namespace IncomeExpenseApp
             selectedImageResources.Add(Resources.SelectedChiTieu);
             selectedImageResources.Add(Resources.SelectedXemThuNhap);
             selectedImageResources.Add(Resources.SelectedXemChiTieu);
+            selectedImageResources.Add(Resources.SelectedKeHoach);
 
             blackImageResources.Add(Resources.DashBoard);
             blackImageResources.Add(Resources.ThuNhap);
             blackImageResources.Add(Resources.ChiTieu);
             blackImageResources.Add(Resources.XemThuNhap);
             blackImageResources.Add(Resources.XemChiTieu);
+            blackImageResources.Add(Resources.KeHoach);
         }
 
         private void Logout(object sender, EventArgs e)
@@ -145,6 +148,13 @@ namespace IncomeExpenseApp
         {
             viewExpenseControl1.BringToFront();
             Panel newSelectedPanel = menuViewExpensePanel;
+            ChangeTheSelectionDisplay(menuSelectedPanel, newSelectedPanel);
+        }
+
+        private void OpenPlan(object sender, EventArgs e)
+        {
+            planControl1.BringToFront();
+            Panel newSelectedPanel = menuPlanPanel;
             ChangeTheSelectionDisplay(menuSelectedPanel, newSelectedPanel);
         }
 
