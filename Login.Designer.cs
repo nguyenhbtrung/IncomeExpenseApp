@@ -50,7 +50,7 @@
             this.forgotPassButton.FlatAppearance.BorderSize = 0;
             this.forgotPassButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.forgotPassButton.Font = new System.Drawing.Font("Times New Roman", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.forgotPassButton.ForeColor = System.Drawing.Color.Green;
+            this.forgotPassButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(57)))), ((int)(((byte)(94)))));
             this.forgotPassButton.Location = new System.Drawing.Point(373, 395);
             this.forgotPassButton.Name = "forgotPassButton";
             this.forgotPassButton.Size = new System.Drawing.Size(130, 32);
@@ -73,7 +73,7 @@
             // 
             // loginButton
             // 
-            this.loginButton.BackColor = System.Drawing.Color.Green;
+            this.loginButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(57)))), ((int)(((byte)(94)))));
             this.loginButton.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.loginButton.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.loginButton.Location = new System.Drawing.Point(373, 345);
@@ -135,7 +135,7 @@
             // 
             // registerButton
             // 
-            this.registerButton.BackColor = System.Drawing.Color.Green;
+            this.registerButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(57)))), ((int)(((byte)(94)))));
             this.registerButton.FlatAppearance.BorderSize = 0;
             this.registerButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.registerButton.Font = new System.Drawing.Font("Times New Roman", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -150,7 +150,7 @@
             // 
             // registerLabel
             // 
-            this.registerLabel.BackColor = System.Drawing.Color.Green;
+            this.registerLabel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(57)))), ((int)(((byte)(94)))));
             this.registerLabel.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.registerLabel.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.registerLabel.Location = new System.Drawing.Point(55, 370);

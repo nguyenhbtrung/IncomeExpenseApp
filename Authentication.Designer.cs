@@ -32,7 +32,7 @@
             this.textLabel = new System.Windows.Forms.Label();
             this.codeField = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
-            this.Close = new System.Windows.Forms.Button();
+            this.CloseButton = new System.Windows.Forms.Button();
             this.border = new System.Windows.Forms.Panel();
             this.notification = new System.Windows.Forms.Label();
             this.border.SuspendLayout();
@@ -66,23 +66,23 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // Close
+            // CloseButton
             // 
-            this.Close.BackColor = System.Drawing.Color.Transparent;
-            this.Close.BackgroundImage = global::IncomeExpenseApp.Properties.Resources.close;
-            this.Close.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.Close.FlatAppearance.BorderColor = System.Drawing.SystemColors.Control;
-            this.Close.FlatAppearance.BorderSize = 0;
-            this.Close.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.Control;
-            this.Close.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.Control;
-            this.Close.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Close.ForeColor = System.Drawing.Color.Transparent;
-            this.Close.Location = new System.Drawing.Point(343, 12);
-            this.Close.Name = "Close";
-            this.Close.Size = new System.Drawing.Size(29, 26);
-            this.Close.TabIndex = 3;
-            this.Close.UseVisualStyleBackColor = true;
-            this.Close.Click += new System.EventHandler(this.Close_Click);
+            this.CloseButton.BackColor = System.Drawing.Color.Transparent;
+            this.CloseButton.BackgroundImage = global::IncomeExpenseApp.Properties.Resources.close;
+            this.CloseButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.CloseButton.FlatAppearance.BorderColor = System.Drawing.SystemColors.Control;
+            this.CloseButton.FlatAppearance.BorderSize = 0;
+            this.CloseButton.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.Control;
+            this.CloseButton.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.Control;
+            this.CloseButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.CloseButton.ForeColor = System.Drawing.Color.Transparent;
+            this.CloseButton.Location = new System.Drawing.Point(343, 12);
+            this.CloseButton.Name = "CloseButton";
+            this.CloseButton.Size = new System.Drawing.Size(29, 26);
+            this.CloseButton.TabIndex = 3;
+            this.CloseButton.UseVisualStyleBackColor = true;
+            this.CloseButton.Click += new System.EventHandler(this.Close_Click);
             // 
             // border
             // 
@@ -111,7 +111,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(383, 163);
-            this.Controls.Add(this.Close);
+            this.Controls.Add(this.CloseButton);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.codeField);
             this.Controls.Add(this.textLabel);
@@ -132,7 +132,7 @@
         private System.Windows.Forms.Label textLabel;
         private System.Windows.Forms.TextBox codeField;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button Close;
+        private System.Windows.Forms.Button CloseButton;
         private System.Windows.Forms.Panel border;
         private System.Windows.Forms.Label notification;
     }
