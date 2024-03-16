@@ -621,9 +621,9 @@
             this.Controls.Add(this.panel6);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.profitChart);
-            this.Controls.Add(this.chart1);
             this.Controls.Add(this.incomeExpendChart);
             this.Controls.Add(this.panel1);
+            this.Controls.Add(this.chart1);
             this.Name = "DashBoardControl";
             this.Size = new System.Drawing.Size(1022, 623);
             this.panel8.ResumeLayout(false);
