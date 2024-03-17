@@ -24,7 +24,7 @@ namespace WindowsFormsApp1
         {
             string fromAddress = "incomeexpenseapp123@gmail.com";
             //string password = "eqnb amki ojds dbvp";
-            string password = "yfvm wzyc edqo fhcd";
+            string password = "svro suvs yiai mnth";
             MailAddress to = new MailAddress(toAddress);
             MailAddress from = new MailAddress(fromAddress);
             MailMessage email = new MailMessage(from, to);
