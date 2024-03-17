@@ -1,12 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Diagnostics;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace IncomeExpenseApp.Controls
@@ -37,7 +30,7 @@ namespace IncomeExpenseApp.Controls
             }
         }
 
-        public int ProfitChartMaxX
+        private int ProfitChartMaxX
         {
             get
             {
@@ -98,10 +91,10 @@ namespace IncomeExpenseApp.Controls
             ProfitChartMaxX = profitChartDataMaxIndex;
             ProfitChartMinX = ProfitChartMaxX - profitChartXRange;
 
-            ChangeRangeProfitChartData(0, ProfitChartMaxX);
+            ChangeProfitChartDataRange(0, ProfitChartMaxX);
         }
 
-        private void ChangeRangeProfitChartData(int minX, int maxX)
+        private void ChangeProfitChartDataRange(int minX, int maxX)
         {
             if (profitChartDataTable == null || profitChartDataTable.Rows.Count <= 0)
                 return;
@@ -171,7 +164,7 @@ namespace IncomeExpenseApp.Controls
 
         private void periodButton_Click(object sender, EventArgs e)
         {
-            ChangeRangeProfitChartData(ProfitChartMinX, ProfitChartMaxX);
+            ChangeProfitChartDataRange(ProfitChartMinX, ProfitChartMaxX);
             switchLeftButton.Enabled = true;
             switchRightButton.Enabled = true;
         }
@@ -179,7 +172,7 @@ namespace IncomeExpenseApp.Controls
         private void overallButton_Click(object sender, EventArgs e)
         {
             int maxX = profitChartDataTable.Rows.Count - 1;
-            ChangeRangeProfitChartData(0, maxX);
+            ChangeProfitChartDataRange(0, maxX);
             switchLeftButton.Enabled = false;
             switchRightButton.Enabled = false;
         }
@@ -192,7 +185,7 @@ namespace IncomeExpenseApp.Controls
             }
             ProfitChartMaxX -= profitChartXRange;
             ProfitChartMinX = ProfitChartMaxX - 10;
-            ChangeRangeProfitChartData(ProfitChartMinX, ProfitChartMaxX);
+            ChangeProfitChartDataRange(ProfitChartMinX, ProfitChartMaxX);
         }
 
         private void switchRightButton_Click(object sender, EventArgs e)
@@ -204,7 +197,7 @@ namespace IncomeExpenseApp.Controls
             }
             ProfitChartMaxX += profitChartXRange;
             ProfitChartMinX = ProfitChartMaxX - profitChartXRange;
-            ChangeRangeProfitChartData(ProfitChartMinX, ProfitChartMaxX);
+            ChangeProfitChartDataRange(ProfitChartMinX, ProfitChartMaxX);
         }
     }
 }

@@ -25,25 +25,16 @@ namespace IncomeExpenseApp
 
         public MainForm(int userId)
         {
-            
+
             InitializeComponent();
             AddMenuImageResourcesToList();
 
             this.UserId = userId;
-            dashBoardControl1.UserId = userId;
-            incomeControl1.UserId = userId;
-            expenseControl1.UserId = userId;
-            viewIncomeControl1.UserId = userId;
-            viewExpenseControl1.UserId = userId;
-            planControl1.UserId = userId;
+            SetControlsUserId(userId);
 
             dashBoardControl1.LoadData();
 
-            panel1.Controls.SetChildIndex(menuDashBoardPanel, 0);
-            panel1.Controls.SetChildIndex(menuIncomePanel, 1);
-            panel1.Controls.SetChildIndex(menuExpensePanel, 2);
-            panel1.Controls.SetChildIndex(menuViewIncomePanel, 3);
-            panel1.Controls.SetChildIndex(menuViewExpensePanel, 4);
+            SetMenuPanelsIndex();
 
             menuSelectedPanel = menuDashBoardPanel;
             this.FormBorderStyle = FormBorderStyle.None;
@@ -56,42 +47,15 @@ namespace IncomeExpenseApp
             AddMenuImageResourcesToList();
 
             this.UserId = 1;
-            dashBoardControl1.UserId = userId;
-            incomeControl1.UserId = userId;
-            expenseControl1.UserId = userId;
-            viewIncomeControl1.UserId = userId;
-            viewExpenseControl1.UserId = userId;
-            planControl1.UserId = userId;
+            SetControlsUserId(userId);
 
             dashBoardControl1.LoadData();
 
-            panel1.Controls.SetChildIndex(menuDashBoardPanel, 0);
-            panel1.Controls.SetChildIndex(menuIncomePanel, 1);
-            panel1.Controls.SetChildIndex(menuExpensePanel, 2);
-            panel1.Controls.SetChildIndex(menuViewIncomePanel, 3);
-            panel1.Controls.SetChildIndex(menuViewExpensePanel, 4);
-            panel1.Controls.SetChildIndex(menuPlanPanel, 5);
+            SetMenuPanelsIndex();
 
             menuSelectedPanel = menuDashBoardPanel;
             this.FormBorderStyle = FormBorderStyle.None;
             Region = Region.FromHrgn(RoundedCornerGenerator.CreateRoundRectRgn(0, 0, Width, Height, 20, 20));
-        }
-
-        private void AddMenuImageResourcesToList()
-        {
-            selectedImageResources.Add(Resources.SelectedDashBoard);
-            selectedImageResources.Add(Resources.SelectedThuNhap);
-            selectedImageResources.Add(Resources.SelectedChiTieu);
-            selectedImageResources.Add(Resources.SelectedXemThuNhap);
-            selectedImageResources.Add(Resources.SelectedXemChiTieu);
-            selectedImageResources.Add(Resources.SelectedKeHoach);
-
-            blackImageResources.Add(Resources.DashBoard);
-            blackImageResources.Add(Resources.ThuNhap);
-            blackImageResources.Add(Resources.ChiTieu);
-            blackImageResources.Add(Resources.XemThuNhap);
-            blackImageResources.Add(Resources.XemChiTieu);
-            blackImageResources.Add(Resources.KeHoach);
         }
 
         private void Logout(object sender, EventArgs e)
@@ -105,7 +69,7 @@ namespace IncomeExpenseApp
             Application.Exit();
         }
 
-        
+
         protected void OpenDashBoard(object sender, EventArgs e)
         {
             dashBoardControl1.BringToFront();
@@ -149,6 +113,25 @@ namespace IncomeExpenseApp
             ChangeTheSelectionDisplay(menuSelectedPanel, newSelectedPanel);
         }
 
+        private void AddMenuImageResourcesToList()
+        {
+            selectedImageResources.Add(Resources.SelectedDashBoard);
+            selectedImageResources.Add(Resources.SelectedThuNhap);
+            selectedImageResources.Add(Resources.SelectedChiTieu);
+            selectedImageResources.Add(Resources.SelectedXemThuNhap);
+            selectedImageResources.Add(Resources.SelectedXemChiTieu);
+            selectedImageResources.Add(Resources.SelectedKeHoach);
+
+            blackImageResources.Add(Resources.DashBoard);
+            blackImageResources.Add(Resources.ThuNhap);
+            blackImageResources.Add(Resources.ChiTieu);
+            blackImageResources.Add(Resources.XemThuNhap);
+            blackImageResources.Add(Resources.XemChiTieu);
+            blackImageResources.Add(Resources.KeHoach);
+        }
+
+        
+
         public void ChangeTheSelectionDisplay(Panel oldMenuPanel, Panel newMenuPanel)
         {
             if (blackImageResources == null || selectedImageResources == null)
@@ -184,6 +167,25 @@ namespace IncomeExpenseApp
             }
 
             menuSelectedPanel = newMenuPanel;
+        }
+
+        private void SetMenuPanelsIndex()
+        {
+            panel1.Controls.SetChildIndex(menuDashBoardPanel, 0);
+            panel1.Controls.SetChildIndex(menuIncomePanel, 1);
+            panel1.Controls.SetChildIndex(menuExpensePanel, 2);
+            panel1.Controls.SetChildIndex(menuViewIncomePanel, 3);
+            panel1.Controls.SetChildIndex(menuViewExpensePanel, 4);
+        }
+
+        private void SetControlsUserId(int userId)
+        {
+            dashBoardControl1.UserId = userId;
+            incomeControl1.UserId = userId;
+            expenseControl1.UserId = userId;
+            viewIncomeControl1.UserId = userId;
+            viewExpenseControl1.UserId = userId;
+            planControl1.UserId = userId;
         }
 
         //int originalExStyle = -1;
