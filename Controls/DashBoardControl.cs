@@ -21,9 +21,33 @@ namespace IncomeExpenseApp.Controls
         private int amountExpense;
         private int profitChartMinX;
         private int profitChartMaxX;
+        private int profitChartXRange = 10;
+        private int profitChartDataMaxIndex;
         private string currencyUnit = " VNĐ";
 
         public int UserId { get => userId; set => userId = value; }
+        private int ProfitChartMinX {
+            get 
+            {
+                return profitChartMinX; 
+            }
+            set
+            {
+                profitChartMinX = (value < 0 ? 0 : value);
+            }
+        }
+
+        public int ProfitChartMaxX
+        {
+            get
+            {
+                return profitChartMaxX;
+            }
+            set
+            {
+                profitChartMaxX = (value > profitChartDataMaxIndex ? profitChartDataMaxIndex : value);
+            }
+        }
 
         public DashBoardControl()
         {
@@ -61,24 +85,25 @@ namespace IncomeExpenseApp.Controls
         {
             profitChartDataTable = databaseConnector.ExecuteDataTableQuery(
                 "with IncomeAndExpense as " +
-                "(select incDate as date, incAmount as amount from Income " +
+                $"(select incDate as date, incAmount as amount from Income where userId = {userId}" +
                 "union all " +
-                "select exDate as date, -exAmount as amount from Expense) " +
+                $"select exDate as date, -exAmount as amount from Expense where userId = {userId}) " +
                 "select format(t1.date, 'dd/MM/yy') as date, sum(t2.amount) as profit from IncomeAndExpense t1 join IncomeAndExpense t2 on t2.date <= t1.date " +
                 "group by t1.date order by t1.date");
             profitChart.DataSource = profitChartDataTable;
             profitChart.Series[0].XValueMember = "date";
             profitChart.Series[0].YValueMembers = "profit";
 
-            profitChartMaxX = profitChartDataTable.Rows.Count - 1;
-            profitChartMinX = profitChartMaxX - 10;
+            profitChartDataMaxIndex = profitChartDataTable.Rows.Count - 1;
+            ProfitChartMaxX = profitChartDataMaxIndex;
+            ProfitChartMinX = ProfitChartMaxX - profitChartXRange;
 
-            FetchProfitChartData(0, profitChartMaxX);
+            ChangeRangeProfitChartData(0, ProfitChartMaxX);
         }
 
-        private void FetchProfitChartData(int minX, int maxX)
+        private void ChangeRangeProfitChartData(int minX, int maxX)
         {
-            if (profitChartDataTable == null)
+            if (profitChartDataTable == null || profitChartDataTable.Rows.Count <= 0)
                 return;
             profitChart.ChartAreas[0].AxisX.Minimum = minX + 1;
             profitChart.ChartAreas[0].AxisX.Maximum = maxX + 1;
@@ -146,7 +171,7 @@ namespace IncomeExpenseApp.Controls
 
         private void periodButton_Click(object sender, EventArgs e)
         {
-            FetchProfitChartData(profitChartMinX, profitChartMaxX);
+            ChangeRangeProfitChartData(ProfitChartMinX, ProfitChartMaxX);
             switchLeftButton.Enabled = true;
             switchRightButton.Enabled = true;
         }
@@ -154,42 +179,32 @@ namespace IncomeExpenseApp.Controls
         private void overallButton_Click(object sender, EventArgs e)
         {
             int maxX = profitChartDataTable.Rows.Count - 1;
-            FetchProfitChartData(0, maxX);
+            ChangeRangeProfitChartData(0, maxX);
             switchLeftButton.Enabled = false;
             switchRightButton.Enabled = false;
         }
 
         private void switchLeftButton_Click(object sender, EventArgs e)
         {
-            int xRange = 10;
-            if (profitChartMaxX < xRange)
+            if (ProfitChartMaxX < profitChartXRange)
             {
                 return;
             }
-            profitChartMaxX -= 10;
-            profitChartMinX = profitChartMaxX - 10;
-            if (profitChartMinX < 0)
-            {
-                profitChartMinX = 0;
-            }
-            FetchProfitChartData(profitChartMinX, profitChartMaxX);
+            ProfitChartMaxX -= profitChartXRange;
+            ProfitChartMinX = ProfitChartMaxX - 10;
+            ChangeRangeProfitChartData(ProfitChartMinX, ProfitChartMaxX);
         }
 
         private void switchRightButton_Click(object sender, EventArgs e)
         {
-            int xRange = 10;
-            int chartDataMaxIndex = profitChartDataTable.Rows.Count - 1;
-            if (profitChartMaxX > profitChartDataTable.Rows.Count - xRange)
+            
+            if (ProfitChartMaxX > profitChartDataTable.Rows.Count - profitChartXRange)
             {
                 return;
             }
-            profitChartMaxX += xRange;
-            if (profitChartMaxX > chartDataMaxIndex)
-            {
-                profitChartMaxX = chartDataMaxIndex;
-            }
-            profitChartMinX = profitChartMaxX - xRange;
-            FetchProfitChartData(profitChartMinX, profitChartMaxX);
+            ProfitChartMaxX += profitChartXRange;
+            ProfitChartMinX = ProfitChartMaxX - profitChartXRange;
+            ChangeRangeProfitChartData(ProfitChartMinX, ProfitChartMaxX);
         }
     }
 }

@@ -109,6 +109,7 @@ namespace IncomeExpenseApp
         protected void OpenDashBoard(object sender, EventArgs e)
         {
             dashBoardControl1.BringToFront();
+            dashBoardControl1.LoadData();
             Panel newSelectedPanel = menuDashBoardPanel;
             ChangeTheSelectionDisplay(menuSelectedPanel, newSelectedPanel);
         }
