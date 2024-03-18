@@ -40,18 +40,20 @@
             this.incomeCategoryLabel = new System.Windows.Forms.Label();
             this.incomeNameLabel = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
+            this.notification = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // saveIncomeButton
             // 
             this.saveIncomeButton.BackColor = System.Drawing.Color.Cyan;
             this.saveIncomeButton.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.saveIncomeButton.Location = new System.Drawing.Point(590, 443);
+            this.saveIncomeButton.Location = new System.Drawing.Point(590, 408);
             this.saveIncomeButton.Name = "saveIncomeButton";
             this.saveIncomeButton.Size = new System.Drawing.Size(250, 57);
             this.saveIncomeButton.TabIndex = 40;
             this.saveIncomeButton.Text = "Lưu khoản thu";
             this.saveIncomeButton.UseVisualStyleBackColor = false;
+            this.saveIncomeButton.Click += new System.EventHandler(this.saveIncomeButton_Click);
             // 
             // incomeDetailLabel
             // 
@@ -155,10 +157,23 @@
             this.label10.TabIndex = 29;
             this.label10.Text = "CHI TIẾT THU NHẬP";
             // 
+            // notification
+            // 
+            this.notification.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.notification.ForeColor = System.Drawing.Color.Red;
+            this.notification.Location = new System.Drawing.Point(586, 490);
+            this.notification.Name = "notification";
+            this.notification.Size = new System.Drawing.Size(254, 43);
+            this.notification.TabIndex = 41;
+            this.notification.Text = "Thông báo";
+            this.notification.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.notification.Visible = false;
+            // 
             // IncomeControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.notification);
             this.Controls.Add(this.saveIncomeButton);
             this.Controls.Add(this.incomeDetailLabel);
             this.Controls.Add(this.incomeDetailText);
@@ -192,5 +207,6 @@
         private System.Windows.Forms.Label incomeCategoryLabel;
         private System.Windows.Forms.Label incomeNameLabel;
         private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label notification;
     }
 }

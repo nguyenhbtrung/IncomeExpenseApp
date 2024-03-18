@@ -44,6 +44,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.showPassBox)).BeginInit();
             this.SuspendLayout();
             // 
+            // CloseButton
+            // 
+            this.CloseButton.FlatAppearance.BorderColor = System.Drawing.SystemColors.Control;
+            this.CloseButton.FlatAppearance.BorderSize = 0;
+            this.CloseButton.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.Control;
+            this.CloseButton.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.Control;
+            // 
             // forgotPassButton
             // 
             this.forgotPassButton.BackColor = System.Drawing.Color.Transparent;
@@ -54,7 +61,7 @@
             this.forgotPassButton.Location = new System.Drawing.Point(373, 395);
             this.forgotPassButton.Name = "forgotPassButton";
             this.forgotPassButton.Size = new System.Drawing.Size(130, 32);
-            this.forgotPassButton.TabIndex = 23;
+            this.forgotPassButton.TabIndex = 4;
             this.forgotPassButton.Text = "Quên mật khẩu?";
             this.forgotPassButton.UseVisualStyleBackColor = false;
             this.forgotPassButton.Click += new System.EventHandler(this.forgotPassButton_Click);
@@ -79,7 +86,7 @@
             this.loginButton.Location = new System.Drawing.Point(373, 345);
             this.loginButton.Name = "loginButton";
             this.loginButton.Size = new System.Drawing.Size(130, 44);
-            this.loginButton.TabIndex = 27;
+            this.loginButton.TabIndex = 3;
             this.loginButton.Text = "Đăng nhập";
             this.loginButton.UseVisualStyleBackColor = false;
             this.loginButton.Click += new System.EventHandler(this.loginButton_Click);
@@ -90,7 +97,7 @@
             this.passwordField.Location = new System.Drawing.Point(324, 246);
             this.passwordField.Name = "passwordField";
             this.passwordField.Size = new System.Drawing.Size(228, 29);
-            this.passwordField.TabIndex = 26;
+            this.passwordField.TabIndex = 2;
             // 
             // passwordLabel
             // 
@@ -109,7 +116,7 @@
             this.usernameField.Location = new System.Drawing.Point(324, 163);
             this.usernameField.Name = "usernameField";
             this.usernameField.Size = new System.Drawing.Size(228, 29);
-            this.usernameField.TabIndex = 24;
+            this.usernameField.TabIndex = 1;
             // 
             // usernameLabel
             // 
@@ -143,7 +150,7 @@
             this.registerButton.Location = new System.Drawing.Point(79, 410);
             this.registerButton.Name = "registerButton";
             this.registerButton.Size = new System.Drawing.Size(134, 32);
-            this.registerButton.TabIndex = 22;
+            this.registerButton.TabIndex = 5;
             this.registerButton.Text = "ĐĂNG KÍ NGAY";
             this.registerButton.UseVisualStyleBackColor = false;
             this.registerButton.Click += new System.EventHandler(this.registerButton_Click);
@@ -201,6 +208,7 @@
             this.Controls.Add(this.registerButton);
             this.Controls.Add(this.registerLabel);
             this.Name = "Login";
+            this.Controls.SetChildIndex(this.CloseButton, 0);
             this.Controls.SetChildIndex(this.registerLabel, 0);
             this.Controls.SetChildIndex(this.registerButton, 0);
             this.Controls.SetChildIndex(this.label1, 0);

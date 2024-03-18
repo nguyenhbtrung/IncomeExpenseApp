@@ -43,6 +43,13 @@
             this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
+            // CloseButton
+            // 
+            this.CloseButton.FlatAppearance.BorderColor = System.Drawing.SystemColors.Control;
+            this.CloseButton.FlatAppearance.BorderSize = 0;
+            this.CloseButton.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.Control;
+            this.CloseButton.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.Control;
+            // 
             // registerLabel
             // 
             this.registerLabel.AutoSize = true;
@@ -60,7 +67,7 @@
             this.passwordField.Location = new System.Drawing.Point(326, 242);
             this.passwordField.Name = "passwordField";
             this.passwordField.Size = new System.Drawing.Size(228, 29);
-            this.passwordField.TabIndex = 30;
+            this.passwordField.TabIndex = 3;
             // 
             // passwordLabel
             // 
@@ -79,7 +86,7 @@
             this.emailField.Location = new System.Drawing.Point(326, 186);
             this.emailField.Name = "emailField";
             this.emailField.Size = new System.Drawing.Size(228, 29);
-            this.emailField.TabIndex = 28;
+            this.emailField.TabIndex = 2;
             // 
             // emailLabel
             // 
@@ -98,7 +105,7 @@
             this.usernameField.Location = new System.Drawing.Point(326, 130);
             this.usernameField.Name = "usernameField";
             this.usernameField.Size = new System.Drawing.Size(228, 29);
-            this.usernameField.TabIndex = 32;
+            this.usernameField.TabIndex = 1;
             // 
             // usernameLabel
             // 
@@ -117,7 +124,7 @@
             this.password2Field.Location = new System.Drawing.Point(326, 298);
             this.password2Field.Name = "password2Field";
             this.password2Field.Size = new System.Drawing.Size(228, 29);
-            this.password2Field.TabIndex = 34;
+            this.password2Field.TabIndex = 4;
             // 
             // password2Label
             // 
@@ -150,7 +157,7 @@
             this.registerButton.Location = new System.Drawing.Point(373, 385);
             this.registerButton.Name = "registerButton";
             this.registerButton.Size = new System.Drawing.Size(130, 44);
-            this.registerButton.TabIndex = 36;
+            this.registerButton.TabIndex = 5;
             this.registerButton.Text = "Đăng kí";
             this.registerButton.UseVisualStyleBackColor = false;
             this.registerButton.Click += new System.EventHandler(this.registerButton_Click);
@@ -165,7 +172,7 @@
             this.loginButton.Location = new System.Drawing.Point(66, 410);
             this.loginButton.Name = "loginButton";
             this.loginButton.Size = new System.Drawing.Size(160, 32);
-            this.loginButton.TabIndex = 38;
+            this.loginButton.TabIndex = 6;
             this.loginButton.Text = "ĐĂNG NHẬP NGAY";
             this.loginButton.UseVisualStyleBackColor = false;
             this.loginButton.Click += new System.EventHandler(this.loginButton_Click);
@@ -200,6 +207,7 @@
             this.Controls.Add(this.emailLabel);
             this.Controls.Add(this.registerLabel);
             this.Name = "Register";
+            this.Controls.SetChildIndex(this.CloseButton, 0);
             this.Controls.SetChildIndex(this.registerLabel, 0);
             this.Controls.SetChildIndex(this.emailLabel, 0);
             this.Controls.SetChildIndex(this.emailField, 0);
