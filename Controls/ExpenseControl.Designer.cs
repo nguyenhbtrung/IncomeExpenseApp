@@ -28,31 +28,33 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.saveIncomeButton = new System.Windows.Forms.Button();
+            this.saveExpenseButton = new System.Windows.Forms.Button();
             this.incomeDetailLabel = new System.Windows.Forms.Label();
-            this.incomeDetailText = new System.Windows.Forms.TextBox();
-            this.incomeCategoryComboBox = new System.Windows.Forms.ComboBox();
-            this.incomeDatePicker = new System.Windows.Forms.DateTimePicker();
-            this.incomeAmountText = new System.Windows.Forms.TextBox();
-            this.incomeNameText = new System.Windows.Forms.TextBox();
+            this.expenseDetailText = new System.Windows.Forms.TextBox();
+            this.expenseCategoryComboBox = new System.Windows.Forms.ComboBox();
+            this.expenseDatePicker = new System.Windows.Forms.DateTimePicker();
+            this.expenseAmountText = new System.Windows.Forms.TextBox();
+            this.expenseNameText = new System.Windows.Forms.TextBox();
             this.incomeDateLabel = new System.Windows.Forms.Label();
             this.incomeAmountLabel = new System.Windows.Forms.Label();
             this.incomeCategoryLabel = new System.Windows.Forms.Label();
             this.incomeNameLabel = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
+            this.notification = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // saveIncomeButton
+            // saveExpenseButton
             // 
-            this.saveIncomeButton.BackColor = System.Drawing.Color.Cyan;
-            this.saveIncomeButton.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.saveIncomeButton.Location = new System.Drawing.Point(590, 442);
-            this.saveIncomeButton.Name = "saveIncomeButton";
-            this.saveIncomeButton.Size = new System.Drawing.Size(250, 57);
-            this.saveIncomeButton.TabIndex = 72;
-            this.saveIncomeButton.Text = "Lưu khoản chi";
-            this.saveIncomeButton.UseVisualStyleBackColor = false;
+            this.saveExpenseButton.BackColor = System.Drawing.Color.Cyan;
+            this.saveExpenseButton.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.saveExpenseButton.Location = new System.Drawing.Point(590, 442);
+            this.saveExpenseButton.Name = "saveExpenseButton";
+            this.saveExpenseButton.Size = new System.Drawing.Size(250, 57);
+            this.saveExpenseButton.TabIndex = 72;
+            this.saveExpenseButton.Text = "Lưu khoản chi";
+            this.saveExpenseButton.UseVisualStyleBackColor = false;
+            this.saveExpenseButton.Click += new System.EventHandler(this.saveExpenseButton_Click);
             // 
             // incomeDetailLabel
             // 
@@ -64,47 +66,47 @@
             this.incomeDetailLabel.TabIndex = 71;
             this.incomeDetailLabel.Text = "Chi tiết khoản tiêu:";
             // 
-            // incomeDetailText
+            // expenseDetailText
             // 
-            this.incomeDetailText.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.incomeDetailText.Location = new System.Drawing.Point(187, 407);
-            this.incomeDetailText.Multiline = true;
-            this.incomeDetailText.Name = "incomeDetailText";
-            this.incomeDetailText.Size = new System.Drawing.Size(250, 141);
-            this.incomeDetailText.TabIndex = 70;
+            this.expenseDetailText.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.expenseDetailText.Location = new System.Drawing.Point(187, 407);
+            this.expenseDetailText.Multiline = true;
+            this.expenseDetailText.Name = "expenseDetailText";
+            this.expenseDetailText.Size = new System.Drawing.Size(250, 141);
+            this.expenseDetailText.TabIndex = 70;
             // 
-            // incomeCategoryComboBox
+            // expenseCategoryComboBox
             // 
-            this.incomeCategoryComboBox.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.incomeCategoryComboBox.FormattingEnabled = true;
-            this.incomeCategoryComboBox.Location = new System.Drawing.Point(590, 189);
-            this.incomeCategoryComboBox.Name = "incomeCategoryComboBox";
-            this.incomeCategoryComboBox.Size = new System.Drawing.Size(250, 31);
-            this.incomeCategoryComboBox.TabIndex = 69;
+            this.expenseCategoryComboBox.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.expenseCategoryComboBox.FormattingEnabled = true;
+            this.expenseCategoryComboBox.Location = new System.Drawing.Point(590, 189);
+            this.expenseCategoryComboBox.Name = "expenseCategoryComboBox";
+            this.expenseCategoryComboBox.Size = new System.Drawing.Size(250, 31);
+            this.expenseCategoryComboBox.TabIndex = 69;
             // 
-            // incomeDatePicker
+            // expenseDatePicker
             // 
-            this.incomeDatePicker.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.incomeDatePicker.Location = new System.Drawing.Point(590, 302);
-            this.incomeDatePicker.Name = "incomeDatePicker";
-            this.incomeDatePicker.Size = new System.Drawing.Size(250, 32);
-            this.incomeDatePicker.TabIndex = 68;
+            this.expenseDatePicker.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.expenseDatePicker.Location = new System.Drawing.Point(590, 302);
+            this.expenseDatePicker.Name = "expenseDatePicker";
+            this.expenseDatePicker.Size = new System.Drawing.Size(250, 32);
+            this.expenseDatePicker.TabIndex = 68;
             // 
-            // incomeAmountText
+            // expenseAmountText
             // 
-            this.incomeAmountText.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.incomeAmountText.Location = new System.Drawing.Point(187, 302);
-            this.incomeAmountText.Name = "incomeAmountText";
-            this.incomeAmountText.Size = new System.Drawing.Size(250, 32);
-            this.incomeAmountText.TabIndex = 67;
+            this.expenseAmountText.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.expenseAmountText.Location = new System.Drawing.Point(187, 302);
+            this.expenseAmountText.Name = "expenseAmountText";
+            this.expenseAmountText.Size = new System.Drawing.Size(250, 32);
+            this.expenseAmountText.TabIndex = 67;
             // 
-            // incomeNameText
+            // expenseNameText
             // 
-            this.incomeNameText.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.incomeNameText.Location = new System.Drawing.Point(187, 188);
-            this.incomeNameText.Name = "incomeNameText";
-            this.incomeNameText.Size = new System.Drawing.Size(250, 32);
-            this.incomeNameText.TabIndex = 66;
+            this.expenseNameText.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.expenseNameText.Location = new System.Drawing.Point(187, 189);
+            this.expenseNameText.Name = "expenseNameText";
+            this.expenseNameText.Size = new System.Drawing.Size(250, 32);
+            this.expenseNameText.TabIndex = 66;
             // 
             // incomeDateLabel
             // 
@@ -130,7 +132,7 @@
             // 
             this.incomeCategoryLabel.AutoSize = true;
             this.incomeCategoryLabel.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.incomeCategoryLabel.Location = new System.Drawing.Point(586, 162);
+            this.incomeCategoryLabel.Location = new System.Drawing.Point(586, 163);
             this.incomeCategoryLabel.Name = "incomeCategoryLabel";
             this.incomeCategoryLabel.Size = new System.Drawing.Size(101, 23);
             this.incomeCategoryLabel.TabIndex = 63;
@@ -140,7 +142,7 @@
             // 
             this.incomeNameLabel.AutoSize = true;
             this.incomeNameLabel.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.incomeNameLabel.Location = new System.Drawing.Point(183, 162);
+            this.incomeNameLabel.Location = new System.Drawing.Point(183, 163);
             this.incomeNameLabel.Name = "incomeNameLabel";
             this.incomeNameLabel.Size = new System.Drawing.Size(169, 23);
             this.incomeNameLabel.TabIndex = 62;
@@ -150,7 +152,7 @@
             // 
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Segoe UI", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(315, 74);
+            this.label11.Location = new System.Drawing.Point(315, 73);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(335, 50);
             this.label11.TabIndex = 61;
@@ -165,17 +167,30 @@
             this.label10.Size = new System.Drawing.Size(0, 50);
             this.label10.TabIndex = 60;
             // 
+            // notification
+            // 
+            this.notification.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.notification.ForeColor = System.Drawing.Color.Red;
+            this.notification.Location = new System.Drawing.Point(590, 505);
+            this.notification.Name = "notification";
+            this.notification.Size = new System.Drawing.Size(250, 43);
+            this.notification.TabIndex = 73;
+            this.notification.Text = "Thông báo";
+            this.notification.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.notification.Visible = false;
+            // 
             // ExpenseControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.saveIncomeButton);
+            this.Controls.Add(this.notification);
+            this.Controls.Add(this.saveExpenseButton);
             this.Controls.Add(this.incomeDetailLabel);
-            this.Controls.Add(this.incomeDetailText);
-            this.Controls.Add(this.incomeCategoryComboBox);
-            this.Controls.Add(this.incomeDatePicker);
-            this.Controls.Add(this.incomeAmountText);
-            this.Controls.Add(this.incomeNameText);
+            this.Controls.Add(this.expenseDetailText);
+            this.Controls.Add(this.expenseCategoryComboBox);
+            this.Controls.Add(this.expenseDatePicker);
+            this.Controls.Add(this.expenseAmountText);
+            this.Controls.Add(this.expenseNameText);
             this.Controls.Add(this.incomeDateLabel);
             this.Controls.Add(this.incomeAmountLabel);
             this.Controls.Add(this.incomeCategoryLabel);
@@ -191,18 +206,19 @@
 
         #endregion
 
-        private System.Windows.Forms.Button saveIncomeButton;
+        private System.Windows.Forms.Button saveExpenseButton;
         private System.Windows.Forms.Label incomeDetailLabel;
-        private System.Windows.Forms.TextBox incomeDetailText;
-        private System.Windows.Forms.ComboBox incomeCategoryComboBox;
-        private System.Windows.Forms.DateTimePicker incomeDatePicker;
-        private System.Windows.Forms.TextBox incomeAmountText;
-        private System.Windows.Forms.TextBox incomeNameText;
+        private System.Windows.Forms.TextBox expenseDetailText;
+        private System.Windows.Forms.ComboBox expenseCategoryComboBox;
+        private System.Windows.Forms.DateTimePicker expenseDatePicker;
+        private System.Windows.Forms.TextBox expenseAmountText;
+        private System.Windows.Forms.TextBox expenseNameText;
         private System.Windows.Forms.Label incomeDateLabel;
         private System.Windows.Forms.Label incomeAmountLabel;
         private System.Windows.Forms.Label incomeCategoryLabel;
         private System.Windows.Forms.Label incomeNameLabel;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label notification;
     }
 }
