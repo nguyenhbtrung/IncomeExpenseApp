@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Data;
+using System.Diagnostics;
 using System.Windows.Forms;
 
 namespace IncomeExpenseApp.Controls
@@ -72,17 +73,73 @@ namespace IncomeExpenseApp.Controls
             LoadExpenseData();
             LoadProfitData();
             LoadProfitChartData();
+            LoadBest();
+            LoadIncomeExpenseChart();
+        }
+
+        private void LoadIncomeExpenseChart()
+        {
+            string query =
+                "select TMonth.month, isnull(IncomeMonth.amount, 0) as incAmount, isnull(ExpenseMonth.amount, 0) as exAmount from " +
+                $"(select format(incDate, 'MM/yyyy') as month, year(incDate) as year from Income where userId = {UserId} " +
+                "union " +
+                $"select format(exDate, 'MM/yyyy') as month, year(exDate) as year from Expense where userId = {UserId}) as TMonth " +
+                $"left join (select format(incDate, 'MM/yyyy') as date, sum(incAmount) as amount from Income where userId = {UserId} " +
+                "group by year(incDate), format(incDate, 'MM/yyyy')) as IncomeMonth " +
+                "on IncomeMonth.date = TMonth.month " +
+                $"left join (select format(exDate, 'MM/yyyy') as date, sum(exAmount) as amount from Expense where userId = {UserId} " +
+                "group by year(exDate), format(exDate, 'MM/yyyy')) as ExpenseMonth " +
+                "on ExpenseMonth.date = TMonth.month " +
+                "order by TMonth.year, TMonth.month";
+            DataSet dataSet = databaseConnector.ExecuteDataSetQuery(query);
+            incomeExpendChart.DataSource = dataSet;
+            incomeExpendChart.Series[0].XValueMember = "month";
+            incomeExpendChart.Series[0].YValueMembers = "incAmount";
+            incomeExpendChart.Series[1].XValueMember = "month";
+            incomeExpendChart.Series[1].YValueMembers = "exAmount";
+        }
+
+        private void LoadBest()
+        {
+            object result = databaseConnector.ExecuteScalar($"select top 1 incAmount from Income where userId = {UserId} order by incAmount desc");
+            if (result != null && result != DBNull.Value)
+            {
+                int best = (int)result;
+                bestIncomeLabel.Text = best.ToString("N0") + currencyUnit;
+            }
+
+            result = databaseConnector.ExecuteScalar($"select top 1 incAmount from Income where month(incDate) = month(getdate()) and year(incDate) = year(getdate()) and userId = {UserId} order by incAmount desc");
+            if (result != null && result != DBNull.Value)
+            {
+                int best = (int)result;
+                bestIncomeMonthLabel.Text = best.ToString("N0") + currencyUnit;
+            }
+
+            result = databaseConnector.ExecuteScalar($"select top 1 exAmount from Expense where userId = {UserId} order by exAmount desc");
+            if (result != null && result != DBNull.Value)
+            {
+                int best = (int)result;
+                bestExpenseLabel.Text = best.ToString("N0") + currencyUnit;
+            }
+
+            result = databaseConnector.ExecuteScalar($"select top 1 exAmount from Expense where month(exDate) = month(getdate()) and year(exDate) = year(getdate()) and userId = {UserId} order by exAmount desc");
+            if (result != null && result != DBNull.Value)
+            {
+                int best = (int)result;
+                bestExpenseMonthLabel.Text = best.ToString("N0") + currencyUnit;
+            }
         }
 
         private void LoadProfitChartData()
         {
-            profitChartDataTable = databaseConnector.ExecuteDataTableQuery(
+            string query = 
                 "with IncomeAndExpense as " +
-                $"(select incDate as date, incAmount as amount from Income where userId = {userId}" +
+                $"(select incDate as date, incAmount as amount from Income where userId = {UserId}" +
                 "union all " +
-                $"select exDate as date, -exAmount as amount from Expense where userId = {userId}) " +
+                $"select exDate as date, -exAmount as amount from Expense where userId = {UserId}) " +
                 "select format(t1.date, 'dd/MM/yy') as date, sum(t2.amount) as profit from IncomeAndExpense t1 join IncomeAndExpense t2 on t2.date <= t1.date " +
-                "group by t1.date order by t1.date");
+                "group by t1.date order by t1.date";
+            profitChartDataTable = databaseConnector.ExecuteDataTableQuery(query);
             profitChart.DataSource = profitChartDataTable;
             profitChart.Series[0].XValueMember = "date";
             profitChart.Series[0].YValueMembers = "profit";
@@ -113,39 +170,39 @@ namespace IncomeExpenseApp.Controls
 
         private void LoadExpenseData()
         {
-            object result = databaseConnector.ExecuteScalar($"select sum(exAmount) from Expense where userId = {userId}");
+            object result = databaseConnector.ExecuteScalar($"select sum(exAmount) from Expense where userId = {UserId}");
             if (result != null && result != DBNull.Value)
             {
                 amountExpense = (int)result;
                 amountExpenselabel.Text = amountExpense.ToString("N0") + currencyUnit;
             }
 
-            result = databaseConnector.ExecuteScalar($"select count(exAmount) from Expense where userId = {userId}");
+            result = databaseConnector.ExecuteScalar($"select count(exAmount) from Expense where userId = {UserId}");
             if (result != null && result != DBNull.Value)
             {
                 int transaction = (int)result;
                 transactionExpenseLabel.Text = transaction.ToString();
             }
 
-            result = databaseConnector.ExecuteScalar($"select top 1 format(exDate, 'dd/MM/yyyy') from Expense where userId = {userId} order by exDate desc");
+            result = databaseConnector.ExecuteScalar($"select top 1 format(exDate, 'dd/MM/yyyy') from Expense where userId = {UserId} order by exDate desc");
 
             if (result != null && result != DBNull.Value)
             {
                 string lastDate = result.ToString();
-                lastTransactionExpenseLabel.Text = "Giao dịch cuối: " + lastDate;
+                lastExpenseLabel.Text = "Giao dịch cuối: " + lastDate;
             }
         }
 
         private void LoadIncomeData()
         {
-            object result = databaseConnector.ExecuteScalar($"select sum(incAmount) from Income where userId = {userId}");
+            object result = databaseConnector.ExecuteScalar($"select sum(incAmount) from Income where userId = {UserId}");
             if (result != null && result != DBNull.Value)
             {
                 amountIncome = (int)result;
                 amountIncomeLabel.Text = amountIncome.ToString("N0") + currencyUnit;
             }
 
-            result = databaseConnector.ExecuteScalar($"select count(incAmount) from Income where userId = {userId}");
+            result = databaseConnector.ExecuteScalar($"select count(incAmount) from Income where userId = {UserId}");
 
             if (result != null && result != DBNull.Value)
             {
@@ -153,12 +210,12 @@ namespace IncomeExpenseApp.Controls
                 transactionIncomeLabel.Text = transaction.ToString();
             }
 
-            result = databaseConnector.ExecuteScalar($"select top 1 format(incDate, 'dd/MM/yyyy') from Income where userId = {userId} order by incDate desc");
+            result = databaseConnector.ExecuteScalar($"select top 1 format(incDate, 'dd/MM/yyyy') from Income where userId = {UserId} order by incDate desc");
 
             if (result != null && result != DBNull.Value)
             {
                 string lastDate = result.ToString();
-                lastTransactionIncomeLabel.Text = "Giao dịch cuối: " + lastDate;
+                lastIncomeLabel.Text = "Giao dịch cuối: " + lastDate;
             }
         }
 
