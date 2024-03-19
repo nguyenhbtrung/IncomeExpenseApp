@@ -54,8 +54,12 @@ namespace IncomeExpenseApp.Controls
                 string date = incomeDatePicker.Value.ToString("yyyy-MM-dd");
                 Debug.WriteLine($"insert into Income (incName, incCategory, incAmount, incDate, incDesciption, userId) values (N'{incomeNameText.Text}', N'{incomeCategoryComboBox.Text}', {Amount}, {incomeDatePicker.Value.ToShortDateString()}, N'{incomeDetailText.Text}', {userId})");
                 databaseConnector.ExecuteNonQuery($"insert into Income (incName, incCategory, incAmount, incDate, incDesciption, userId) values (N'{incomeNameText.Text}', N'{incomeCategoryComboBox.Text}', {Amount}, '{date}', N'{incomeDetailText.Text}', {userId})");
-                notification.Text = "Lưu thành công!!";
-                notification.Visible = true;
+                MessageBox.Show("Lưu thành công!!", "Thông báo");
+                incomeNameText.Clear();
+                incomeCategoryComboBox.SelectedIndex = -1;
+                incomeAmountText.Clear();
+                incomeDetailText.Clear();
+                notification.Visible = false;
                 return;
             }
             else

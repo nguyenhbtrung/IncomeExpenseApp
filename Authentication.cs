@@ -28,7 +28,7 @@ namespace IncomeExpenseApp
             if (codeField.Text.Equals(Register.maXacThuc))
             {
                 databaseConnector.ExecuteNonQuery($"insert into UserInfo values (N'{Register.username}', N'{Register.password}', N'{Register.email}')");
-                MessageBox.Show("Tạo tài khoản thành công!!");
+                MessageBox.Show("Tạo tài khoản thành công!!", "Thông báo");
                 this.Close();
                 Login obj = new Login();
                 obj.Show();
