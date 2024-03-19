@@ -51,7 +51,7 @@ namespace IncomeExpenseApp.Controls
 
         private void radioButton2_CheckedChanged(object sender, EventArgs e)
         {
-            chart1.BringToFront();
+            topChart.BringToFront();
             panel6.BringToFront();
         }
 
@@ -75,6 +75,33 @@ namespace IncomeExpenseApp.Controls
             LoadProfitChartData();
             LoadBest();
             LoadIncomeExpenseChart();
+            LoadTopChart();
+        }
+
+        private void LoadTopChart()
+        {
+            string incomeQuery = 
+                "with Top3 as " +
+                $"(select top 3 incId, incName, incAmount from Income where month(incDate) = month(getdate()) and year(incDate) = year(getdate()) and userId = {UserId}) " +
+                "select incName, incAmount from Top3 " +
+                "union all " +
+                $"select N'Còn lại' as incName, sum(incAmount) from Income where month(incDate) = month(getdate()) and year(incDate) = year(getdate()) and userId = {UserId} and incId not in (select incId from Top3)";
+            string expenseQuery = 
+                "with Top3 as " +
+                $"(select top 3 exId, exName, exAmount from Expense where month(exDate) = month(getdate()) and year(exDate) = year(getdate()) and userId = {UserId}) " +
+                "select exName, exAmount from Top3 " +
+                "union all " +
+                $"select N'Còn lại' as exName, sum(exAmount) from Expense where month(exDate) = month(getdate()) and year(exDate) = year(getdate()) and userId = {UserId} and exId not in (select exId from Top3)";
+            DataSet dataSet = databaseConnector.ExecuteDataSetQuery(incomeQuery);
+            DataSet expenseData = databaseConnector.ExecuteDataSetQuery(expenseQuery);
+            dataSet.Merge(expenseData);
+            topChart.DataSource = dataSet;
+            topChart.Series[0].XValueMember = "incName";
+            topChart.Series[0].YValueMembers = "incAmount";
+ 
+            topChart.Series[1].XValueMember = "exName";
+            topChart.Series[1].YValueMembers = "exAmount";
+            topChart.DataBind();
         }
 
         private void LoadIncomeExpenseChart()
@@ -91,12 +118,17 @@ namespace IncomeExpenseApp.Controls
                 "group by year(exDate), format(exDate, 'MM/yyyy')) as ExpenseMonth " +
                 "on ExpenseMonth.date = TMonth.month " +
                 "order by TMonth.year, TMonth.month";
-            DataSet dataSet = databaseConnector.ExecuteDataSetQuery(query);
-            incomeExpendChart.DataSource = dataSet;
+            DataTable dataTable = databaseConnector.ExecuteDataTableQuery(query);
+            incomeExpendChart.DataSource = dataTable;
             incomeExpendChart.Series[0].XValueMember = "month";
             incomeExpendChart.Series[0].YValueMembers = "incAmount";
             incomeExpendChart.Series[1].XValueMember = "month";
             incomeExpendChart.Series[1].YValueMembers = "exAmount";
+
+            if (dataTable.Rows.Count > 10)
+            {
+                incomeExpendChart.ChartAreas[0].AxisX.ScaleView.Zoom(1, 11);
+            }
         }
 
         private void LoadBest()
