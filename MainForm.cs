@@ -33,6 +33,7 @@ namespace IncomeExpenseApp
             SetControlsUserId(userId);
 
             dashBoardControl1.LoadData();
+            planControl1.LoadData();
 
             SetMenuPanelsIndex();
 
