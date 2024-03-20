@@ -345,7 +345,7 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = global::IncomeExpenseApp.Properties.Resources.Untitled_1;
+            this.pictureBox1.Image = global::IncomeExpenseApp.Properties.Resources.logo2;
             this.pictureBox1.Location = new System.Drawing.Point(12, 12);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(35, 50);
