@@ -26,6 +26,22 @@ namespace IncomeExpenseApp.Controls
         public void LoadData()
         {
             LoadBudgetPanel();
+            LoadTable();
+        }
+
+        private void LoadTable()
+        {
+            string query =
+                "select epId, epName, epCategory, epAmount, epDate " +
+                $"from ExpensePlan where userId = {UserId}";
+            DataTable dataTable = databaseConnector.ExecuteDataTableQuery(query);
+            dataTable.Columns["epId"].ColumnName = "STT";
+            dataTable.Columns["epName"].ColumnName = "Tên khoản chi";
+            dataTable.Columns["epCategory"].ColumnName = "Danh mục";
+            dataTable.Columns["epAmount"].ColumnName = "Số tiền";
+            dataTable.Columns["epDate"].ColumnName = "Ngày chi";
+
+            expensePlanTable.DataSource = dataTable;
         }
 
         private void LoadBudgetPanel()
