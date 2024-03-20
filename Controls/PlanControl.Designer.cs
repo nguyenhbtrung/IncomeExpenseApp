@@ -28,10 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.expensePlanTable = new System.Windows.Forms.DataGridView();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.textBox3 = new System.Windows.Forms.TextBox();
@@ -44,7 +44,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.deleteAllButton = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -53,6 +53,7 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.button4 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.expensePlanTable)).BeginInit();
             this.budgetPanel.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -62,41 +63,42 @@
             // 
             // expensePlanTable
             // 
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.expensePlanTable.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.expensePlanTable.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.expensePlanTable.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.expensePlanTable.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.expensePlanTable.BackgroundColor = System.Drawing.Color.White;
             this.expensePlanTable.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.expensePlanTable.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.expensePlanTable.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.RoyalBlue;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle6.Padding = new System.Windows.Forms.Padding(10, 5, 10, 5);
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.RoyalBlue;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.expensePlanTable.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.RoyalBlue;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.Padding = new System.Windows.Forms.Padding(10, 5, 10, 5);
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.RoyalBlue;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.expensePlanTable.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.expensePlanTable.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.expensePlanTable.Cursor = System.Windows.Forms.Cursors.Default;
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle7.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle7.Padding = new System.Windows.Forms.Padding(10, 5, 10, 5);
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.ScrollBar;
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.expensePlanTable.DefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle3.Padding = new System.Windows.Forms.Padding(10, 5, 10, 5);
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.ScrollBar;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.expensePlanTable.DefaultCellStyle = dataGridViewCellStyle3;
             this.expensePlanTable.EnableHeadersVisualStyles = false;
             this.expensePlanTable.Location = new System.Drawing.Point(27, 21);
             this.expensePlanTable.Name = "expensePlanTable";
+            this.expensePlanTable.ReadOnly = true;
             this.expensePlanTable.RowHeadersVisible = false;
             this.expensePlanTable.RowHeadersWidth = 51;
-            dataGridViewCellStyle8.Padding = new System.Windows.Forms.Padding(10, 5, 10, 5);
-            this.expensePlanTable.RowsDefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle4.Padding = new System.Windows.Forms.Padding(10, 5, 10, 5);
+            this.expensePlanTable.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.expensePlanTable.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.expensePlanTable.Size = new System.Drawing.Size(908, 295);
             this.expensePlanTable.TabIndex = 0;
@@ -104,7 +106,7 @@
             // textBox1
             // 
             this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.textBox1.Location = new System.Drawing.Point(377, 66);
+            this.textBox1.Location = new System.Drawing.Point(376, 56);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(221, 29);
             this.textBox1.TabIndex = 1;
@@ -112,17 +114,17 @@
             // textBox3
             // 
             this.textBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.textBox3.Location = new System.Drawing.Point(33, 69);
+            this.textBox3.Location = new System.Drawing.Point(134, 56);
             this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(246, 29);
+            this.textBox3.Size = new System.Drawing.Size(214, 29);
             this.textBox3.TabIndex = 3;
             // 
             // textBox4
             // 
             this.textBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.textBox4.Location = new System.Drawing.Point(33, 144);
+            this.textBox4.Location = new System.Drawing.Point(134, 144);
             this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(246, 29);
+            this.textBox4.Size = new System.Drawing.Size(214, 29);
             this.textBox4.TabIndex = 4;
             // 
             // budgetPanel
@@ -152,14 +154,14 @@
             // 
             // expectedExpenseLabel
             // 
-            this.expectedExpenseLabel.AutoSize = true;
             this.expectedExpenseLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.expectedExpenseLabel.ForeColor = System.Drawing.Color.Gray;
-            this.expectedExpenseLabel.Location = new System.Drawing.Point(177, 43);
+            this.expectedExpenseLabel.Location = new System.Drawing.Point(136, 44);
             this.expectedExpenseLabel.Name = "expectedExpenseLabel";
-            this.expectedExpenseLabel.Size = new System.Drawing.Size(26, 29);
+            this.expectedExpenseLabel.Size = new System.Drawing.Size(113, 29);
             this.expectedExpenseLabel.TabIndex = 8;
             this.expectedExpenseLabel.Text = "0";
+            this.expectedExpenseLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // budgetLabel
             // 
@@ -200,7 +202,7 @@
             this.button1.BackColor = System.Drawing.SystemColors.Control;
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.SystemColors.Desktop;
-            this.button1.Location = new System.Drawing.Point(108, 144);
+            this.button1.Location = new System.Drawing.Point(26, 25);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 31);
             this.button1.TabIndex = 7;
@@ -212,31 +214,32 @@
             this.button2.BackColor = System.Drawing.SystemColors.Control;
             this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button2.ForeColor = System.Drawing.SystemColors.Desktop;
-            this.button2.Location = new System.Drawing.Point(27, 144);
+            this.button2.Location = new System.Drawing.Point(26, 142);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(75, 31);
             this.button2.TabIndex = 8;
             this.button2.Text = "Xoá";
             this.button2.UseVisualStyleBackColor = false;
             // 
-            // button3
+            // deleteAllButton
             // 
-            this.button3.BackColor = System.Drawing.SystemColors.Control;
-            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.ForeColor = System.Drawing.SystemColors.Desktop;
-            this.button3.Location = new System.Drawing.Point(189, 144);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(92, 31);
-            this.button3.TabIndex = 9;
-            this.button3.Text = "Xoá tất cả";
-            this.button3.UseVisualStyleBackColor = false;
+            this.deleteAllButton.BackColor = System.Drawing.SystemColors.Control;
+            this.deleteAllButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.deleteAllButton.ForeColor = System.Drawing.SystemColors.Desktop;
+            this.deleteAllButton.Location = new System.Drawing.Point(27, 151);
+            this.deleteAllButton.Name = "deleteAllButton";
+            this.deleteAllButton.Size = new System.Drawing.Size(254, 31);
+            this.deleteAllButton.TabIndex = 9;
+            this.deleteAllButton.Text = "Xoá toàn bộ";
+            this.deleteAllButton.UseVisualStyleBackColor = false;
+            this.deleteAllButton.Click += new System.EventHandler(this.deleteAllButton_Click);
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.Indigo;
-            this.label3.Location = new System.Drawing.Point(29, 38);
+            this.label3.Location = new System.Drawing.Point(130, 25);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(108, 20);
             this.label3.TabIndex = 10;
@@ -247,7 +250,7 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.Indigo;
-            this.label4.Location = new System.Drawing.Point(373, 35);
+            this.label4.Location = new System.Drawing.Point(373, 25);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(82, 20);
             this.label4.TabIndex = 11;
@@ -258,7 +261,7 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.Indigo;
-            this.label5.Location = new System.Drawing.Point(29, 113);
+            this.label5.Location = new System.Drawing.Point(130, 113);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(59, 20);
             this.label5.TabIndex = 12;
@@ -269,7 +272,7 @@
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.Indigo;
-            this.label6.Location = new System.Drawing.Point(373, 110);
+            this.label6.Location = new System.Drawing.Point(373, 113);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(69, 20);
             this.label6.TabIndex = 13;
@@ -289,9 +292,7 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.White;
-            this.panel2.Controls.Add(this.button3);
-            this.panel2.Controls.Add(this.button2);
-            this.panel2.Controls.Add(this.button1);
+            this.panel2.Controls.Add(this.deleteAllButton);
             this.panel2.Controls.Add(this.budgetPanel);
             this.panel2.Location = new System.Drawing.Point(25, 27);
             this.panel2.Name = "panel2";
@@ -310,8 +311,11 @@
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.Color.White;
+            this.panel4.Controls.Add(this.button4);
+            this.panel4.Controls.Add(this.button2);
             this.panel4.Controls.Add(this.dateTimePicker1);
             this.panel4.Controls.Add(this.textBox4);
+            this.panel4.Controls.Add(this.button1);
             this.panel4.Controls.Add(this.textBox1);
             this.panel4.Controls.Add(this.textBox3);
             this.panel4.Controls.Add(this.label6);
@@ -322,6 +326,18 @@
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(629, 201);
             this.panel4.TabIndex = 18;
+            // 
+            // button4
+            // 
+            this.button4.BackColor = System.Drawing.SystemColors.Control;
+            this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button4.ForeColor = System.Drawing.SystemColors.Desktop;
+            this.button4.Location = new System.Drawing.Point(26, 84);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(75, 31);
+            this.button4.TabIndex = 15;
+            this.button4.Text = "Lưu";
+            this.button4.UseVisualStyleBackColor = false;
             // 
             // PlanControl
             // 
@@ -355,7 +371,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button deleteAllButton;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
@@ -367,5 +383,6 @@
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Button button4;
     }
 }

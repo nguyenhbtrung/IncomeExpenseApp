@@ -32,7 +32,7 @@ namespace IncomeExpenseApp.Controls
         private void LoadTable()
         {
             string query =
-                "select epId, epName, epCategory, epAmount, epDate " +
+                "select epId, epName, epCategory, epAmount, format(epDate, 'dd/MM/yyyy') as epDate " +
                 $"from ExpensePlan where userId = {UserId}";
             DataTable dataTable = databaseConnector.ExecuteDataTableQuery(query);
             dataTable.Columns["epId"].ColumnName = "STT";
@@ -85,6 +85,15 @@ namespace IncomeExpenseApp.Controls
                 expectedExpenseLabel.Text = expectedExpense.ToString("0,,.00") + "M";
             }
 
+        }
+
+        private void deleteAllButton_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Bạn có chắc muốn xoá toàn bộ kế hoạch chi tiêu?", "Xác nhận", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                databaseConnector.ExecuteNonQuery($"delete from ExpensePlan where userId = {UserId}");
+                LoadTable();
+            }
         }
     }
 }

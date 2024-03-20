@@ -110,6 +110,7 @@ namespace IncomeExpenseApp
         private void OpenPlan(object sender, EventArgs e)
         {
             planControl1.BringToFront();
+            planControl1.LoadData();
             Panel newSelectedPanel = menuPlanPanel;
             ChangeTheSelectionDisplay(menuSelectedPanel, newSelectedPanel);
         }
