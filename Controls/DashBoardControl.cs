@@ -124,6 +124,8 @@ namespace IncomeExpenseApp.Controls
             incomeExpendChart.Series[0].YValueMembers = "incAmount";
             incomeExpendChart.Series[1].XValueMember = "month";
             incomeExpendChart.Series[1].YValueMembers = "exAmount";
+            incomeExpendChart.DataBind();
+       
 
             if (dataTable.Rows.Count > 10)
             {
@@ -169,7 +171,8 @@ namespace IncomeExpenseApp.Controls
                 $"(select incDate as date, incAmount as amount from Income where userId = {UserId}" +
                 "union all " +
                 $"select exDate as date, -exAmount as amount from Expense where userId = {UserId}) " +
-                "select format(t1.date, 'dd/MM/yy') as date, sum(t2.amount) as profit from IncomeAndExpense t1 join IncomeAndExpense t2 on t2.date <= t1.date " +
+                "select format(t1.date, 'dd/MM/yy') as date, sum(t2.amount) as profit from (select distinct date from IncomeAndExpense) as t1 " +
+                "join IncomeAndExpense t2 on t2.date <= t1.date " +
                 "group by t1.date order by t1.date";
             profitChartDataTable = databaseConnector.ExecuteDataTableQuery(query);
             profitChart.DataSource = profitChartDataTable;
