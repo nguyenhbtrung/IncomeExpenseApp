@@ -36,7 +36,7 @@ namespace IncomeExpenseApp.Controls
                 "select epId, epName, epCategory, epAmount, format(epDate, 'dd/MM/yyyy') as epDateFormat " +
                 $"from ExpensePlan where userId = {UserId} order by epDate desc";
             DataTable dataTable = databaseConnector.ExecuteDataTableQuery(query);
-            dataTable.Columns["epId"].ColumnName = "STT";
+            //dataTable.Columns["epId"].ColumnName = "STT";
             dataTable.Columns["epName"].ColumnName = "Tên khoản chi";
             dataTable.Columns["epCategory"].ColumnName = "Danh mục";
             dataTable.Columns["epAmount"].ColumnName = "Số tiền";
@@ -129,7 +129,8 @@ namespace IncomeExpenseApp.Controls
                 "insert into ExpensePlan values" +
                 $"(N'{name}', N'{category}', {amount}, '{date}', {UserId})";
             databaseConnector.ExecuteNonQuery(query);
-            //expensePlanTable.Rows.Add();
+            //DataGridViewRow row = (DataGridViewRow)expensePlanTable.Rows[0].Clone();
+    
             LoadData();
             //query = $"select top 1 epId from ExpensePlan where userId = {UserId} order by epId desc";
             //object result = databaseConnector.ExecuteScalar(query);
@@ -146,10 +147,10 @@ namespace IncomeExpenseApp.Controls
         {
             if (expensePlanTable.SelectedRows.Count > 0)
             {
-                string name = expensePlanTable.SelectedRows[0].Cells[1].Value.ToString();
-                string category = expensePlanTable.SelectedRows[0].Cells[2].Value.ToString();
-                string amount = expensePlanTable.SelectedRows[0].Cells[3].Value.ToString();
-                string dateStr = expensePlanTable.SelectedRows[0].Cells[4].Value.ToString();
+                string name = expensePlanTable.SelectedRows[0].Cells[2].Value.ToString();
+                string category = expensePlanTable.SelectedRows[0].Cells[3].Value.ToString();
+                string amount = expensePlanTable.SelectedRows[0].Cells[4].Value.ToString();
+                string dateStr = expensePlanTable.SelectedRows[0].Cells[5].Value.ToString();
                 nameTextBox.Text = name;
                 categoryTextBox.Text = category;
                 amountTextBox.Text = amount;
@@ -193,6 +194,19 @@ namespace IncomeExpenseApp.Controls
                 $"where epId = {epId}";
             databaseConnector.ExecuteNonQuery(query);
             LoadData();
+        }
+
+        private void expensePlanTable_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
+        {
+            foreach (DataGridViewRow row in expensePlanTable.Rows)
+            {
+                expensePlanTable.Rows[row.Index].Cells[0].Value = (row.Index + 1).ToString();
+            }
+        }
+
+        private void expensePlanTable_RowPostPaint(object sender, DataGridViewRowPostPaintEventArgs e)
+        {
+            
         }
     }
 }

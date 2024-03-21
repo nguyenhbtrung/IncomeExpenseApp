@@ -54,6 +54,7 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.saveButton = new System.Windows.Forms.Button();
+            this.serialNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.expensePlanTable)).BeginInit();
             this.budgetPanel.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -81,6 +82,8 @@
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.expensePlanTable.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.expensePlanTable.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.expensePlanTable.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.serialNumber});
             this.expensePlanTable.Cursor = System.Windows.Forms.Cursors.Default;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
@@ -103,6 +106,8 @@
             this.expensePlanTable.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.expensePlanTable.Size = new System.Drawing.Size(908, 295);
             this.expensePlanTable.TabIndex = 0;
+            this.expensePlanTable.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.expensePlanTable_DataBindingComplete);
+            this.expensePlanTable.RowPostPaint += new System.Windows.Forms.DataGridViewRowPostPaintEventHandler(this.expensePlanTable_RowPostPaint);
             this.expensePlanTable.SelectionChanged += new System.EventHandler(this.expensePlanTable_SelectionChanged);
             // 
             // categoryTextBox
@@ -344,6 +349,14 @@
             this.saveButton.UseVisualStyleBackColor = false;
             this.saveButton.Click += new System.EventHandler(this.saveButton_Click);
             // 
+            // serialNumber
+            // 
+            this.serialNumber.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.serialNumber.Frozen = true;
+            this.serialNumber.HeaderText = "STT";
+            this.serialNumber.Name = "serialNumber";
+            this.serialNumber.ReadOnly = true;
+            // 
             // PlanControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -389,5 +402,6 @@
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Button saveButton;
+        private System.Windows.Forms.DataGridViewTextBoxColumn serialNumber;
     }
 }
