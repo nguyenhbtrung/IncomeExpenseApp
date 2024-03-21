@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -32,14 +33,14 @@ namespace IncomeExpenseApp.Controls
         private void LoadTable()
         {
             string query =
-                "select epId, epName, epCategory, epAmount, format(epDate, 'dd/MM/yyyy') as epDate " +
-                $"from ExpensePlan where userId = {UserId}";
+                "select epId, epName, epCategory, epAmount, format(epDate, 'dd/MM/yyyy') as epDateFormat " +
+                $"from ExpensePlan where userId = {UserId} order by epDate desc";
             DataTable dataTable = databaseConnector.ExecuteDataTableQuery(query);
             dataTable.Columns["epId"].ColumnName = "STT";
             dataTable.Columns["epName"].ColumnName = "Tên khoản chi";
             dataTable.Columns["epCategory"].ColumnName = "Danh mục";
             dataTable.Columns["epAmount"].ColumnName = "Số tiền";
-            dataTable.Columns["epDate"].ColumnName = "Ngày chi";
+            dataTable.Columns["epDateFormat"].ColumnName = "Ngày chi";
 
             expensePlanTable.DataSource = dataTable;
         }
@@ -87,6 +88,24 @@ namespace IncomeExpenseApp.Controls
 
         }
 
+        private bool ValidateInput(string name, string category, string amountText, out int amount)
+        {
+            if (string.IsNullOrEmpty(name) || string.IsNullOrEmpty(category))
+            {
+                MessageBox.Show("Hãy điền đầy đủ thông tin!");
+                amount = 0;
+                return false;
+            }
+
+            if (!int.TryParse(amountText, out amount))
+            {
+                MessageBox.Show("Số tiền phải là một số!");
+                return false;
+            }
+
+            return true;
+        }
+
         private void deleteAllButton_Click(object sender, EventArgs e)
         {
             if (MessageBox.Show("Bạn có chắc muốn xoá toàn bộ kế hoạch chi tiêu?", "Xác nhận", MessageBoxButtons.YesNo) == DialogResult.Yes)
@@ -94,6 +113,86 @@ namespace IncomeExpenseApp.Controls
                 databaseConnector.ExecuteNonQuery($"delete from ExpensePlan where userId = {UserId}");
                 LoadTable();
             }
+        }
+
+        private void addButton_Click(object sender, EventArgs e)
+        {
+            string name = nameTextBox.Text;
+            string category = categoryTextBox.Text;
+            string amountStr = amountTextBox.Text;
+            string date = dateTimePicker.Value.Date.ToString();
+            int amount;
+            if (!ValidateInput(name, category, amountStr, out amount))
+                return;
+
+            string query = 
+                "insert into ExpensePlan values" +
+                $"(N'{name}', N'{category}', {amount}, '{date}', {UserId})";
+            databaseConnector.ExecuteNonQuery(query);
+            //expensePlanTable.Rows.Add();
+            LoadData();
+            //query = $"select top 1 epId from ExpensePlan where userId = {UserId} order by epId desc";
+            //object result = databaseConnector.ExecuteScalar(query);
+            //if (result != null && result != DBNull.Value)
+            //{
+            //    int epId = (int)result;
+                
+            //}
+            //expensePlanTable.SelectedRows.Clear();
+
+        }
+
+        private void expensePlanTable_SelectionChanged(object sender, EventArgs e)
+        {
+            if (expensePlanTable.SelectedRows.Count > 0)
+            {
+                string name = expensePlanTable.SelectedRows[0].Cells[1].Value.ToString();
+                string category = expensePlanTable.SelectedRows[0].Cells[2].Value.ToString();
+                string amount = expensePlanTable.SelectedRows[0].Cells[3].Value.ToString();
+                string dateStr = expensePlanTable.SelectedRows[0].Cells[4].Value.ToString();
+                nameTextBox.Text = name;
+                categoryTextBox.Text = category;
+                amountTextBox.Text = amount;
+                if (dateStr != "")
+                {
+                    DateTime date = DateTime.ParseExact(dateStr, "dd/MM/yyyy", null);
+                    dateTimePicker.Value = date;
+                } 
+            }
+        }
+
+        private void deleteButton_Click(object sender, EventArgs e)
+        {
+            object selectedRowId = expensePlanTable.SelectedRows[0].Cells[0].Value;
+            if (selectedRowId == null)
+                return;
+            string epId = selectedRowId.ToString();
+            string query = $"delete from ExpensePlan where epId = {epId}";
+            databaseConnector.ExecuteNonQuery(query);
+            LoadData();
+        }
+
+        private void saveButton_Click(object sender, EventArgs e)
+        {
+            object selectedRowId = expensePlanTable.SelectedRows[0].Cells[0].Value;
+            if (selectedRowId == null)
+                return;
+            string epId = selectedRowId.ToString();
+            string name = nameTextBox.Text;
+            string category = categoryTextBox.Text;
+            string amountStr = amountTextBox.Text;
+            string date = dateTimePicker.Value.Date.ToString();
+            int amount;
+
+            if (!ValidateInput(name, category, amountStr, out amount))
+                return;
+
+            string query = 
+                $"update ExpensePlan " +
+                $"set epName = N'{name}', epCategory = N'{category}', epAmount = {amount}, epDate = '{date}'" +
+                $"where epId = {epId}";
+            databaseConnector.ExecuteNonQuery(query);
+            LoadData();
         }
     }
 }
