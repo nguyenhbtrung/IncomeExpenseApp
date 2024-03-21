@@ -28,34 +28,39 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.STT = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.IncomeName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Amount = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Date = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Detail = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            this.ViewExpenseTable = new System.Windows.Forms.DataGridView();
             this.incomeCategoryComboBox = new System.Windows.Forms.ComboBox();
             this.incomeNameText = new System.Windows.Forms.TextBox();
             this.incomeCategoryLabel = new System.Windows.Forms.Label();
             this.incomeNameLabel = new System.Windows.Forms.Label();
             this.nameLabel = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.incomeExpenseDataSet1 = new IncomeExpenseApp.IncomeExpenseDataSet1();
+            this.expenseBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.expenseTableAdapter = new IncomeExpenseApp.IncomeExpenseDataSet1TableAdapters.ExpenseTableAdapter();
+            this.exIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.exNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.exCategoryDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.exAmountDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.exDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.exDesciptionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            ((System.ComponentModel.ISupportInitialize)(this.ViewExpenseTable)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.incomeExpenseDataSet1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.expenseBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
-            // dataGridView1
+            // ViewExpenseTable
             // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
-            this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
-            this.dataGridView1.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Sunken;
+            this.ViewExpenseTable.AllowUserToAddRows = false;
+            this.ViewExpenseTable.AllowUserToDeleteRows = false;
+            this.ViewExpenseTable.AutoGenerateColumns = false;
+            this.ViewExpenseTable.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.ViewExpenseTable.BackgroundColor = System.Drawing.Color.White;
+            this.ViewExpenseTable.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Sunken;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -63,93 +68,39 @@
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.STT,
-            this.IncomeName,
-            this.Amount,
-            this.Date,
-            this.Detail});
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle6;
-            this.dataGridView1.Location = new System.Drawing.Point(9, 179);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle7;
-            this.dataGridView1.RowHeadersVisible = false;
-            this.dataGridView1.Size = new System.Drawing.Size(1004, 435);
-            this.dataGridView1.TabIndex = 70;
-            // 
-            // STT
-            // 
-            this.STT.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.STT.DefaultCellStyle = dataGridViewCellStyle2;
-            this.STT.HeaderText = "STT";
-            this.STT.MinimumWidth = 75;
-            this.STT.Name = "STT";
-            this.STT.ReadOnly = true;
-            this.STT.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.STT.Width = 75;
-            // 
-            // IncomeName
-            // 
-            this.IncomeName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Times New Roman", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.IncomeName.DefaultCellStyle = dataGridViewCellStyle3;
-            this.IncomeName.HeaderText = "Tên khoản tiêu";
-            this.IncomeName.MinimumWidth = 250;
-            this.IncomeName.Name = "IncomeName";
-            this.IncomeName.ReadOnly = true;
-            this.IncomeName.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.IncomeName.Width = 250;
-            // 
-            // Amount
-            // 
-            this.Amount.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.Amount.HeaderText = "Số tiền";
-            this.Amount.MinimumWidth = 150;
-            this.Amount.Name = "Amount";
-            this.Amount.ReadOnly = true;
-            this.Amount.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.Amount.Width = 150;
-            // 
-            // Date
-            // 
-            this.Date.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.Date.DefaultCellStyle = dataGridViewCellStyle4;
-            this.Date.HeaderText = "Ngày nhận";
-            this.Date.MinimumWidth = 150;
-            this.Date.Name = "Date";
-            this.Date.ReadOnly = true;
-            this.Date.Width = 150;
-            // 
-            // Detail
-            // 
-            this.Detail.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            this.Detail.DefaultCellStyle = dataGridViewCellStyle5;
-            this.Detail.HeaderText = "Chi tiết";
-            this.Detail.MinimumWidth = 376;
-            this.Detail.Name = "Detail";
-            this.Detail.ReadOnly = true;
-            this.Detail.Width = 376;
+            this.ViewExpenseTable.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.ViewExpenseTable.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.ViewExpenseTable.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.exIdDataGridViewTextBoxColumn,
+            this.exNameDataGridViewTextBoxColumn,
+            this.exCategoryDataGridViewTextBoxColumn,
+            this.exAmountDataGridViewTextBoxColumn,
+            this.exDateDataGridViewTextBoxColumn,
+            this.exDesciptionDataGridViewTextBoxColumn});
+            this.ViewExpenseTable.DataSource = this.expenseBindingSource;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.ViewExpenseTable.DefaultCellStyle = dataGridViewCellStyle3;
+            this.ViewExpenseTable.Location = new System.Drawing.Point(9, 179);
+            this.ViewExpenseTable.Name = "ViewExpenseTable";
+            this.ViewExpenseTable.ReadOnly = true;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.ViewExpenseTable.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            this.ViewExpenseTable.RowHeadersVisible = false;
+            this.ViewExpenseTable.Size = new System.Drawing.Size(1004, 435);
+            this.ViewExpenseTable.TabIndex = 70;
+            this.ViewExpenseTable.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.ViewExpenseTable_CellContentClick);
             // 
             // incomeCategoryComboBox
             // 
@@ -198,11 +149,90 @@
             this.nameLabel.TabIndex = 65;
             this.nameLabel.Text = "THỐNG KÊ CHI TIÊU";
             // 
+            // incomeExpenseDataSet1
+            // 
+            this.incomeExpenseDataSet1.DataSetName = "IncomeExpenseDataSet1";
+            this.incomeExpenseDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // expenseBindingSource
+            // 
+            this.expenseBindingSource.DataMember = "Expense";
+            this.expenseBindingSource.DataSource = this.incomeExpenseDataSet1;
+            // 
+            // expenseTableAdapter
+            // 
+            this.expenseTableAdapter.ClearBeforeFill = true;
+            // 
+            // exIdDataGridViewTextBoxColumn
+            // 
+            this.exIdDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.exIdDataGridViewTextBoxColumn.DataPropertyName = "exId";
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.exIdDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle2;
+            this.exIdDataGridViewTextBoxColumn.HeaderText = "STT";
+            this.exIdDataGridViewTextBoxColumn.Name = "exIdDataGridViewTextBoxColumn";
+            this.exIdDataGridViewTextBoxColumn.ReadOnly = true;
+            this.exIdDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.exIdDataGridViewTextBoxColumn.Width = 50;
+            // 
+            // exNameDataGridViewTextBoxColumn
+            // 
+            this.exNameDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.exNameDataGridViewTextBoxColumn.DataPropertyName = "exName";
+            this.exNameDataGridViewTextBoxColumn.HeaderText = "Tên khoản chi";
+            this.exNameDataGridViewTextBoxColumn.Name = "exNameDataGridViewTextBoxColumn";
+            this.exNameDataGridViewTextBoxColumn.ReadOnly = true;
+            this.exNameDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.exNameDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.exNameDataGridViewTextBoxColumn.Width = 200;
+            // 
+            // exCategoryDataGridViewTextBoxColumn
+            // 
+            this.exCategoryDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.exCategoryDataGridViewTextBoxColumn.DataPropertyName = "exCategory";
+            this.exCategoryDataGridViewTextBoxColumn.HeaderText = "Danh mục";
+            this.exCategoryDataGridViewTextBoxColumn.Name = "exCategoryDataGridViewTextBoxColumn";
+            this.exCategoryDataGridViewTextBoxColumn.ReadOnly = true;
+            this.exCategoryDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.exCategoryDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.exCategoryDataGridViewTextBoxColumn.Width = 200;
+            // 
+            // exAmountDataGridViewTextBoxColumn
+            // 
+            this.exAmountDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.exAmountDataGridViewTextBoxColumn.DataPropertyName = "exAmount";
+            this.exAmountDataGridViewTextBoxColumn.HeaderText = "Số tiền";
+            this.exAmountDataGridViewTextBoxColumn.Name = "exAmountDataGridViewTextBoxColumn";
+            this.exAmountDataGridViewTextBoxColumn.ReadOnly = true;
+            this.exAmountDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.exAmountDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // exDateDataGridViewTextBoxColumn
+            // 
+            this.exDateDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.exDateDataGridViewTextBoxColumn.DataPropertyName = "exDate";
+            this.exDateDataGridViewTextBoxColumn.HeaderText = "Thời gian";
+            this.exDateDataGridViewTextBoxColumn.Name = "exDateDataGridViewTextBoxColumn";
+            this.exDateDataGridViewTextBoxColumn.ReadOnly = true;
+            this.exDateDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.exDateDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // exDesciptionDataGridViewTextBoxColumn
+            // 
+            this.exDesciptionDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.exDesciptionDataGridViewTextBoxColumn.DataPropertyName = "exDesciption";
+            this.exDesciptionDataGridViewTextBoxColumn.HeaderText = "Chi tiết";
+            this.exDesciptionDataGridViewTextBoxColumn.Name = "exDesciptionDataGridViewTextBoxColumn";
+            this.exDesciptionDataGridViewTextBoxColumn.ReadOnly = true;
+            this.exDesciptionDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.exDesciptionDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.exDesciptionDataGridViewTextBoxColumn.Width = 354;
+            // 
             // ViewExpenseControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.ViewExpenseTable);
             this.Controls.Add(this.incomeCategoryComboBox);
             this.Controls.Add(this.incomeNameText);
             this.Controls.Add(this.incomeCategoryLabel);
@@ -210,7 +240,9 @@
             this.Controls.Add(this.nameLabel);
             this.Name = "ViewExpenseControl";
             this.Size = new System.Drawing.Size(1022, 623);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ViewExpenseTable)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.incomeExpenseDataSet1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.expenseBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -218,16 +250,20 @@
 
         #endregion
 
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn STT;
-        private System.Windows.Forms.DataGridViewTextBoxColumn IncomeName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Amount;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Date;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Detail;
+        private System.Windows.Forms.DataGridView ViewExpenseTable;
         private System.Windows.Forms.ComboBox incomeCategoryComboBox;
         private System.Windows.Forms.TextBox incomeNameText;
         private System.Windows.Forms.Label incomeCategoryLabel;
         private System.Windows.Forms.Label incomeNameLabel;
         private System.Windows.Forms.Label nameLabel;
+        private System.Windows.Forms.BindingSource expenseBindingSource;
+        private IncomeExpenseDataSet1 incomeExpenseDataSet1;
+        private IncomeExpenseDataSet1TableAdapters.ExpenseTableAdapter expenseTableAdapter;
+        private System.Windows.Forms.DataGridViewTextBoxColumn exIdDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn exNameDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn exCategoryDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn exAmountDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn exDateDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn exDesciptionDataGridViewTextBoxColumn;
     }
 }
