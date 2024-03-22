@@ -43,6 +43,7 @@ namespace IncomeExpenseApp.Controls
             dataTable.Columns["epDateFormat"].ColumnName = "Ngày chi";
 
             expensePlanTable.DataSource = dataTable;
+            expensePlanTable.Columns[1].Visible = false;
         }
 
         private void LoadBudgetPanel()
@@ -132,12 +133,13 @@ namespace IncomeExpenseApp.Controls
             //DataGridViewRow row = (DataGridViewRow)expensePlanTable.Rows[0].Clone();
     
             LoadData();
-            //query = $"select top 1 epId from ExpensePlan where userId = {UserId} order by epId desc";
+
+            //query = $"select top 1 epid from expenseplan where userid = {userid} order by epid desc";
             //object result = databaseConnector.ExecuteScalar(query);
             //if (result != null && result != DBNull.Value)
             //{
-            //    int epId = (int)result;
-                
+            //    int epid = (int)result;
+
             //}
             //expensePlanTable.SelectedRows.Clear();
 
