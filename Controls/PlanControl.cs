@@ -134,13 +134,23 @@ namespace IncomeExpenseApp.Controls
     
             LoadData();
 
-            //query = $"select top 1 epid from expenseplan where userid = {userid} order by epid desc";
-            //object result = databaseConnector.ExecuteScalar(query);
-            //if (result != null && result != DBNull.Value)
-            //{
-            //    int epid = (int)result;
-
-            //}
+            query = $"select top 1 epId from ExpensePlan where userId = {UserId} order by epid desc";
+            object result = databaseConnector.ExecuteScalar(query);
+            if (result != null && result != DBNull.Value)
+            {
+                int epId = (int)result;
+                foreach (DataGridViewRow row in expensePlanTable.Rows)
+                {
+                    if (row.Cells[1].Value.ToString() == epId.ToString())
+                    {
+                        row.Selected = true;
+                        expensePlanTable.FirstDisplayedScrollingRowIndex = row.Index;
+                        break;
+                    }
+                    Debug.WriteLine(row.Cells[1].Value.ToString());
+                }
+            }
+            
             //expensePlanTable.SelectedRows.Clear();
 
         }
