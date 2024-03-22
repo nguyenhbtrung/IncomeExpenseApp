@@ -33,8 +33,7 @@ namespace IncomeExpenseApp
                     databaseConnector.ExecuteNonQuery($"insert into UserInfo values (N'{Register.username}', N'{Register.password}', N'{Register.email}')");
                     MessageBox.Show("Tạo tài khoản thành công!!", "Thông báo");
                     this.Close();
-                    Login obj = new Login();
-                    obj.Show();
+                    Program.LoginForm.Show();
                 }
                 else notification.Visible = true;
             }
@@ -43,7 +42,7 @@ namespace IncomeExpenseApp
                 if (codeField.Text.Equals(Login.maXacThuc))
                 {
                     this.Close();
-                    Login obj = new Login();
+                    ChangePassword obj = new ChangePassword();
                     obj.Show();
                 }
                 else notification.Visible = true;

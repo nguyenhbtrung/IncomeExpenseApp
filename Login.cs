@@ -13,7 +13,7 @@ namespace IncomeExpenseApp
     public partial class Login : IncomeExpenseApp.LoginFrame
     {
         private DatabaseConnector databaseConnector;
-        public static string maXacThuc;
+        public static string maXacThuc,id;
         public Login()
         {
             InitializeComponent();
@@ -75,11 +75,14 @@ namespace IncomeExpenseApp
                 foreach (DataRow rows in login.Rows)
                 {
                     string username = rows["userName"].ToString();
+                    
                     if (usernameField.Text == username)
                     {
-                        string email = rows["email"].ToString();
+                        id = rows["userId"].ToString();
+                        string email = rows["userEmail"].ToString();
                         maXacThuc = EmailSender.SendAuthenticationEmail(email, 1);
                         ShowAuthenticaon(1);
+                        this.Hide();
                     }
 
                 }

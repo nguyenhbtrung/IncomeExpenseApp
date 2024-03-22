@@ -76,7 +76,7 @@ namespace IncomeExpenseApp
                 email = emailField.Text;
                 maXacThuc = EmailSender.SendAuthenticationEmail(emailField.Text, 0);
                 ShowAuthenticaon(0);
-                this.Hide();
+                this.Close();
             }
 
         }

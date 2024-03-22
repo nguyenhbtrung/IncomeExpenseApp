@@ -124,6 +124,7 @@
             this.loginButton.TabIndex = 31;
             this.loginButton.Text = "Đăng nhập";
             this.loginButton.UseVisualStyleBackColor = false;
+            this.loginButton.Click += new System.EventHandler(this.loginButton_Click);
             // 
             // showPassBox2
             // 
