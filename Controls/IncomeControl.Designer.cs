@@ -188,6 +188,7 @@
             this.Controls.Add(this.label10);
             this.Name = "IncomeControl";
             this.Size = new System.Drawing.Size(1022, 623);
+            this.Load += new System.EventHandler(this.IncomeControl_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
