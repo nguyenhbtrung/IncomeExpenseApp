@@ -13,7 +13,7 @@ namespace IncomeExpenseApp
     public partial class Login : IncomeExpenseApp.LoginFrame
     {
         private DatabaseConnector databaseConnector;
-
+        public static string maXacThuc;
         public Login()
         {
             InitializeComponent();
@@ -65,6 +65,25 @@ namespace IncomeExpenseApp
 
         private void forgotPassButton_Click(object sender, EventArgs e)
         {
+            if(usernameField.Text == "")
+            {
+                notification.Text = "Nhập tài khoản vào ô tên đăng nhập để lấy lại mật khẩu!!";
+                notification.Visible = true;
+            }else
+            {
+                DataTable login = databaseConnector.ExecuteDataTableQuery($"select * from UserInfo");
+                foreach (DataRow rows in login.Rows)
+                {
+                    string username = rows["userName"].ToString();
+                    if (usernameField.Text == username)
+                    {
+                        string email = rows["email"].ToString();
+                        maXacThuc = EmailSender.SendAuthenticationEmail(email, 1);
+                        ShowAuthenticaon(1);
+                    }
+
+                }
+            }
         }
 
         private void hidePassBox_Click(object sender, EventArgs e)

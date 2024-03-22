@@ -41,9 +41,9 @@ namespace IncomeExpenseApp
             Register obj = new Register();
             obj.Show();
         }
-        public void ShowAuthenticaon()
+        public void ShowAuthenticaon(int a)
         {
-            Authentication obj = new Authentication();
+            Authentication obj = new Authentication(a);
             obj.ShowDialog();
         }
 

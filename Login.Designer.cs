@@ -70,9 +70,9 @@
             // 
             this.notification.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.notification.ForeColor = System.Drawing.Color.Red;
-            this.notification.Location = new System.Drawing.Point(324, 290);
+            this.notification.Location = new System.Drawing.Point(317, 289);
             this.notification.Name = "notification";
-            this.notification.Size = new System.Drawing.Size(228, 43);
+            this.notification.Size = new System.Drawing.Size(242, 43);
             this.notification.TabIndex = 28;
             this.notification.Text = "Thông báo";
             this.notification.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -208,7 +208,6 @@
             this.Controls.Add(this.registerButton);
             this.Controls.Add(this.registerLabel);
             this.Name = "Login";
-            this.Controls.SetChildIndex(this.CloseButton, 0);
             this.Controls.SetChildIndex(this.registerLabel, 0);
             this.Controls.SetChildIndex(this.registerButton, 0);
             this.Controls.SetChildIndex(this.label1, 0);
@@ -221,6 +220,7 @@
             this.Controls.SetChildIndex(this.forgotPassButton, 0);
             this.Controls.SetChildIndex(this.hidePassBox, 0);
             this.Controls.SetChildIndex(this.showPassBox, 0);
+            this.Controls.SetChildIndex(this.CloseButton, 0);
             ((System.ComponentModel.ISupportInitialize)(this.hidePassBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.showPassBox)).EndInit();
             this.ResumeLayout(false);
