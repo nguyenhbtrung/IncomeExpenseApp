@@ -68,10 +68,5 @@ namespace IncomeExpenseApp.Controls
                 return;
             }
         }
-
-        private void IncomeControl_Load(object sender, EventArgs e)
-        {
-
-        }
     }
 }
