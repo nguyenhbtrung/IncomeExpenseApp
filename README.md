@@ -1,8 +1,7 @@
 # IncomeExpenseApp
-
-
-# Program.cs:
-
+## Program.cs:
+Add this class to your Repo
+```C#
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -15,7 +14,7 @@ namespace IncomeExpenseApp
 
     internal static class Program
     {
-        private static string dbConnectionString = "ConnectionString";
+        private static string dbConnectionString = "YourDatabaseConnectionString";
 
         public static string DbConnectionString { get => dbConnectionString; }
         public static Login LoginForm { get; private set; }
@@ -31,4 +30,5 @@ namespace IncomeExpenseApp
         }
     }
 }
+```
  
