@@ -15,7 +15,7 @@ namespace IncomeExpenseApp
         public static string DbConnectionString { get => dbConnectionString; }
         public static Login LoginForm { get; private set; }
 
-        
+        //test xem co pull dc program ve k
         [STAThread]
         static void Main()
         {
