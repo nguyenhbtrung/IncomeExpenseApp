@@ -130,29 +130,34 @@ namespace IncomeExpenseApp.Controls
                 "insert into ExpensePlan values" +
                 $"(N'{name}', N'{category}', {amount}, '{date}', {UserId})";
             databaseConnector.ExecuteNonQuery(query);
-            //DataGridViewRow row = (DataGridViewRow)expensePlanTable.Rows[0].Clone();
     
             LoadData();
 
-            query = $"select top 1 epId from ExpensePlan where userId = {UserId} order by epId desc";
-            object result = databaseConnector.ExecuteScalar(query);
+            object result = GetLastestEpId();
             if (result != null && result != DBNull.Value)
             {
                 int epId = (int)result;
-                foreach (DataGridViewRow row in expensePlanTable.Rows)
+                SetSelectedRowExpensePlanTable(epId);
+            }
+        }
+
+        private object GetLastestEpId()
+        {
+            string query = $"select top 1 epId from ExpensePlan where userId = {UserId} order by epId desc";
+            return databaseConnector.ExecuteScalar(query);
+        }
+
+        private void SetSelectedRowExpensePlanTable(int epId)
+        {
+            foreach (DataGridViewRow row in expensePlanTable.Rows)
+            {
+                if (row.Cells[1].Value.ToString() == epId.ToString())
                 {
-                    if (row.Cells[1].Value.ToString() == epId.ToString())
-                    {
-                        row.Selected = true;
-                        expensePlanTable.FirstDisplayedScrollingRowIndex = row.Index;
-                        break;
-                    }
-                    Debug.WriteLine(row.Cells[1].Value.ToString());
+                    row.Selected = true;
+                    expensePlanTable.FirstDisplayedScrollingRowIndex = row.Index;
+                    break;
                 }
             }
-            
-            //expensePlanTable.SelectedRows.Clear();
-
         }
 
         private void expensePlanTable_SelectionChanged(object sender, EventArgs e)
@@ -175,11 +180,13 @@ namespace IncomeExpenseApp.Controls
         }
 
         private void deleteButton_Click(object sender, EventArgs e)
-        {
-            object selectedRowId = expensePlanTable.SelectedRows[0].Cells[1].Value;
-            if (selectedRowId == null)
+        { 
+            string epId;
+            if (!TryGetSelectedRowIdExpensePlanTable(out epId))
+            {
+                MessageBox.Show("Hàng cần xoá chưa được chọn!");
                 return;
-            string epId = selectedRowId.ToString();
+            }
             string query = $"delete from ExpensePlan where epId = {epId}";
             databaseConnector.ExecuteNonQuery(query);
             LoadData();
@@ -187,10 +194,12 @@ namespace IncomeExpenseApp.Controls
 
         private void saveButton_Click(object sender, EventArgs e)
         {
-            object selectedRowId = expensePlanTable.SelectedRows[0].Cells[1].Value;
-            if (selectedRowId == null)
+            string epId;
+            if (!TryGetSelectedRowIdExpensePlanTable(out epId))
+            {
+                MessageBox.Show("Hàng cần lưu thay đổi chưa được chọn!");
                 return;
-            string epId = selectedRowId.ToString();
+            }
             string name = nameTextBox.Text;
             string category = categoryTextBox.Text;
             string amountStr = amountTextBox.Text;
@@ -206,23 +215,25 @@ namespace IncomeExpenseApp.Controls
                 $"where epId = {epId}";
             databaseConnector.ExecuteNonQuery(query);
             LoadData();
-            query = $"select top 1 epId from ExpensePlan where userId = {UserId} and epId = {epId}";
-            object result = databaseConnector.ExecuteScalar(query);
-            if (result != null && result != DBNull.Value)
-            {
-                int id = (int)result;
-                foreach (DataGridViewRow row in expensePlanTable.Rows)
-                {
-                    if (row.Cells[1].Value.ToString() == id.ToString())
-                    {
-                        row.Selected = true;
-                        expensePlanTable.FirstDisplayedScrollingRowIndex = row.Index;
-                        break;
-                    }
-                    Debug.WriteLine(row.Cells[1].Value.ToString());
-                }
-            }
+            SetSelectedRowExpensePlanTable(int.Parse(epId));
 
+        }
+
+        private bool TryGetSelectedRowIdExpensePlanTable(out string id)
+        {
+            if (expensePlanTable.SelectedRows.Count == 0)
+            {
+                id = "-1";
+                return false;
+            }
+            object selectedRowId = expensePlanTable.SelectedRows[0].Cells[1].Value;
+            if (selectedRowId == null)
+            {
+                id = "-1";
+                return false;
+            }
+            id = selectedRowId.ToString();
+            return true;
         }
 
         private void expensePlanTable_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
