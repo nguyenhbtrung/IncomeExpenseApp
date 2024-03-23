@@ -15,7 +15,6 @@ namespace IncomeExpenseApp.Controls
     public partial class UserInformationControl : UserControl
     {
         private int userId;
-        private DatabaseConnector databaseConnector;
 
         public int UserId { get => userId; set => userId = value; }
         public UserInformationControl()

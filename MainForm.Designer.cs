@@ -503,7 +503,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLight;
             this.ClientSize = new System.Drawing.Size(1215, 720);
-            this.Controls.Add(this.userInformation1);
             this.Controls.Add(this.exitPictureBox);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label8);
@@ -516,6 +515,7 @@
             this.Controls.Add(this.expenseControl1);
             this.Controls.Add(this.incomeControl1);
             this.Controls.Add(this.planControl1);
+            this.Controls.Add(this.userInformation1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "MainForm";
