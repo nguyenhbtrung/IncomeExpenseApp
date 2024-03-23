@@ -13,7 +13,8 @@ namespace IncomeExpenseApp
     public partial class Login : IncomeExpenseApp.LoginFrame
     {
         private DatabaseConnector databaseConnector;
-        public static string maXacThuc,id;
+        public static string maXacThuc,id, username, password, email;
+        public static bool isLogin = false;
         public Login()
         {
             InitializeComponent();
@@ -38,11 +39,14 @@ namespace IncomeExpenseApp
             DataTable login = databaseConnector.ExecuteDataTableQuery($"select * from UserInfo");
             foreach(DataRow rows in login.Rows)
             {
-                string username = rows["userName"].ToString();
-                string password = rows["userPassword"].ToString();
+                username = rows["userName"].ToString();
+                password = rows["userPassword"].ToString();
                 if (usernameField.Text == username && passwordField.Text == password)
                 {
+                    isLogin = true;
                     int userId = Convert.ToInt32(rows["userId"]);
+                    id = Convert.ToString(rows["userId"]);
+                    email = rows["userEmail"].ToString();
                     MainForm obj = new MainForm(userId);
                     this.Hide();
                     usernameField.Clear();
@@ -75,7 +79,6 @@ namespace IncomeExpenseApp
                 foreach (DataRow rows in login.Rows)
                 {
                     string username = rows["userName"].ToString();
-                    
                     if (usernameField.Text == username)
                     {
                         id = rows["userId"].ToString();

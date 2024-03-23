@@ -63,8 +63,15 @@ namespace IncomeExpenseApp
                 string id = Login.id;
                 databaseConnector.ExecuteDataTableQuery($"UPDATE UserInfo SET userPassword = {passBox1.Text} WHERE userId = {id};");
                 MessageBox.Show("Đổi mật khẩu thành công!!", "Thông báo");
-                this.Close();
-                Program.LoginForm.Show();
+                if (Login.isLogin)
+                {
+                    this.Close();
+                }
+                else
+                {
+                    this.Close();
+                    Program.LoginForm.Show();
+                }
             }
             else
             {

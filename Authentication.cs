@@ -43,7 +43,7 @@ namespace IncomeExpenseApp
                 {
                     this.Close();
                     ChangePassword obj = new ChangePassword();
-                    obj.Show();
+                    obj.ShowDialog();
                 }
                 else notification.Visible = true;
             }
