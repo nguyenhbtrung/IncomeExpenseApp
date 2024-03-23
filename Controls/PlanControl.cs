@@ -134,7 +134,7 @@ namespace IncomeExpenseApp.Controls
     
             LoadData();
 
-            query = $"select top 1 epId from ExpensePlan where userId = {UserId} order by epid desc";
+            query = $"select top 1 epId from ExpensePlan where userId = {UserId} order by epId desc";
             object result = databaseConnector.ExecuteScalar(query);
             if (result != null && result != DBNull.Value)
             {
@@ -176,7 +176,7 @@ namespace IncomeExpenseApp.Controls
 
         private void deleteButton_Click(object sender, EventArgs e)
         {
-            object selectedRowId = expensePlanTable.SelectedRows[0].Cells[0].Value;
+            object selectedRowId = expensePlanTable.SelectedRows[0].Cells[1].Value;
             if (selectedRowId == null)
                 return;
             string epId = selectedRowId.ToString();
@@ -187,7 +187,7 @@ namespace IncomeExpenseApp.Controls
 
         private void saveButton_Click(object sender, EventArgs e)
         {
-            object selectedRowId = expensePlanTable.SelectedRows[0].Cells[0].Value;
+            object selectedRowId = expensePlanTable.SelectedRows[0].Cells[1].Value;
             if (selectedRowId == null)
                 return;
             string epId = selectedRowId.ToString();
@@ -206,6 +206,23 @@ namespace IncomeExpenseApp.Controls
                 $"where epId = {epId}";
             databaseConnector.ExecuteNonQuery(query);
             LoadData();
+            query = $"select top 1 epId from ExpensePlan where userId = {UserId} and epId = {epId}";
+            object result = databaseConnector.ExecuteScalar(query);
+            if (result != null && result != DBNull.Value)
+            {
+                int id = (int)result;
+                foreach (DataGridViewRow row in expensePlanTable.Rows)
+                {
+                    if (row.Cells[1].Value.ToString() == id.ToString())
+                    {
+                        row.Selected = true;
+                        expensePlanTable.FirstDisplayedScrollingRowIndex = row.Index;
+                        break;
+                    }
+                    Debug.WriteLine(row.Cells[1].Value.ToString());
+                }
+            }
+
         }
 
         private void expensePlanTable_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
