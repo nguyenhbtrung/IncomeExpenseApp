@@ -121,7 +121,7 @@ namespace IncomeExpenseApp.Controls
             string name = nameTextBox.Text;
             string category = categoryTextBox.Text;
             string amountStr = amountTextBox.Text;
-            string date = dateTimePicker.Value.Date.ToString();
+            string date = dateTimePicker.Value.Date.ToString("yyyyMMdd");
             int amount;
             if (!ValidateInput(name, category, amountStr, out amount))
                 return;
@@ -194,7 +194,7 @@ namespace IncomeExpenseApp.Controls
             string name = nameTextBox.Text;
             string category = categoryTextBox.Text;
             string amountStr = amountTextBox.Text;
-            string date = dateTimePicker.Value.Date.ToString();
+            string date = dateTimePicker.Value.Date.ToString("yyyyMMdd");
             int amount;
 
             if (!ValidateInput(name, category, amountStr, out amount))
