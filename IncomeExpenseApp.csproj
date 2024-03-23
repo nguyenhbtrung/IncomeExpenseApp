@@ -83,6 +83,12 @@
     <Compile Include="Controls\PlanControl.Designer.cs">
       <DependentUpon>PlanControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="Controls\UserInformationControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\UserInformationControl.Designer.cs">
+      <DependentUpon>UserInformationControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="Controls\ViewExpenseControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -162,6 +168,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\PlanControl.resx">
       <DependentUpon>PlanControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\UserInformationControl.resx">
+      <DependentUpon>UserInformationControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\ViewExpenseControl.resx">
       <DependentUpon>ViewExpenseControl.cs</DependentUpon>
@@ -269,6 +278,7 @@
     <None Include="Resources\KeHoach.png" />
     <None Include="Resources\logo2.png" />
     <Content Include="QuerySQLServer\query.sql" />
+    <None Include="Resources\Information01.png" />
     <Content Include="Resources\SelectedChiTieu.png" />
     <Content Include="Resources\SelectedDashBoard.png" />
     <None Include="Resources\SelectedKeHoach.png" />

@@ -48,7 +48,7 @@ namespace IncomeExpenseApp
             AddMenuImageResourcesToList();
 
             this.UserId = 1;
-            SetControlsUserId(userId);
+            SetControlsUserId(UserId);
 
             dashBoardControl1.LoadData();
 
@@ -178,6 +178,7 @@ namespace IncomeExpenseApp
             panel1.Controls.SetChildIndex(menuExpensePanel, 2);
             panel1.Controls.SetChildIndex(menuViewIncomePanel, 3);
             panel1.Controls.SetChildIndex(menuViewExpensePanel, 4);
+            panel1.Controls.SetChildIndex(menuPlanPanel, 5);
         }
 
         private void SetControlsUserId(int userId)
@@ -188,6 +189,12 @@ namespace IncomeExpenseApp
             viewIncomeControl1.UserId = userId;
             viewExpenseControl1.UserId = userId;
             planControl1.UserId = userId;
+            userInformation1.UserId = userId;
+        }
+
+        private void OpenUserInfo(object sender, EventArgs e)
+        {
+            userInformation1.BringToFront();
         }
 
         //int originalExStyle = -1;
