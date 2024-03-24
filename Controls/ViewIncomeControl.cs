@@ -45,6 +45,34 @@ namespace IncomeExpenseApp.Controls
             dataTable.Columns["incDate"].ColumnName = "Thời gian";
             dataTable.Columns["incDesciption"].ColumnName = "Chi tiết";
             ViewIncomeTable.Columns["userId"].Visible = false;
+
+            ViewIncomeTable.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
+            ViewIncomeTable.Columns[0].Width = 50;
+            ViewIncomeTable.Columns[0].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            ViewIncomeTable.Columns[0].SortMode = DataGridViewColumnSortMode.NotSortable;
+
+            ViewIncomeTable.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
+            ViewIncomeTable.Columns[1].Width = 220;
+            ViewIncomeTable.Columns[1].SortMode = DataGridViewColumnSortMode.NotSortable;
+
+            ViewIncomeTable.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
+            ViewIncomeTable.Columns[2].Width = 220;
+            ViewIncomeTable.Columns[2].SortMode = DataGridViewColumnSortMode.NotSortable;
+
+            ViewIncomeTable.Columns[3].AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
+            ViewIncomeTable.Columns[3].Width = 100;
+            ViewIncomeTable.Columns[3].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            ViewIncomeTable.Columns[3].SortMode = DataGridViewColumnSortMode.NotSortable;
+
+            ViewIncomeTable.Columns[4].AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
+            ViewIncomeTable.Columns[4].Width = 120;
+            ViewIncomeTable.Columns[4].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            ViewIncomeTable.Columns[4].SortMode = DataGridViewColumnSortMode.NotSortable;
+
+            ViewIncomeTable.Columns[5].AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
+            ViewIncomeTable.Columns[5].Width = 294;
+            ViewIncomeTable.Columns[5].SortMode = DataGridViewColumnSortMode.NotSortable;
+
         }
 
         private void viewincomeCategoryComboBox_SelectedIndexChanged(object sender, EventArgs e)
