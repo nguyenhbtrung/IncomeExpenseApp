@@ -48,16 +48,16 @@ namespace IncomeExpenseApp.Controls
 
         private void LoadBudgetPanel()
         {
-            string profitQuery =
+            string balanceAmountQuery =
                 "select sum(amount) from " +
                 $"(select incAmount as amount from Income where userId = {UserId} " +
                 "union all " +
                 $"select -exAmount as amount from Expense where userId = {UserId}) as IncAndEx";
-            object result = databaseConnector.ExecuteScalar(profitQuery);
-            int profit = 0;
+            object result = databaseConnector.ExecuteScalar(balanceAmountQuery);
+            int balanceAmount = 0;
             if (result != null && result != DBNull.Value)
             {
-                profit = (int)result;
+                balanceAmount = (int)result;
             }
 
             string expectedQuery =
@@ -69,24 +69,28 @@ namespace IncomeExpenseApp.Controls
                 expectedExpense = (int)result;
             }
 
-            int budget = profit - expectedExpense;
-            SetMoneyLabel(budget, budgetLabel);
+            int budgetRemain = balanceAmount - expectedExpense;
+            SetMoneyLabel(budgetRemain, budgetRemainLabel);
             SetMoneyLabel(expectedExpense, expectedExpenseLabel);
+            SetColorBudgetRemainLabel(balanceAmount, budgetRemain);
 
-            float ratio = budget / (float)profit;
+        }
+
+        private void SetColorBudgetRemainLabel(int balanceAmount, int budgetRemain)
+        {
+            float ratio = budgetRemain / (float)balanceAmount;
             if (ratio < 0.1f)
             {
-                budgetLabel.ForeColor = Color.Red;
+                budgetRemainLabel.ForeColor = Color.Red;
             }
             else if (ratio < 0.5f)
             {
-                budgetLabel.ForeColor = Color.DarkOrange;
+                budgetRemainLabel.ForeColor = Color.DarkOrange;
             }
             else
             {
-                budgetLabel.ForeColor = Color.LawnGreen;
+                budgetRemainLabel.ForeColor = Color.LawnGreen;
             }
-
         }
 
         private void SetMoneyLabel(int money, Label label)

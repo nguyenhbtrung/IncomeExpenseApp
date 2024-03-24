@@ -40,7 +40,7 @@
             this.budgetPanel = new System.Windows.Forms.Panel();
             this.label10 = new System.Windows.Forms.Label();
             this.expectedExpenseLabel = new System.Windows.Forms.Label();
-            this.budgetLabel = new System.Windows.Forms.Label();
+            this.budgetRemainLabel = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.addButton = new System.Windows.Forms.Button();
@@ -147,7 +147,7 @@
             this.budgetPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.budgetPanel.Controls.Add(this.label10);
             this.budgetPanel.Controls.Add(this.expectedExpenseLabel);
-            this.budgetPanel.Controls.Add(this.budgetLabel);
+            this.budgetPanel.Controls.Add(this.budgetRemainLabel);
             this.budgetPanel.Controls.Add(this.label2);
             this.budgetPanel.Controls.Add(this.label1);
             this.budgetPanel.Location = new System.Drawing.Point(27, 25);
@@ -177,17 +177,17 @@
             this.expectedExpenseLabel.Text = "0";
             this.expectedExpenseLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // budgetLabel
+            // budgetRemainLabel
             // 
-            this.budgetLabel.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.budgetLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.budgetLabel.ForeColor = System.Drawing.Color.Red;
-            this.budgetLabel.Location = new System.Drawing.Point(3, 39);
-            this.budgetLabel.Name = "budgetLabel";
-            this.budgetLabel.Size = new System.Drawing.Size(109, 39);
-            this.budgetLabel.TabIndex = 7;
-            this.budgetLabel.Text = "0";
-            this.budgetLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.budgetRemainLabel.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.budgetRemainLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.budgetRemainLabel.ForeColor = System.Drawing.Color.Red;
+            this.budgetRemainLabel.Location = new System.Drawing.Point(3, 39);
+            this.budgetRemainLabel.Name = "budgetRemainLabel";
+            this.budgetRemainLabel.Size = new System.Drawing.Size(109, 39);
+            this.budgetRemainLabel.TabIndex = 7;
+            this.budgetRemainLabel.Text = "0";
+            this.budgetRemainLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label2
             // 
@@ -394,7 +394,7 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.DateTimePicker dateTimePicker;
-        private System.Windows.Forms.Label budgetLabel;
+        private System.Windows.Forms.Label budgetRemainLabel;
         private System.Windows.Forms.Label expectedExpenseLabel;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel3;
