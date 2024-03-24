@@ -33,6 +33,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.expensePlanTable = new System.Windows.Forms.DataGridView();
+            this.serialNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.categoryTextBox = new System.Windows.Forms.TextBox();
             this.nameTextBox = new System.Windows.Forms.TextBox();
             this.amountTextBox = new System.Windows.Forms.TextBox();
@@ -54,7 +55,6 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.saveButton = new System.Windows.Forms.Button();
-            this.serialNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.expensePlanTable)).BeginInit();
             this.budgetPanel.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -107,8 +107,15 @@
             this.expensePlanTable.Size = new System.Drawing.Size(908, 295);
             this.expensePlanTable.TabIndex = 0;
             this.expensePlanTable.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.expensePlanTable_DataBindingComplete);
-            this.expensePlanTable.RowPostPaint += new System.Windows.Forms.DataGridViewRowPostPaintEventHandler(this.expensePlanTable_RowPostPaint);
             this.expensePlanTable.SelectionChanged += new System.EventHandler(this.expensePlanTable_SelectionChanged);
+            // 
+            // serialNumber
+            // 
+            this.serialNumber.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.serialNumber.Frozen = true;
+            this.serialNumber.HeaderText = "STT";
+            this.serialNumber.Name = "serialNumber";
+            this.serialNumber.ReadOnly = true;
             // 
             // categoryTextBox
             // 
@@ -348,14 +355,6 @@
             this.saveButton.Text = "Lưu";
             this.saveButton.UseVisualStyleBackColor = false;
             this.saveButton.Click += new System.EventHandler(this.saveButton_Click);
-            // 
-            // serialNumber
-            // 
-            this.serialNumber.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.serialNumber.Frozen = true;
-            this.serialNumber.HeaderText = "STT";
-            this.serialNumber.Name = "serialNumber";
-            this.serialNumber.ReadOnly = true;
             // 
             // PlanControl
             // 

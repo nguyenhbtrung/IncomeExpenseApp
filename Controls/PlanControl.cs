@@ -48,7 +48,7 @@ namespace IncomeExpenseApp.Controls
 
         private void LoadBudgetPanel()
         {
-            string profitQuery = 
+            string profitQuery =
                 "select sum(amount) from " +
                 $"(select incAmount as amount from Income where userId = {UserId} " +
                 "union all " +
@@ -70,23 +70,35 @@ namespace IncomeExpenseApp.Controls
             }
 
             int budget = profit - expectedExpense;
-            if (budget < 1000000)
+            SetMoneyLabel(budget, budgetLabel);
+            SetMoneyLabel(expectedExpense, expectedExpenseLabel);
+
+            float ratio = budget / (float)profit;
+            if (ratio < 0.1f)
             {
-                budgetLabel.Text = budget.ToString();
+                budgetLabel.ForeColor = Color.Red;
+            }
+            else if (ratio < 0.5f)
+            {
+                budgetLabel.ForeColor = Color.DarkOrange;
             }
             else
             {
-                budgetLabel.Text = budget.ToString("0,,.00") + "M";
-            }
-            if (expectedExpense < 1000000)
-            {
-                expectedExpenseLabel.Text = expectedExpense.ToString();
-            }
-            else
-            {
-                expectedExpenseLabel.Text = expectedExpense.ToString("0,,.00") + "M";
+                budgetLabel.ForeColor = Color.LawnGreen;
             }
 
+        }
+
+        private void SetMoneyLabel(int money, Label label)
+        {
+            if (money < 1000000 && money > -1000000)
+            {
+                label.Text = money.ToString();
+            }
+            else
+            {
+                label.Text = money.ToString("0,,.00") + "M";
+            }
         }
 
         private bool ValidateInput(string name, string category, string amountText, out int amount)
@@ -112,7 +124,7 @@ namespace IncomeExpenseApp.Controls
             if (MessageBox.Show("Bạn có chắc muốn xoá toàn bộ kế hoạch chi tiêu?", "Xác nhận", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
                 databaseConnector.ExecuteNonQuery($"delete from ExpensePlan where userId = {UserId}");
-                LoadTable();
+                LoadData();
             }
         }
 
@@ -242,11 +254,6 @@ namespace IncomeExpenseApp.Controls
             {
                 expensePlanTable.Rows[row.Index].Cells[0].Value = (row.Index + 1).ToString();
             }
-        }
-
-        private void expensePlanTable_RowPostPaint(object sender, DataGridViewRowPostPaintEventArgs e)
-        {
-            
         }
     }
 }
