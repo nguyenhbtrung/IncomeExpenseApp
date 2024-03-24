@@ -70,5 +70,28 @@ namespace IncomeExpenseApp.Controls
                 return;
             }
         }
+        public void LoadData()
+        {
+            string query =
+                "select epId, epName, epCategory, epAmount, format(epDate, 'dd/MM/yyyy') as epDateFormat " +
+                $"from ExpensePlan where userId = {UserId} order by epDate desc";
+            DataTable dataTable = databaseConnector.ExecuteDataTableQuery(query);
+            //dataTable.Columns["epId"].ColumnName = "STT";
+            dataTable.Columns["epName"].ColumnName = "Tên khoản chi";
+            dataTable.Columns["epCategory"].ColumnName = "Danh mục";
+            dataTable.Columns["epAmount"].ColumnName = "Số tiền";
+            dataTable.Columns["epDateFormat"].ColumnName = "Ngày chi";
+
+            expensePlanTable.DataSource = dataTable;
+            expensePlanTable.Columns[1].Visible = false;
+            
+        }
+        private void expensePlanTable_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
+        {
+            foreach (DataGridViewRow row in expensePlanTable.Rows)
+            {
+                expensePlanTable.Rows[row.Index].Cells[0].Value = (row.Index + 1).ToString();
+            }
+        }
     }
 }
