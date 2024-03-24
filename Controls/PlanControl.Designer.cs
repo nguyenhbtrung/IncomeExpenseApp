@@ -107,7 +107,6 @@
             this.expensePlanTable.Size = new System.Drawing.Size(908, 295);
             this.expensePlanTable.TabIndex = 0;
             this.expensePlanTable.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.expensePlanTable_DataBindingComplete);
-            this.expensePlanTable.RowPostPaint += new System.Windows.Forms.DataGridViewRowPostPaintEventHandler(this.expensePlanTable_RowPostPaint);
             this.expensePlanTable.SelectionChanged += new System.EventHandler(this.expensePlanTable_SelectionChanged);
             // 
             // serialNumber

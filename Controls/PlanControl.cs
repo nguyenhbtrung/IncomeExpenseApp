@@ -48,7 +48,7 @@ namespace IncomeExpenseApp.Controls
 
         private void LoadBudgetPanel()
         {
-            string profitQuery = 
+            string profitQuery =
                 "select sum(amount) from " +
                 $"(select incAmount as amount from Income where userId = {UserId} " +
                 "union all " +
@@ -70,24 +70,10 @@ namespace IncomeExpenseApp.Controls
             }
 
             int budget = profit - expectedExpense;
-            if (budget < 1000000 && budget > -1000000)
-            {
-                budgetLabel.Text = budget.ToString();
-            }
-            else
-            {
-                budgetLabel.Text = budget.ToString("0,,.00") + "M";
-            }
-            if (expectedExpense < 1000000 && expectedExpense > -1000000)
-            {
-                expectedExpenseLabel.Text = expectedExpense.ToString();
-            }
-            else
-            {
-                expectedExpenseLabel.Text = expectedExpense.ToString("0,,.00") + "M";
-            }
+            SetMoneyLabel(budget, budgetLabel);
+            SetMoneyLabel(expectedExpense, expectedExpenseLabel);
 
-            float ratio = (float)budget / (float)profit;
+            float ratio = budget / (float)profit;
             if (ratio < 0.1f)
             {
                 budgetLabel.ForeColor = Color.Red;
@@ -101,6 +87,18 @@ namespace IncomeExpenseApp.Controls
                 budgetLabel.ForeColor = Color.LawnGreen;
             }
 
+        }
+
+        private void SetMoneyLabel(int money, Label label)
+        {
+            if (money < 1000000 && money > -1000000)
+            {
+                label.Text = money.ToString();
+            }
+            else
+            {
+                label.Text = money.ToString("0,,.00") + "M";
+            }
         }
 
         private bool ValidateInput(string name, string category, string amountText, out int amount)
@@ -256,11 +254,6 @@ namespace IncomeExpenseApp.Controls
             {
                 expensePlanTable.Rows[row.Index].Cells[0].Value = (row.Index + 1).ToString();
             }
-        }
-
-        private void expensePlanTable_RowPostPaint(object sender, DataGridViewRowPostPaintEventArgs e)
-        {
-            
         }
     }
 }
