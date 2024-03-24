@@ -62,6 +62,7 @@ namespace IncomeExpenseApp
         private void Logout(object sender, EventArgs e)
         {
             Program.LoginForm.Show();
+            Login.isLogin = false;
             this.Close();
         }
 
