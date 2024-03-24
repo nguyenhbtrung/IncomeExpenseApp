@@ -25,12 +25,6 @@ namespace IncomeExpenseApp.Controls
         {
             InitializeComponent();
             databaseConnector = new DatabaseConnector(Program.DbConnectionString);
-            //expenseCategoryComboBox.Items.Add("Thực phẩm");
-            //expenseCategoryComboBox.Items.Add("Hóa đơn");
-            //expenseCategoryComboBox.Items.Add("Giải trí");
-            //expenseCategoryComboBox.Items.Add("Du lịch");
-            //expenseCategoryComboBox.Items.Add("Y tế");
-            
         }
         
         private void saveExpenseButton_Click(object sender, EventArgs e)
@@ -82,7 +76,6 @@ namespace IncomeExpenseApp.Controls
                 "select epId, epName, epCategory, epAmount, format(epDate, 'dd/MM/yyyy') as epDateFormat " +
                 $"from ExpensePlan where userId = {UserId} order by epDate desc";
             DataTable dataTable = databaseConnector.ExecuteDataTableQuery(query);
-            //dataTable.Columns["epId"].ColumnName = "STT";
             dataTable.Columns["epName"].ColumnName = "Tên khoản chi";
             dataTable.Columns["epCategory"].ColumnName = "Danh mục";
             dataTable.Columns["epAmount"].ColumnName = "Số tiền";
@@ -122,6 +115,7 @@ namespace IncomeExpenseApp.Controls
             expenseNameText.Clear();
             expenseDetailText.Clear();
             expenseAmountText.Clear();
+            expenseCategoryComboBox.ResetText();
             expenseDatePicker.Value = DateTime.Now;
             expenseCategoryComboBox.SelectedIndex = -1;
             if (expensePlanTable.SelectedCells.Count > 0)
@@ -131,6 +125,7 @@ namespace IncomeExpenseApp.Controls
                 expenseNameText.Text = Convert.ToString(selectedRow.Cells["Tên khoản chi"].Value);
                 expenseAmountText.Text = Convert.ToString(selectedRow.Cells["Số tiền"].Value);
                 expenseDatePicker.Text = Convert.ToString(selectedRow.Cells["Ngày chi"].Value);
+                expenseCategoryComboBox.Text = Convert.ToString(selectedRow.Cells["Danh mục"].Value);
             }
         }
     }
