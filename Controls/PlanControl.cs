@@ -70,7 +70,7 @@ namespace IncomeExpenseApp.Controls
             }
 
             int budget = profit - expectedExpense;
-            if (budget < 1000000)
+            if (budget < 1000000 && budget > -1000000)
             {
                 budgetLabel.Text = budget.ToString();
             }
@@ -78,13 +78,27 @@ namespace IncomeExpenseApp.Controls
             {
                 budgetLabel.Text = budget.ToString("0,,.00") + "M";
             }
-            if (expectedExpense < 1000000)
+            if (expectedExpense < 1000000 && expectedExpense > -1000000)
             {
                 expectedExpenseLabel.Text = expectedExpense.ToString();
             }
             else
             {
                 expectedExpenseLabel.Text = expectedExpense.ToString("0,,.00") + "M";
+            }
+
+            float ratio = (float)budget / (float)profit;
+            if (ratio < 0.1f)
+            {
+                budgetLabel.ForeColor = Color.Red;
+            }
+            else if (ratio < 0.5f)
+            {
+                budgetLabel.ForeColor = Color.DarkOrange;
+            }
+            else
+            {
+                budgetLabel.ForeColor = Color.LawnGreen;
             }
 
         }
@@ -112,7 +126,7 @@ namespace IncomeExpenseApp.Controls
             if (MessageBox.Show("Bạn có chắc muốn xoá toàn bộ kế hoạch chi tiêu?", "Xác nhận", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
                 databaseConnector.ExecuteNonQuery($"delete from ExpensePlan where userId = {UserId}");
-                LoadTable();
+                LoadData();
             }
         }
 
