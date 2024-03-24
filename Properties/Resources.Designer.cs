@@ -223,6 +223,16 @@ namespace IncomeExpenseApp.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap SelectedUserInfo {
+            get {
+                object obj = ResourceManager.GetObject("SelectedUserInfo", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap SelectedXemChiTieu {
             get {
                 object obj = ResourceManager.GetObject("SelectedXemChiTieu", resourceCulture);
@@ -266,6 +276,16 @@ namespace IncomeExpenseApp.Properties {
         internal static System.Drawing.Bitmap Untitled_1 {
             get {
                 object obj = ResourceManager.GetObject("Untitled-1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap UserInfo {
+            get {
+                object obj = ResourceManager.GetObject("UserInfo", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

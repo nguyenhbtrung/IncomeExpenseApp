@@ -118,6 +118,14 @@ namespace IncomeExpenseApp
             ChangeTheSelectionDisplay(menuSelectedPanel, newSelectedPanel);
         }
 
+        private void OpenUserInfo(object sender, EventArgs e)
+        {
+            userInformation1.BringToFront();
+            userInformation1.LoadData();
+            Panel newSelectedPanel = menuUserInfoPanel;
+            ChangeTheSelectionDisplay(menuSelectedPanel, newSelectedPanel);
+        }
+
         private void AddMenuImageResourcesToList()
         {
             selectedImageResources.Add(Resources.SelectedDashBoard);
@@ -126,6 +134,7 @@ namespace IncomeExpenseApp
             selectedImageResources.Add(Resources.SelectedXemThuNhap);
             selectedImageResources.Add(Resources.SelectedXemChiTieu);
             selectedImageResources.Add(Resources.SelectedKeHoach);
+            selectedImageResources.Add(Resources.SelectedUserInfo);
 
             blackImageResources.Add(Resources.DashBoard);
             blackImageResources.Add(Resources.ThuNhap);
@@ -133,6 +142,7 @@ namespace IncomeExpenseApp
             blackImageResources.Add(Resources.XemThuNhap);
             blackImageResources.Add(Resources.XemChiTieu);
             blackImageResources.Add(Resources.KeHoach);
+            blackImageResources.Add(Resources.UserInfo);
         }
 
         
@@ -182,6 +192,7 @@ namespace IncomeExpenseApp
             panel1.Controls.SetChildIndex(menuViewIncomePanel, 3);
             panel1.Controls.SetChildIndex(menuViewExpensePanel, 4);
             panel1.Controls.SetChildIndex(menuPlanPanel, 5);
+            panel1.Controls.SetChildIndex(menuUserInfoPanel, 6);
         }
 
         private void SetControlsUserId(int userId)
@@ -195,30 +206,7 @@ namespace IncomeExpenseApp
             userInformation1.UserId = userId;
         }
 
-        private void OpenUserInfo(object sender, EventArgs e)
-        {
-            userInformation1.BringToFront();
-            userInformation1.LoadData();
-            foreach (Control control in panel1.Controls)
-            {
-                if (control is Panel panel && control.Name.StartsWith("menu"))
-                {
-                    panel.BackColor = Color.White;
-                    foreach (Control controlChild in panel.Controls)
-                    {
-                        if (controlChild is Label label)
-                        {
-                            label.ForeColor = SystemColors.Desktop;
-                        }
-                        if (controlChild is PictureBox pictureBox)
-                        {
-                            int index = panel1.Controls.IndexOf(panel);
-                            pictureBox.Image = blackImageResources[index];
-                        }
-                    }
-                }
-            }
-        }
+        
 
         //int originalExStyle = -1;
         //bool enableFormLevelDoubleBuffering = true;

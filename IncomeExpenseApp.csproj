@@ -273,6 +273,7 @@
     <None Include="Resources\DashBoard.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\UserInfo.png" />
     <None Include="Resources\HidePass.png" />
     <None Include="Resources\border.png" />
     <None Include="Resources\KeHoach.png" />
@@ -283,6 +284,7 @@
     <Content Include="Resources\SelectedDashBoard.png" />
     <None Include="Resources\SelectedKeHoach.png" />
     <Content Include="Resources\SelectedThuNhap.png" />
+    <None Include="Resources\SelectedUserInfo.png" />
     <Content Include="Resources\SelectedXemChiTieu.png" />
     <Content Include="Resources\SelectedXemThuNhap.png" />
     <None Include="Resources\ShowPass.png" />
