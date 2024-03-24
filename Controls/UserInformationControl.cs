@@ -15,22 +15,31 @@ namespace IncomeExpenseApp.Controls
     public partial class UserInformationControl : UserControl
     {
         private int userId;
-
         public int UserId { get => userId; set => userId = value; }
+        string email;
+        private DatabaseConnector databaseConnector;
         public UserInformationControl()
         {
             InitializeComponent();
-            accountEmailText.Text = Login.email;
-            accountNamePass.Text = Login.password;
-            accountNamePass.PasswordChar = '*';
-            accountNameText.Text = Login.username;
+            databaseConnector = new DatabaseConnector(Program.DbConnectionString);
+            LoadData();
         }
 
         private void ChangePass_Click(object sender, EventArgs e)
         {
-            Login.maXacThuc = EmailSender.SendAuthenticationEmail(Login.email, 1);
-            Authentication obj = new Authentication(1);
+            Login.maXacThuc = EmailSender.SendAuthenticationEmail(email, 1);
+            Authentication obj = new Authentication(UserId);
             obj.ShowDialog();
+        }
+        private void LoadData()
+        {
+            DataTable data = databaseConnector.ExecuteDataTableQuery($"select userName, userPassword, userEmail from UserInfo WHERE userId = {UserId}");
+            DataRow row = data.Rows[0];
+            email = row["userEmail"].ToString();
+            accountEmailText.Text = email;
+            accountNamePass.Text = row["userPassword"].ToString();
+            accountNameText.Text = row["userName"].ToString();
+            accountNamePass.PasswordChar = '*';
         }
     }
 }

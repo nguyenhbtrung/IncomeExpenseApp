@@ -11,13 +11,14 @@ namespace IncomeExpenseApp
     public partial class ChangePassword : IncomeExpenseApp.LoginFrame
     {
         private DatabaseConnector databaseConnector;
-
-        public ChangePassword()
+        int userId;
+        public ChangePassword(int userId)
         {
             InitializeComponent();
             databaseConnector = new DatabaseConnector(Program.DbConnectionString);
             passBox1.PasswordChar = '*';
             passBox2.PasswordChar = '*';
+            this.userId = userId;
         }
 
         private void hidePassBox_Click(object sender, EventArgs e)
@@ -48,20 +49,15 @@ namespace IncomeExpenseApp
         {
             if(passBox1.Text == "")
             {
-                notification.Text = "Mật khẩu không được để trống!!";
-                notification.Visible = true;
-                return;
+                showNoti("Mật khẩu không được để trống!!");
             }
             else if(passBox2.Text == "")
             {
-                notification.Text = "Mật khẩu không được để trống!!";
-                notification.Visible = true;
-                return;
+                showNoti("Chưa điền lại mật khẩu!!");
             }
             if(passBox1.Text == passBox2.Text)
             {
-                string id = Login.id;
-                databaseConnector.ExecuteDataTableQuery($"UPDATE UserInfo SET userPassword = {passBox1.Text} WHERE userId = {id};");
+                databaseConnector.ExecuteDataTableQuery($"UPDATE UserInfo SET userPassword = N'{passBox1.Text}' WHERE userId = {userId};");
                 MessageBox.Show("Đổi mật khẩu thành công!!", "Thông báo");
                 if (Login.isLogin)
                 {
@@ -75,9 +71,14 @@ namespace IncomeExpenseApp
             }
             else
             {
-                notification.Text = "Mật khẩu nhập lại không trùng khớp!!";
-                notification.Visible = true;
+                showNoti("Mật khẩu nhập lại không trùng khớp!!");
             }
+        }
+        private void showNoti(string text)
+        {
+            notification.Text = text;
+            notification.Visible = true;
+            return;
         }
     }
 }

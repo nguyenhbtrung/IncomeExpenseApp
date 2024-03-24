@@ -13,7 +13,8 @@ namespace IncomeExpenseApp
     public partial class Login : IncomeExpenseApp.LoginFrame
     {
         private DatabaseConnector databaseConnector;
-        public static string maXacThuc,id, username, password, email;
+        public static string maXacThuc, username, password, email;
+        public static int userId;
         public static bool isLogin = false;
         public Login()
         {
@@ -26,15 +27,11 @@ namespace IncomeExpenseApp
 
             if (usernameField.Text == "")
             {
-                notification.Text = "Chưa điền tài khoản!!";
-                notification.Visible = true;
-                return;
+                showNoti("Chưa điền tài khoản!!");
             }
             else if (passwordField.Text == "")
             {
-                notification.Text = "Chưa điền mật khẩu!!";
-                notification.Visible = true;
-                return;
+                showNoti("Chưa điền mật khẩu!!");
             }
             DataTable login = databaseConnector.ExecuteDataTableQuery($"select * from UserInfo");
             foreach(DataRow rows in login.Rows)
@@ -44,8 +41,7 @@ namespace IncomeExpenseApp
                 if (usernameField.Text == username && passwordField.Text == password)
                 {
                     isLogin = true;
-                    int userId = Convert.ToInt32(rows["userId"]);
-                    id = Convert.ToString(rows["userId"]);
+                    userId = Convert.ToInt32(rows["userId"]);
                     email = rows["userEmail"].ToString();
                     MainForm obj = new MainForm(userId);
                     this.Hide();
@@ -57,9 +53,7 @@ namespace IncomeExpenseApp
                 }
 
             }
-            notification.Text = "Sai tên tài khoản hoặc mật khẩu!!";
-            notification.Visible = true;
-            
+            showNoti("Sai tên tài khoản hoặc\nmật khẩu!!");
         }
 
         private void registerButton_Click(object sender, EventArgs e)
@@ -71,9 +65,9 @@ namespace IncomeExpenseApp
         {
             if(usernameField.Text == "")
             {
-                notification.Text = "Nhập tài khoản vào ô tên đăng nhập để lấy lại mật khẩu!!";
-                notification.Visible = true;
-            }else
+                showNoti("Nhập tài khoản vào ô tên đăng nhập để lấy lại mật khẩu!!");
+            }
+            else
             {
                 DataTable login = databaseConnector.ExecuteDataTableQuery($"select * from UserInfo");
                 foreach (DataRow rows in login.Rows)
@@ -81,10 +75,10 @@ namespace IncomeExpenseApp
                     string username = rows["userName"].ToString();
                     if (usernameField.Text == username)
                     {
-                        id = rows["userId"].ToString();
+                        userId = Convert.ToInt32(rows["userId"]);
                         string email = rows["userEmail"].ToString();
                         maXacThuc = EmailSender.SendAuthenticationEmail(email, 1);
-                        ShowAuthenticaon(1);
+                        ShowAuthenticaon(userId);
                         this.Hide();
                     }
 
@@ -102,6 +96,13 @@ namespace IncomeExpenseApp
         {
             passwordField.PasswordChar = '\0';
             hidePassBox.BringToFront();
+        }
+
+        private void showNoti(string text)
+        {
+            notification.Text = text;
+            notification.Visible = true;
+            return;
         }
     }
 }

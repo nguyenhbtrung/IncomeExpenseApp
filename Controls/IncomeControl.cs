@@ -31,21 +31,15 @@ namespace IncomeExpenseApp.Controls
         {
             if(incomeNameText.Text == "")
             {
-                notification.Text = "Chưa điền tên khoản thu!!";
-                notification.Visible = true;
-                return;
+                showNoti("Chưa điền tên khoản thu!!");
             }
             else if(incomeCategoryComboBox.Text == "")
             {
-                notification.Text = "Chưa chọn danh mục!!";
-                notification.Visible = true;
-                return;
+                showNoti("Chưa chọn danh mục!!");
             }
             else if(incomeAmountText.Text == "")
             {
-                notification.Text = "Chưa nhập số tiền!!";
-                notification.Visible = true;
-                return;
+                showNoti("Chưa nhập số tiền!!");
             }
             var isNumeric = int.TryParse(incomeAmountText.Text, out int n);
             if (isNumeric)
@@ -63,10 +57,14 @@ namespace IncomeExpenseApp.Controls
             }
             else
             {
-                notification.Text = "Nhập sai số tiền!!";
-                notification.Visible = true;
-                return;
+                showNoti("Nhập sai số tiền!!");
             }
+        }
+        private void showNoti(string text)
+        {
+            notification.Text = text;
+            notification.Visible = true;
+            return;
         }
     }
 }

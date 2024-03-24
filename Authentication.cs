@@ -16,37 +16,33 @@ namespace IncomeExpenseApp
     public partial class Authentication : Form
     {
         private DatabaseConnector databaseConnector;
-        int a;
-        public Authentication(int a)
+        int userId;
+        public Authentication(int userId)
         {
-            this.a = a;
+            this.userId = userId;
             InitializeComponent();
             databaseConnector = new DatabaseConnector(Program.DbConnectionString);
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if (a == 0)
+            if(codeField.Text.Equals(Register.maXacThuc) || codeField.Text.Equals(Login.maXacThuc))
             {
-                if (codeField.Text.Equals(Register.maXacThuc))
+                if (userId == 0)
                 {
                     databaseConnector.ExecuteNonQuery($"insert into UserInfo values (N'{Register.username}', N'{Register.password}', N'{Register.email}')");
                     MessageBox.Show("Tạo tài khoản thành công!!", "Thông báo");
                     this.Close();
                     Program.LoginForm.Show();
                 }
-                else notification.Visible = true;
-            }
-            else
-            {
-                if (codeField.Text.Equals(Login.maXacThuc))
+                else
                 {
                     this.Close();
-                    ChangePassword obj = new ChangePassword();
+                    ChangePassword obj = new ChangePassword(userId);
                     obj.ShowDialog();
                 }
-                else notification.Visible = true;
             }
+            else notification.Visible = true;
         }
 
         private void Close_Click(object sender, EventArgs e)
