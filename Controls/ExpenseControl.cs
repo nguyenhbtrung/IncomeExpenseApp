@@ -5,9 +5,12 @@ using System.Data;
 using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 namespace IncomeExpenseApp.Controls
 {
@@ -22,11 +25,12 @@ namespace IncomeExpenseApp.Controls
         {
             InitializeComponent();
             databaseConnector = new DatabaseConnector(Program.DbConnectionString);
-            expenseCategoryComboBox.Items.Add("Thực phẩm");
-            expenseCategoryComboBox.Items.Add("Hóa đơn");
-            expenseCategoryComboBox.Items.Add("Giải trí");
-            expenseCategoryComboBox.Items.Add("Du lịch");
-            expenseCategoryComboBox.Items.Add("Y tế");
+            //expenseCategoryComboBox.Items.Add("Thực phẩm");
+            //expenseCategoryComboBox.Items.Add("Hóa đơn");
+            //expenseCategoryComboBox.Items.Add("Giải trí");
+            //expenseCategoryComboBox.Items.Add("Du lịch");
+            //expenseCategoryComboBox.Items.Add("Y tế");
+            
         }
         
         private void saveExpenseButton_Click(object sender, EventArgs e)
@@ -81,16 +85,50 @@ namespace IncomeExpenseApp.Controls
             dataTable.Columns["epCategory"].ColumnName = "Danh mục";
             dataTable.Columns["epAmount"].ColumnName = "Số tiền";
             dataTable.Columns["epDateFormat"].ColumnName = "Ngày chi";
-
             expensePlanTable.DataSource = dataTable;
             expensePlanTable.Columns[1].Visible = false;
-            
+            DataTable category = databaseConnector.ExecuteDataTableQuery($"select exCategory from Expense");
+            bool trung = false;
+            foreach (DataRow rows in category.Rows)
+            {
+                foreach(Object item in expenseCategoryComboBox.Items)
+                {
+                    trung = false;
+                    if (rows["exCategory"].ToString().Equals(Convert.ToString(item)))
+                    {
+                        trung = true;
+                        break;
+                    } 
+                }
+                if (!trung)
+                {
+                    expenseCategoryComboBox.Items.Add(rows["exCategory"].ToString());
+                }
+
+            }
         }
         private void expensePlanTable_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
         {
             foreach (DataGridViewRow row in expensePlanTable.Rows)
             {
                 expensePlanTable.Rows[row.Index].Cells[0].Value = (row.Index + 1).ToString();
+            }
+            expensePlanTable.Rows[0].Selected = false;
+        }
+        private void expensePlanTable_SelectionChanged(object sender, EventArgs e)
+        {
+            expenseNameText.Clear();
+            expenseDetailText.Clear();
+            expenseAmountText.Clear();
+            expenseDatePicker.Value = DateTime.Now;
+            expenseCategoryComboBox.SelectedIndex = -1;
+            if (expensePlanTable.SelectedCells.Count > 0)
+            {
+                int selectedrowindex = expensePlanTable.SelectedCells[0].RowIndex;
+                DataGridViewRow selectedRow = expensePlanTable.Rows[selectedrowindex];
+                expenseNameText.Text = Convert.ToString(selectedRow.Cells["Tên khoản chi"].Value);
+                expenseAmountText.Text = Convert.ToString(selectedRow.Cells["Số tiền"].Value);
+                expenseDatePicker.Text = Convert.ToString(selectedRow.Cells["Ngày chi"].Value);
             }
         }
     }

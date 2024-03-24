@@ -236,6 +236,7 @@
             this.expensePlanTable.Size = new System.Drawing.Size(811, 225);
             this.expensePlanTable.TabIndex = 74;
             this.expensePlanTable.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.expensePlanTable_DataBindingComplete);
+            this.expensePlanTable.SelectionChanged += new System.EventHandler(this.expensePlanTable_SelectionChanged);
             // 
             // label1
             // 
