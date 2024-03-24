@@ -34,6 +34,7 @@ namespace IncomeExpenseApp
 
             dashBoardControl1.LoadData();
             planControl1.LoadData();
+            userInformation1.LoadData();
 
             SetMenuPanelsIndex();
 
@@ -196,6 +197,25 @@ namespace IncomeExpenseApp
         private void OpenUserInfo(object sender, EventArgs e)
         {
             userInformation1.BringToFront();
+            foreach (Control control in panel1.Controls)
+            {
+                if (control is Panel panel && control.Name.StartsWith("menu"))
+                {
+                    panel.BackColor = Color.White;
+                    foreach (Control controlChild in panel.Controls)
+                    {
+                        if (controlChild is Label label)
+                        {
+                            label.ForeColor = SystemColors.Desktop;
+                        }
+                        if (controlChild is PictureBox pictureBox)
+                        {
+                            int index = panel1.Controls.IndexOf(panel);
+                            pictureBox.Image = blackImageResources[index];
+                        }
+                    }
+                }
+            }
         }
 
         //int originalExStyle = -1;
