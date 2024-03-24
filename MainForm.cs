@@ -102,6 +102,7 @@ namespace IncomeExpenseApp
             viewIncomeControl1.BringToFront();
             Panel newSelectedPanel = menuViewIncomePanel;
             ChangeTheSelectionDisplay(menuSelectedPanel, newSelectedPanel);
+            viewIncomeControl1.LoadData();
         }
 
         protected void OpenViewExpense(object sender, EventArgs e)
@@ -109,6 +110,7 @@ namespace IncomeExpenseApp
             viewExpenseControl1.BringToFront();
             Panel newSelectedPanel = menuViewExpensePanel;
             ChangeTheSelectionDisplay(menuSelectedPanel, newSelectedPanel);
+            viewExpenseControl1.LoadData();
         }
 
         private void OpenPlan(object sender, EventArgs e)
