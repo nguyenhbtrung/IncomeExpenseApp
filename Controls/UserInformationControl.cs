@@ -22,7 +22,6 @@ namespace IncomeExpenseApp.Controls
         {
             InitializeComponent();
             databaseConnector = new DatabaseConnector(Program.DbConnectionString);
-            LoadData();
         }
 
         private void ChangePass_Click(object sender, EventArgs e)
@@ -31,9 +30,9 @@ namespace IncomeExpenseApp.Controls
             Authentication obj = new Authentication(UserId);
             obj.ShowDialog();
         }
-        private void LoadData()
+        public void LoadData()
         {
-            DataTable data = databaseConnector.ExecuteDataTableQuery($"select userName, userPassword, userEmail from UserInfo WHERE userId = {UserId}");
+            DataTable data = databaseConnector.ExecuteDataTableQuery($"select * from UserInfo WHERE userId = {UserId}");
             DataRow row = data.Rows[0];
             email = row["userEmail"].ToString();
             accountEmailText.Text = email;

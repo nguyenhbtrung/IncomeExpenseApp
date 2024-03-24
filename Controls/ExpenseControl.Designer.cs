@@ -48,7 +48,7 @@
             // 
             this.saveExpenseButton.BackColor = System.Drawing.Color.Cyan;
             this.saveExpenseButton.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.saveExpenseButton.Location = new System.Drawing.Point(590, 442);
+            this.saveExpenseButton.Location = new System.Drawing.Point(670, 298);
             this.saveExpenseButton.Name = "saveExpenseButton";
             this.saveExpenseButton.Size = new System.Drawing.Size(250, 57);
             this.saveExpenseButton.TabIndex = 72;
@@ -60,7 +60,7 @@
             // 
             this.incomeDetailLabel.AutoSize = true;
             this.incomeDetailLabel.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.incomeDetailLabel.Location = new System.Drawing.Point(183, 381);
+            this.incomeDetailLabel.Location = new System.Drawing.Point(105, 234);
             this.incomeDetailLabel.Name = "incomeDetailLabel";
             this.incomeDetailLabel.Size = new System.Drawing.Size(170, 23);
             this.incomeDetailLabel.TabIndex = 71;
@@ -69,17 +69,17 @@
             // expenseDetailText
             // 
             this.expenseDetailText.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.expenseDetailText.Location = new System.Drawing.Point(187, 407);
+            this.expenseDetailText.Location = new System.Drawing.Point(109, 260);
             this.expenseDetailText.Multiline = true;
             this.expenseDetailText.Name = "expenseDetailText";
-            this.expenseDetailText.Size = new System.Drawing.Size(250, 141);
+            this.expenseDetailText.Size = new System.Drawing.Size(541, 32);
             this.expenseDetailText.TabIndex = 70;
             // 
             // expenseCategoryComboBox
             // 
             this.expenseCategoryComboBox.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.expenseCategoryComboBox.FormattingEnabled = true;
-            this.expenseCategoryComboBox.Location = new System.Drawing.Point(590, 189);
+            this.expenseCategoryComboBox.Location = new System.Drawing.Point(389, 191);
             this.expenseCategoryComboBox.Name = "expenseCategoryComboBox";
             this.expenseCategoryComboBox.Size = new System.Drawing.Size(250, 31);
             this.expenseCategoryComboBox.TabIndex = 69;
@@ -87,7 +87,7 @@
             // expenseDatePicker
             // 
             this.expenseDatePicker.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.expenseDatePicker.Location = new System.Drawing.Point(590, 302);
+            this.expenseDatePicker.Location = new System.Drawing.Point(670, 260);
             this.expenseDatePicker.Name = "expenseDatePicker";
             this.expenseDatePicker.Size = new System.Drawing.Size(250, 32);
             this.expenseDatePicker.TabIndex = 68;
@@ -95,7 +95,7 @@
             // expenseAmountText
             // 
             this.expenseAmountText.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.expenseAmountText.Location = new System.Drawing.Point(187, 302);
+            this.expenseAmountText.Location = new System.Drawing.Point(670, 191);
             this.expenseAmountText.Name = "expenseAmountText";
             this.expenseAmountText.Size = new System.Drawing.Size(250, 32);
             this.expenseAmountText.TabIndex = 67;
@@ -103,7 +103,7 @@
             // expenseNameText
             // 
             this.expenseNameText.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.expenseNameText.Location = new System.Drawing.Point(187, 189);
+            this.expenseNameText.Location = new System.Drawing.Point(109, 190);
             this.expenseNameText.Name = "expenseNameText";
             this.expenseNameText.Size = new System.Drawing.Size(250, 32);
             this.expenseNameText.TabIndex = 66;
@@ -112,7 +112,7 @@
             // 
             this.incomeDateLabel.AutoSize = true;
             this.incomeDateLabel.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.incomeDateLabel.Location = new System.Drawing.Point(586, 276);
+            this.incomeDateLabel.Location = new System.Drawing.Point(666, 234);
             this.incomeDateLabel.Name = "incomeDateLabel";
             this.incomeDateLabel.Size = new System.Drawing.Size(89, 23);
             this.incomeDateLabel.TabIndex = 65;
@@ -122,7 +122,7 @@
             // 
             this.incomeAmountLabel.AutoSize = true;
             this.incomeAmountLabel.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.incomeAmountLabel.Location = new System.Drawing.Point(183, 276);
+            this.incomeAmountLabel.Location = new System.Drawing.Point(666, 165);
             this.incomeAmountLabel.Name = "incomeAmountLabel";
             this.incomeAmountLabel.Size = new System.Drawing.Size(74, 23);
             this.incomeAmountLabel.TabIndex = 64;
@@ -132,7 +132,7 @@
             // 
             this.incomeCategoryLabel.AutoSize = true;
             this.incomeCategoryLabel.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.incomeCategoryLabel.Location = new System.Drawing.Point(586, 163);
+            this.incomeCategoryLabel.Location = new System.Drawing.Point(385, 165);
             this.incomeCategoryLabel.Name = "incomeCategoryLabel";
             this.incomeCategoryLabel.Size = new System.Drawing.Size(101, 23);
             this.incomeCategoryLabel.TabIndex = 63;
@@ -142,7 +142,7 @@
             // 
             this.incomeNameLabel.AutoSize = true;
             this.incomeNameLabel.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.incomeNameLabel.Location = new System.Drawing.Point(183, 163);
+            this.incomeNameLabel.Location = new System.Drawing.Point(105, 164);
             this.incomeNameLabel.Name = "incomeNameLabel";
             this.incomeNameLabel.Size = new System.Drawing.Size(169, 23);
             this.incomeNameLabel.TabIndex = 62;
@@ -162,7 +162,7 @@
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Segoe UI", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(236, 250);
+            this.label10.Location = new System.Drawing.Point(719, 139);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(0, 50);
             this.label10.TabIndex = 60;
@@ -171,7 +171,7 @@
             // 
             this.notification.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.notification.ForeColor = System.Drawing.Color.Red;
-            this.notification.Location = new System.Drawing.Point(590, 505);
+            this.notification.Location = new System.Drawing.Point(670, 361);
             this.notification.Name = "notification";
             this.notification.Size = new System.Drawing.Size(250, 43);
             this.notification.TabIndex = 73;

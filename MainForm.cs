@@ -197,6 +197,7 @@ namespace IncomeExpenseApp
         private void OpenUserInfo(object sender, EventArgs e)
         {
             userInformation1.BringToFront();
+            userInformation1.LoadData();
             foreach (Control control in panel1.Controls)
             {
                 if (control is Panel panel && control.Name.StartsWith("menu"))
