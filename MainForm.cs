@@ -86,6 +86,7 @@ namespace IncomeExpenseApp
             incomeControl1.BringToFront();
             Panel newSelectedPanel = menuIncomePanel;
             ChangeTheSelectionDisplay(menuSelectedPanel, newSelectedPanel);
+            incomeControl1.LoadData();
         }
 
         protected void OpenExpense(object sender, EventArgs e)

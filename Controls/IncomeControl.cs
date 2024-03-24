@@ -52,7 +52,9 @@ namespace IncomeExpenseApp.Controls
                 incomeCategoryComboBox.SelectedIndex = -1;
                 incomeAmountText.Clear();
                 incomeDetailText.Clear();
+                LoadData();
                 notification.Visible = false;
+                incomeCategoryComboBox.ResetText();
                 return;
             }
             else
@@ -65,6 +67,29 @@ namespace IncomeExpenseApp.Controls
             notification.Text = text;
             notification.Visible = true;
             return;
+        }
+
+        public void LoadData()
+        {
+            DataTable category = databaseConnector.ExecuteDataTableQuery($"select incCategory from Income");
+            bool trung = false;
+            foreach (DataRow rows in category.Rows)
+            {
+                foreach (Object item in incomeCategoryComboBox.Items)
+                {
+                    trung = false;
+                    if (rows["incCategory"].ToString().Equals(Convert.ToString(item)))
+                    {
+                        trung = true;
+                        break;
+                    }
+                }
+                if (!trung)
+                {
+                    incomeCategoryComboBox.Items.Add(rows["incCategory"].ToString());
+                }
+
+            }
         }
     }
 }

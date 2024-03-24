@@ -61,7 +61,9 @@ namespace IncomeExpenseApp.Controls
                 databaseConnector.ExecuteNonQuery($"insert into Expense values (N'{expenseNameText.Text}', N'{expenseCategoryComboBox.Text}', {Amount}, '{date}', N'{expenseDetailText.Text}', {userId})");
                 MessageBox.Show("Lưu thành công!!", "Thông báo");
                 expenseNameText.Clear();
+                LoadData();
                 expenseCategoryComboBox.SelectedIndex = -1;
+                expenseCategoryComboBox.ResetText();
                 expenseAmountText.Clear();
                 expenseDetailText.Clear();
                 notification.Visible = false;
