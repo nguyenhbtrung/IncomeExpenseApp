@@ -39,6 +39,7 @@
             this.incomeCategoryLabel = new System.Windows.Forms.Label();
             this.incomeNameLabel = new System.Windows.Forms.Label();
             this.nameLabel = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.ViewExpenseTable)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.expenseBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -81,7 +82,6 @@
             this.ViewExpenseTable.RowHeadersVisible = false;
             this.ViewExpenseTable.Size = new System.Drawing.Size(1004, 435);
             this.ViewExpenseTable.TabIndex = 70;
-            this.ViewExpenseTable.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.ViewExpenseTable_CellContentClick);
             // 
             // expenseBindingSource
             // 
@@ -95,7 +95,7 @@
             this.viewexpenseCategoryComboBox.Name = "viewexpenseCategoryComboBox";
             this.viewexpenseCategoryComboBox.Size = new System.Drawing.Size(250, 31);
             this.viewexpenseCategoryComboBox.TabIndex = 69;
-            this.viewexpenseCategoryComboBox.SelectedIndexChanged += new System.EventHandler(this.incomeCategoryComboBox_SelectedIndexChanged);
+            this.viewexpenseCategoryComboBox.SelectedIndexChanged += new System.EventHandler(this.viewexpenseCategoryComboBox_SelectedIndexChanged);
             // 
             // incomeNameText
             // 
@@ -135,10 +135,22 @@
             this.nameLabel.TabIndex = 65;
             this.nameLabel.Text = "THỐNG KÊ CHI TIÊU";
             // 
+            // button1
+            // 
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Location = new System.Drawing.Point(473, 141);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(98, 32);
+            this.button1.TabIndex = 71;
+            this.button1.Text = "Tìm kiếm";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // ViewExpenseControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.ViewExpenseTable);
             this.Controls.Add(this.viewexpenseCategoryComboBox);
             this.Controls.Add(this.incomeNameText);
@@ -163,5 +175,6 @@
         private System.Windows.Forms.Label incomeNameLabel;
         private System.Windows.Forms.Label nameLabel;
         private System.Windows.Forms.BindingSource expenseBindingSource;
+        private System.Windows.Forms.Button button1;
     }
 }
