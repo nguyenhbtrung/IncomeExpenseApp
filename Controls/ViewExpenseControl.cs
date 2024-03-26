@@ -15,7 +15,7 @@ namespace IncomeExpenseApp.Controls
     {
         private int userId;
         private DatabaseConnector databaseConnector;
-
+        int delete_id;
         public int UserId { get => userId; set => userId = value; }
         public ViewExpenseControl()
         {
@@ -203,6 +203,29 @@ namespace IncomeExpenseApp.Controls
         {
             viewexpenseCategoryComboBox.Text = "";
             expenseNameText.Text = "";
+            LoadData();
+        }
+
+        private void ViewExpenseTable_CellMouseUp(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            if(e.Button == MouseButtons.Right)
+            {
+                delete_id = Convert.ToInt32(ViewExpenseTable.Rows[e.RowIndex].Cells["STT"].Value.ToString());
+                this.contextMenuStrip1.Show(this.ViewExpenseTable, e.Location);
+                contextMenuStrip1.Show(Cursor.Position);
+            }
+        }
+
+        private void contextMenuStrip1_Opening(object sender, CancelEventArgs e)
+        {
+
+        }
+
+        private void contextMenuStrip1_Click(object sender, EventArgs e)
+        {
+            databaseConnector = new DatabaseConnector(Program.DbConnectionString);
+            string query = "delete from dbo.expense where exId =" + delete_id + "";
+            databaseConnector.ExecuteNonQuery(query);
             LoadData();
         }
     }

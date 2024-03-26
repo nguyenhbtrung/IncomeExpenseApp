@@ -16,6 +16,7 @@ namespace IncomeExpenseApp.Controls
     {
         private int userId;
         private DatabaseConnector databaseConnector;
+        int delete_id;
 
         public int UserId { get => userId; set => userId = value; }
         public ViewIncomeControl()
@@ -205,6 +206,24 @@ namespace IncomeExpenseApp.Controls
             viewincomeCategoryComboBox.Text = "";
             incomeNameText.Text = "";
             LoadData();
+        }
+
+        private void contextMenuStrip1_Click_1(object sender, EventArgs e)
+        {
+            databaseConnector = new DatabaseConnector(Program.DbConnectionString);
+            string query = "delete from dbo.income where incId =" + delete_id + "";
+            databaseConnector.ExecuteNonQuery(query);
+            LoadData();
+        }
+
+        private void ViewIncomeTable_CellMouseUp(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Right)
+            {
+                delete_id = Convert.ToInt32(ViewIncomeTable.Rows[e.RowIndex].Cells["STT"].Value.ToString());
+                this.contextMenuStrip1.Show(this.ViewIncomeTable, e.Location);
+                contextMenuStrip1.Show(Cursor.Position);
+            }
         }
     }
 }
