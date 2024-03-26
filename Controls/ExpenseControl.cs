@@ -116,7 +116,7 @@ namespace IncomeExpenseApp.Controls
             expenseDetailText.Clear();
             expenseAmountText.Clear();
             expenseCategoryComboBox.ResetText();
-            expenseDatePicker.Value = DateTime.Now;
+            //expenseDatePicker.Value = DateTime.Now;
             expenseCategoryComboBox.SelectedIndex = -1;
             if (expensePlanTable.SelectedCells.Count > 0)
             {
@@ -124,7 +124,12 @@ namespace IncomeExpenseApp.Controls
                 DataGridViewRow selectedRow = expensePlanTable.Rows[selectedrowindex];
                 expenseNameText.Text = Convert.ToString(selectedRow.Cells["Tên khoản chi"].Value);
                 expenseAmountText.Text = Convert.ToString(selectedRow.Cells["Số tiền"].Value);
-                expenseDatePicker.Text = Convert.ToString(selectedRow.Cells["Ngày chi"].Value);
+                string dateStr = Convert.ToString(selectedRow.Cells["Ngày chi"].Value);
+                if (dateStr != "")
+                {
+                    DateTime date = DateTime.ParseExact(dateStr, "dd/MM/yyyy", null);
+                    expenseDatePicker.Value = date;
+                }
                 expenseCategoryComboBox.Text = Convert.ToString(selectedRow.Cells["Danh mục"].Value);
             }
         }
