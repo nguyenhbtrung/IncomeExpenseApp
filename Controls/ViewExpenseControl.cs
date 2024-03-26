@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
+using System.Drawing.Text;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -16,6 +17,7 @@ namespace IncomeExpenseApp.Controls
         private int userId;
         private DatabaseConnector databaseConnector;
         int delete_id;
+
         public int UserId { get => userId; set => userId = value; }
         public ViewExpenseControl()
         {
@@ -27,6 +29,7 @@ namespace IncomeExpenseApp.Controls
             string query = $"select distinct exCategory from dbo.Expense";
             HashSet<string> uniqueValues = new HashSet<string>();
 
+            //Duyệt cột danh mục trong cơ sở dữ liệu, nạp vào trong ComboBox, mục nào đã tồn tại thì không nạp
             using (SqlConnection connection = new SqlConnection(Program.DbConnectionString))
             {
                 using (SqlCommand cmd = new SqlCommand(query, connection))
@@ -50,8 +53,8 @@ namespace IncomeExpenseApp.Controls
             //Căn chỉnh hiển thị bảng
             ViewExpenseTable.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             ViewExpenseTable.RowsDefaultCellStyle.Font = new Font("Time New Roman", 10);
-
         }
+
         public void LoadData()
         {
             //Kết nối với bảng dữ liệu tùy theo id tài khoản của người dùng, nạp dữ liệu vào đối tượng bảng để hiển thị trong phần mềm
@@ -102,7 +105,7 @@ namespace IncomeExpenseApp.Controls
 
         public void searchData(string valueToSearch)
         {
-            //Kết nối với bảng dữ liệu tùy theo id tài khoản của người dùng, nạp dữ liệu vào đối tượng bảng để hiển thị trong phần mềm với điều kiện cho trước
+            //Kết nối với bảng dữ liệu tùy theo id tài khoản của người dùng, nạp dữ liệu vào đối tượng bảng, hiển thị bất kì những hàng thuộc bảng có dữ liệu trùng với dữ liệu người dùng nhập 
             databaseConnector = new DatabaseConnector(Program.DbConnectionString);
             String query = $"select * from dbo.Expense where userId = {UserId} AND CONCAT(exName, exCategory, exAmount, exDate, exDesciption) like N'%" + valueToSearch + "%'";
             DataTable dataTable = databaseConnector.ExecuteDataTableQuery(query);
@@ -148,7 +151,7 @@ namespace IncomeExpenseApp.Controls
 
         private void viewexpenseCategoryComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-            //Kết nối với bảng dữ liệu tùy theo id tài khoản của người dùng, nạp dữ liệu vào đối tượng bảng để hiển thị trong phần mềm với điều kiện cho trước
+            //Kết nối với bảng dữ liệu tùy theo id tài khoản của người dùng, nạp dữ liệu vào đối tượng bảng, hiển thị bất kì những hàng thuộc bảng có dữ liệu trùng với dữ liệu người dùng nhập 
             databaseConnector = new DatabaseConnector(Program.DbConnectionString);
             String values = viewexpenseCategoryComboBox.Text.ToString();
             String query = $"select * from dbo.Expense where userId = {UserId} AND CONCAT(exName, exCategory, exAmount, exDate, exDesciption) like N'%" + values + "%'";
@@ -195,12 +198,14 @@ namespace IncomeExpenseApp.Controls
 
         private void SearchExpenseButton_Click(object sender, EventArgs e)
         {
+            //Chuyển văn bản người dùng nhập thành định dạng String, xử dụng dữ liệu này làm điều kiện để truy xuất câu lệnh SQL trong hàm searchData
             string valueToSearch = expenseNameText.Text.ToString();
             searchData(valueToSearch);
         }
 
         private void RefreshExpense(object sender, EventArgs e)
         {
+            //Làm sạch dữ liệu trong các trường cho phép điền, làm mới bảng hiển thị
             viewexpenseCategoryComboBox.Text = "";
             expenseNameText.Text = "";
             LoadData();
@@ -208,6 +213,7 @@ namespace IncomeExpenseApp.Controls
 
         private void ViewExpenseTable_CellMouseUp(object sender, DataGridViewCellMouseEventArgs e)
         {
+            //Lấy dữ liệu thuộc cột STT tại dòng mà người dùng bấm chuột phải vào, chuyển sang định dạng Int (số nguyên)
             if(e.Button == MouseButtons.Right)
             {
                 delete_id = Convert.ToInt32(ViewExpenseTable.Rows[e.RowIndex].Cells["STT"].Value.ToString());
@@ -218,6 +224,7 @@ namespace IncomeExpenseApp.Controls
 
         private void contextMenuStrip1_Click(object sender, EventArgs e)
         {
+            //Sử dụng dữ liệu lấy được từ hành động Click, đối chiếu theo bảng thuộc cơ sở dữ liệu để thực hiện câu lệnh SQL
             databaseConnector = new DatabaseConnector(Program.DbConnectionString);
             string query = "delete from dbo.expense where exId =" + delete_id + "";
             databaseConnector.ExecuteNonQuery(query);

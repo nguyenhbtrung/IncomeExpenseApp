@@ -24,6 +24,8 @@ namespace IncomeExpenseApp.Controls
             InitializeComponent();
             //Kết nối với bảng dữ liệu tùy theo id tài khoản của người dùng
             databaseConnector = new DatabaseConnector(Program.DbConnectionString);
+            
+            //Duyệt cột danh mục trong cơ sở dữ liệu, nạp vào trong ComboBox, mục nào đã tồn tại thì không nạp
             string query = $"select distinct incCategory from dbo.Income";
             HashSet<string> uniqueValues = new HashSet<string>();
 
@@ -99,7 +101,6 @@ namespace IncomeExpenseApp.Controls
             ViewIncomeTable.Columns[5].SortMode = DataGridViewColumnSortMode.NotSortable;
 
             ViewIncomeTable.EnableHeadersVisualStyles = false;
-
         }
 
         public void searchData(string valueToSearch)
@@ -197,34 +198,38 @@ namespace IncomeExpenseApp.Controls
 
         private void SearchIncomeButton_Click(object sender, EventArgs e)
         {
+            //Chuyển văn bản người dùng nhập thành định dạng String, xử dụng dữ liệu này làm điều kiện để truy xuất câu lệnh SQL trong hàm searchData
             string valueToSearch = incomeNameText.Text.ToString();
             searchData(valueToSearch);
         }
 
         private void RefreshIncome_Click(object sender, EventArgs e)
         {
+            //Làm sạch dữ liệu trong các trường cho phép điền, làm mới bảng hiển thị
             viewincomeCategoryComboBox.Text = "";
             incomeNameText.Text = "";
             LoadData();
         }
 
-        private void contextMenuStrip1_Click_1(object sender, EventArgs e)
-        {
-            databaseConnector = new DatabaseConnector(Program.DbConnectionString);
-            string query = "delete from dbo.income where incId =" + delete_id + "";
-            databaseConnector.ExecuteNonQuery(query);
-            MessageBox.Show("Xóa lịch sử thành công");
-            LoadData();
-        }
-
         private void ViewIncomeTable_CellMouseUp(object sender, DataGridViewCellMouseEventArgs e)
         {
+            //Lấy dữ liệu thuộc cột STT tại dòng mà người dùng bấm chuột phải vào, chuyển sang định dạng Int (số nguyên)
             if (e.Button == MouseButtons.Right)
             {
                 delete_id = Convert.ToInt32(ViewIncomeTable.Rows[e.RowIndex].Cells["STT"].Value.ToString());
                 this.contextMenuStrip1.Show(this.ViewIncomeTable, e.Location);
                 contextMenuStrip1.Show(Cursor.Position);
             }
+        }
+
+        private void contextMenuStrip1_Click_1(object sender, EventArgs e)
+        {
+            //Sử dụng dữ liệu lấy được từ hành động Click, đối chiếu theo bảng thuộc cơ sở dữ liệu để thực hiện câu lệnh SQL
+            databaseConnector = new DatabaseConnector(Program.DbConnectionString);
+            string query = "delete from dbo.income where incId =" + delete_id + "";
+            databaseConnector.ExecuteNonQuery(query);
+            MessageBox.Show("Xóa lịch sử thành công");
+            LoadData();
         }
     }
 }
