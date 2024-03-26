@@ -118,11 +118,11 @@
             this.loginButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(57)))), ((int)(((byte)(94)))));
             this.loginButton.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.loginButton.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.loginButton.Location = new System.Drawing.Point(373, 371);
+            this.loginButton.Location = new System.Drawing.Point(354, 361);
             this.loginButton.Name = "loginButton";
-            this.loginButton.Size = new System.Drawing.Size(130, 44);
+            this.loginButton.Size = new System.Drawing.Size(160, 44);
             this.loginButton.TabIndex = 31;
-            this.loginButton.Text = "Đăng nhập";
+            this.loginButton.Text = "Đổi mật khẩu";
             this.loginButton.UseVisualStyleBackColor = false;
             this.loginButton.Click += new System.EventHandler(this.loginButton_Click);
             // 
