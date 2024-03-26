@@ -104,11 +104,14 @@ namespace IncomeExpenseApp.Controls
         }
         private void expensePlanTable_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
         {
-            foreach (DataGridViewRow row in expensePlanTable.Rows)
+            if (expensePlanTable.Rows.Count > 0)
             {
-                expensePlanTable.Rows[row.Index].Cells[0].Value = (row.Index + 1).ToString();
+                foreach (DataGridViewRow row in expensePlanTable.Rows)
+                {
+                    expensePlanTable.Rows[row.Index].Cells[0].Value = (row.Index + 1).ToString();
+                }
+                expensePlanTable.Rows[0].Selected = false;
             }
-            expensePlanTable.Rows[0].Selected = false;
         }
         private void expensePlanTable_SelectionChanged(object sender, EventArgs e)
         {
