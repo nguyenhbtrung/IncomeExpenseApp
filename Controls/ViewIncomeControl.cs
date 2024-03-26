@@ -195,13 +195,13 @@ namespace IncomeExpenseApp.Controls
             ViewIncomeTable.Columns[5].SortMode = DataGridViewColumnSortMode.NotSortable; 
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void SearchIncomeButton_Click(object sender, EventArgs e)
         {
             string valueToSearch = incomeNameText.Text.ToString();
             searchData(valueToSearch);
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void RefreshIncome_Click(object sender, EventArgs e)
         {
             viewincomeCategoryComboBox.Text = "";
             incomeNameText.Text = "";

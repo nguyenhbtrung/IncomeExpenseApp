@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.ViewIncomeTable = new System.Windows.Forms.DataGridView();
             this.incomeBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.viewincomeCategoryComboBox = new System.Windows.Forms.ComboBox();
@@ -37,8 +37,8 @@
             this.incomeCategoryLabel = new System.Windows.Forms.Label();
             this.incomeNameLabel = new System.Windows.Forms.Label();
             this.nameLabel = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.SearchIncomeButton = new System.Windows.Forms.Button();
+            this.RefreshIncomeButton = new System.Windows.Forms.Button();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.xóaDữLiệuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.ViewIncomeTable)).BeginInit();
@@ -55,14 +55,14 @@
             this.ViewIncomeTable.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.ViewIncomeTable.BackgroundColor = System.Drawing.Color.White;
             this.ViewIncomeTable.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Sunken;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.ViewIncomeTable.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.ViewIncomeTable.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.ViewIncomeTable.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.ViewIncomeTable.Location = new System.Drawing.Point(9, 179);
             this.ViewIncomeTable.Name = "ViewIncomeTable";
@@ -124,27 +124,27 @@
             this.nameLabel.TabIndex = 34;
             this.nameLabel.Text = "THỐNG KÊ THU NHẬP";
             // 
-            // button1
+            // SearchIncomeButton
             // 
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(473, 141);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(98, 32);
-            this.button1.TabIndex = 40;
-            this.button1.Text = "Tìm kiếm";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.SearchIncomeButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SearchIncomeButton.Location = new System.Drawing.Point(473, 141);
+            this.SearchIncomeButton.Name = "SearchIncomeButton";
+            this.SearchIncomeButton.Size = new System.Drawing.Size(98, 32);
+            this.SearchIncomeButton.TabIndex = 40;
+            this.SearchIncomeButton.Text = "Tìm kiếm";
+            this.SearchIncomeButton.UseVisualStyleBackColor = true;
+            this.SearchIncomeButton.Click += new System.EventHandler(this.SearchIncomeButton_Click);
             // 
-            // button2
+            // RefreshIncomeButton
             // 
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(876, 141);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(98, 32);
-            this.button2.TabIndex = 41;
-            this.button2.Text = "Làm mới";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.RefreshIncomeButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.RefreshIncomeButton.Location = new System.Drawing.Point(876, 141);
+            this.RefreshIncomeButton.Name = "RefreshIncomeButton";
+            this.RefreshIncomeButton.Size = new System.Drawing.Size(98, 32);
+            this.RefreshIncomeButton.TabIndex = 41;
+            this.RefreshIncomeButton.Text = "Làm mới";
+            this.RefreshIncomeButton.UseVisualStyleBackColor = true;
+            this.RefreshIncomeButton.Click += new System.EventHandler(this.RefreshIncome_Click);
             // 
             // contextMenuStrip1
             // 
@@ -164,8 +164,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.RefreshIncomeButton);
+            this.Controls.Add(this.SearchIncomeButton);
             this.Controls.Add(this.ViewIncomeTable);
             this.Controls.Add(this.viewincomeCategoryComboBox);
             this.Controls.Add(this.incomeNameText);
@@ -191,8 +191,8 @@
         private System.Windows.Forms.Label incomeNameLabel;
         private System.Windows.Forms.Label nameLabel;
         private System.Windows.Forms.BindingSource incomeBindingSource;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button SearchIncomeButton;
+        private System.Windows.Forms.Button RefreshIncomeButton;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.ToolStripMenuItem xóaDữLiệuToolStripMenuItem;
     }

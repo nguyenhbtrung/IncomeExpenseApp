@@ -193,13 +193,13 @@ namespace IncomeExpenseApp.Controls
             ViewExpenseTable.Columns[5].SortMode = DataGridViewColumnSortMode.NotSortable; 
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void SearchExpenseButton_Click(object sender, EventArgs e)
         {
             string valueToSearch = expenseNameText.Text.ToString();
             searchData(valueToSearch);
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void RefreshExpense(object sender, EventArgs e)
         {
             viewexpenseCategoryComboBox.Text = "";
             expenseNameText.Text = "";
@@ -214,11 +214,6 @@ namespace IncomeExpenseApp.Controls
                 this.contextMenuStrip1.Show(this.ViewExpenseTable, e.Location);
                 contextMenuStrip1.Show(Cursor.Position);
             }
-        }
-
-        private void contextMenuStrip1_Opening(object sender, CancelEventArgs e)
-        {
-
         }
 
         private void contextMenuStrip1_Click(object sender, EventArgs e)
