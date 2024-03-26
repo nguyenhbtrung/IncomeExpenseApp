@@ -34,13 +34,6 @@ create table Expense(
 	foreign key (userId) references UserInfo(userId)
 );
 
---Luu tong thu nhap va chi tieu sau khi xoa lich su
-create table OldData(
-	oldIncAmount int not null,
-	oldExAmount int not null,
-	userId int primary key not null,
-	foreign key (userId) references UserInfo(userId)
-);
 
 create table ExpensePlan(
 	epId int identity(1,1) primary key not null,
