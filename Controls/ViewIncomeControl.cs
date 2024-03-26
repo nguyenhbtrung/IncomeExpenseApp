@@ -23,7 +23,7 @@ namespace IncomeExpenseApp.Controls
             InitializeComponent();
             //Kết nối với bảng dữ liệu tùy theo id tài khoản của người dùng
             databaseConnector = new DatabaseConnector(Program.DbConnectionString);
-            string query = $"select distinct incCategory from dbo.Income where userId = {UserId}";
+            string query = $"select distinct incCategory from dbo.Income";
             HashSet<string> uniqueValues = new HashSet<string>();
 
             //Duyệt cột danh mục trong cơ sở dữ liệu, nạp vào trong ComboBox, mục nào đã tồn tại thì không nạp
@@ -48,7 +48,6 @@ namespace IncomeExpenseApp.Controls
             }
 
             //Căn chỉnh hiển thị bảng
-            viewincomeCategoryComboBox.Items.Add("");
             ViewIncomeTable.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             ViewIncomeTable.RowsDefaultCellStyle.Font = new Font("Time New Roman", 10);
         }
@@ -192,13 +191,20 @@ namespace IncomeExpenseApp.Controls
 
             ViewIncomeTable.Columns[5].AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
             ViewIncomeTable.Columns[5].Width = 294;
-            ViewIncomeTable.Columns[5].SortMode = DataGridViewColumnSortMode.NotSortable; string value = viewincomeCategoryComboBox.Text.ToString();
+            ViewIncomeTable.Columns[5].SortMode = DataGridViewColumnSortMode.NotSortable; 
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
             string valueToSearch = incomeNameText.Text.ToString();
             searchData(valueToSearch);
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            viewincomeCategoryComboBox.Text = "";
+            incomeNameText.Text = "";
+            LoadData();
         }
     }
 }

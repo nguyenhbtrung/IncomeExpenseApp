@@ -24,7 +24,7 @@ namespace IncomeExpenseApp.Controls
             databaseConnector = new DatabaseConnector(Program.DbConnectionString);
 
             //Duyệt cột danh mục trong cơ sở dữ liệu, nạp vào trong ComboBox, mục nào đã tồn tại thì không nạp
-            string query = $"select distinct exCategory from dbo.Expense where userId = {UserId}";
+            string query = $"select distinct exCategory from dbo.Expense";
             HashSet<string> uniqueValues = new HashSet<string>();
 
             using (SqlConnection connection = new SqlConnection(Program.DbConnectionString))
@@ -48,7 +48,6 @@ namespace IncomeExpenseApp.Controls
             }
 
             //Căn chỉnh hiển thị bảng
-            viewexpenseCategoryComboBox.Items.Add("");
             ViewExpenseTable.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             ViewExpenseTable.RowsDefaultCellStyle.Font = new Font("Time New Roman", 10);
 
@@ -191,13 +190,20 @@ namespace IncomeExpenseApp.Controls
 
             ViewExpenseTable.Columns[5].AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
             ViewExpenseTable.Columns[5].Width = 294;
-            ViewExpenseTable.Columns[5].SortMode = DataGridViewColumnSortMode.NotSortable; string value = viewexpenseCategoryComboBox.Text.ToString();
+            ViewExpenseTable.Columns[5].SortMode = DataGridViewColumnSortMode.NotSortable; 
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            string valueToSearch = incomeNameText.Text.ToString();
+            string valueToSearch = expenseNameText.Text.ToString();
             searchData(valueToSearch);
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            viewexpenseCategoryComboBox.Text = "";
+            expenseNameText.Text = "";
+            LoadData();
         }
     }
 }

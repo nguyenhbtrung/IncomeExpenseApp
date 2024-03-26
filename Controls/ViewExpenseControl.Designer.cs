@@ -35,11 +35,12 @@
             this.ViewExpenseTable = new System.Windows.Forms.DataGridView();
             this.expenseBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.viewexpenseCategoryComboBox = new System.Windows.Forms.ComboBox();
-            this.incomeNameText = new System.Windows.Forms.TextBox();
+            this.expenseNameText = new System.Windows.Forms.TextBox();
             this.incomeCategoryLabel = new System.Windows.Forms.Label();
             this.incomeNameLabel = new System.Windows.Forms.Label();
             this.nameLabel = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.ViewExpenseTable)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.expenseBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -48,6 +49,8 @@
             // 
             this.ViewExpenseTable.AllowUserToAddRows = false;
             this.ViewExpenseTable.AllowUserToDeleteRows = false;
+            this.ViewExpenseTable.AllowUserToResizeColumns = false;
+            this.ViewExpenseTable.AllowUserToResizeRows = false;
             this.ViewExpenseTable.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.ViewExpenseTable.BackgroundColor = System.Drawing.Color.White;
             this.ViewExpenseTable.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Sunken;
@@ -97,13 +100,13 @@
             this.viewexpenseCategoryComboBox.TabIndex = 69;
             this.viewexpenseCategoryComboBox.SelectedIndexChanged += new System.EventHandler(this.viewexpenseCategoryComboBox_SelectedIndexChanged);
             // 
-            // incomeNameText
+            // expenseNameText
             // 
-            this.incomeNameText.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.incomeNameText.Location = new System.Drawing.Point(194, 141);
-            this.incomeNameText.Name = "incomeNameText";
-            this.incomeNameText.Size = new System.Drawing.Size(250, 32);
-            this.incomeNameText.TabIndex = 68;
+            this.expenseNameText.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.expenseNameText.Location = new System.Drawing.Point(194, 141);
+            this.expenseNameText.Name = "expenseNameText";
+            this.expenseNameText.Size = new System.Drawing.Size(250, 32);
+            this.expenseNameText.TabIndex = 68;
             // 
             // incomeCategoryLabel
             // 
@@ -146,14 +149,26 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // button2
+            // 
+            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.Location = new System.Drawing.Point(876, 140);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(98, 32);
+            this.button2.TabIndex = 72;
+            this.button2.Text = "Làm mới";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
             // ViewExpenseControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.ViewExpenseTable);
             this.Controls.Add(this.viewexpenseCategoryComboBox);
-            this.Controls.Add(this.incomeNameText);
+            this.Controls.Add(this.expenseNameText);
             this.Controls.Add(this.incomeCategoryLabel);
             this.Controls.Add(this.incomeNameLabel);
             this.Controls.Add(this.nameLabel);
@@ -170,11 +185,12 @@
 
         private System.Windows.Forms.DataGridView ViewExpenseTable;
         private System.Windows.Forms.ComboBox viewexpenseCategoryComboBox;
-        private System.Windows.Forms.TextBox incomeNameText;
+        private System.Windows.Forms.TextBox expenseNameText;
         private System.Windows.Forms.Label incomeCategoryLabel;
         private System.Windows.Forms.Label incomeNameLabel;
         private System.Windows.Forms.Label nameLabel;
         private System.Windows.Forms.BindingSource expenseBindingSource;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button2;
     }
 }
