@@ -22,7 +22,7 @@ namespace IncomeExpenseApp.Controls
         {
             InitializeComponent();
             databaseConnector = new DatabaseConnector(Program.DbConnectionString);
-            string query = "select distinct incCategory from dbo.Income";
+            string query = $"select distinct incCategory from dbo.Income where userId = {UserId}";
             HashSet<string> uniqueValues = new HashSet<string>();
 
             using (SqlConnection connection = new SqlConnection(Program.DbConnectionString))
@@ -53,7 +53,7 @@ namespace IncomeExpenseApp.Controls
         public void LoadData()
         {
             databaseConnector = new DatabaseConnector(Program.DbConnectionString);
-            String query = "select * from dbo.Income where userId = UserId";
+            String query = $"select * from dbo.Income where userId = {UserId}";
             DataTable dataTable = databaseConnector.ExecuteDataTableQuery(query);
             ViewIncomeTable.DataSource = dataTable;
 
@@ -99,7 +99,7 @@ namespace IncomeExpenseApp.Controls
         public void searchData(string valueToSearch)
         {
             databaseConnector = new DatabaseConnector(Program.DbConnectionString);
-            String query = "select * from dbo.Income where CONCAT(incName, incCategory, incAmount, incDate, incDesciption) like N'%" + valueToSearch + "%'";
+            String query = $"select * from dbo.Income where userId = {UserId} AND CONCAT(incName, incCategory, incAmount, incDate, incDesciption) like N'%" + valueToSearch + "%'";
             DataTable dataTable = databaseConnector.ExecuteDataTableQuery(query);
             ViewIncomeTable.DataSource = dataTable;
 
@@ -144,7 +144,7 @@ namespace IncomeExpenseApp.Controls
 
             databaseConnector = new DatabaseConnector(Program.DbConnectionString);
             String values = viewincomeCategoryComboBox.Text.ToString();
-            String query = "select * from dbo.Income where CONCAT(incName, incCategory, incAmount, incDate, incDesciption) like N'%" + values + "%'";
+            String query = $"select * from dbo.Income where userId = {UserId} AND CONCAT(incName, incCategory, incAmount, incDate, incDesciption) like N'%" + values + "%'";
             DataTable dataTable = databaseConnector.ExecuteDataTableQuery(query);
             ViewIncomeTable.DataSource = dataTable;
 
