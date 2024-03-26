@@ -20,8 +20,10 @@ namespace IncomeExpenseApp.Controls
         public ViewExpenseControl()
         {
             InitializeComponent();
+            //Kết nối với bảng dữ liệu tùy theo id tài khoản của người dùng
             databaseConnector = new DatabaseConnector(Program.DbConnectionString);
-            
+
+            //Duyệt cột danh mục trong cơ sở dữ liệu, nạp vào trong ComboBox, mục nào đã tồn tại thì không nạp
             string query = $"select distinct exCategory from dbo.Expense where userId = {UserId}";
             HashSet<string> uniqueValues = new HashSet<string>();
 
@@ -45,6 +47,7 @@ namespace IncomeExpenseApp.Controls
                 }
             }
 
+            //Căn chỉnh hiển thị bảng
             viewexpenseCategoryComboBox.Items.Add("");
             ViewExpenseTable.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             ViewExpenseTable.RowsDefaultCellStyle.Font = new Font("Time New Roman", 10);
@@ -52,11 +55,13 @@ namespace IncomeExpenseApp.Controls
         }
         public void LoadData()
         {
+            //Kết nối với bảng dữ liệu tùy theo id tài khoản của người dùng, nạp dữ liệu vào đối tượng bảng để hiển thị trong phần mềm
             databaseConnector = new DatabaseConnector(Program.DbConnectionString);
             String query = $"select * from dbo.Expense where userId = {UserId} ";
             DataTable dataTable = databaseConnector.ExecuteDataTableQuery(query);
             ViewExpenseTable.DataSource = dataTable;
 
+            //Đặt tên cột thuộc bảng
             dataTable.Columns["exId"].ColumnName = "STT";
             dataTable.Columns["exName"].ColumnName = "Tên khoản chi";
             dataTable.Columns["exCategory"].ColumnName = "Danh mục";
@@ -65,6 +70,7 @@ namespace IncomeExpenseApp.Controls
             dataTable.Columns["exDesciption"].ColumnName = "Chi tiết";
             ViewExpenseTable.Columns["userId"].Visible = false;
 
+            //Tùy chỉnh hiển thị kích thước cột, kích thước văn bản trong cột
             ViewExpenseTable.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
             ViewExpenseTable.Columns[0].Width = 50;
             ViewExpenseTable.Columns[0].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
@@ -97,11 +103,13 @@ namespace IncomeExpenseApp.Controls
 
         public void searchData(string valueToSearch)
         {
+            //Kết nối với bảng dữ liệu tùy theo id tài khoản của người dùng, nạp dữ liệu vào đối tượng bảng để hiển thị trong phần mềm với điều kiện cho trước
             databaseConnector = new DatabaseConnector(Program.DbConnectionString);
             String query = $"select * from dbo.Expense where userId = {UserId} AND CONCAT(exName, exCategory, exAmount, exDate, exDesciption) like N'%" + valueToSearch + "%'";
             DataTable dataTable = databaseConnector.ExecuteDataTableQuery(query);
             ViewExpenseTable.DataSource = dataTable;
 
+            //Đặt tên cột thuộc bảng
             dataTable.Columns["exId"].ColumnName = "STT";
             dataTable.Columns["exName"].ColumnName = "Tên khoản thu";
             dataTable.Columns["exCategory"].ColumnName = "Danh mục";
@@ -110,6 +118,7 @@ namespace IncomeExpenseApp.Controls
             dataTable.Columns["exDesciption"].ColumnName = "Chi tiết";
             ViewExpenseTable.Columns["userId"].Visible = false;
 
+            //Tùy chỉnh hiển thị kích thước cột, kích thước văn bản trong cột
             ViewExpenseTable.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
             ViewExpenseTable.Columns[0].Width = 50;
             ViewExpenseTable.Columns[0].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
@@ -140,12 +149,14 @@ namespace IncomeExpenseApp.Controls
 
         private void viewexpenseCategoryComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
+            //Kết nối với bảng dữ liệu tùy theo id tài khoản của người dùng, nạp dữ liệu vào đối tượng bảng để hiển thị trong phần mềm với điều kiện cho trước
             databaseConnector = new DatabaseConnector(Program.DbConnectionString);
             String values = viewexpenseCategoryComboBox.Text.ToString();
             String query = $"select * from dbo.Expense where userId = {UserId} AND CONCAT(exName, exCategory, exAmount, exDate, exDesciption) like N'%" + values + "%'";
             DataTable dataTable = databaseConnector.ExecuteDataTableQuery(query);
             ViewExpenseTable.DataSource = dataTable;
 
+            //Đặt tên cột thuộc bảng
             dataTable.Columns["exId"].ColumnName = "STT";
             dataTable.Columns["exName"].ColumnName = "Tên khoản thu";
             dataTable.Columns["exCategory"].ColumnName = "Danh mục";
@@ -154,6 +165,7 @@ namespace IncomeExpenseApp.Controls
             dataTable.Columns["exDesciption"].ColumnName = "Chi tiết";
             ViewExpenseTable.Columns["userId"].Visible = false;
 
+            //Tùy chỉnh hiển thị kích thước cột, kích thước văn bản trong cột
             ViewExpenseTable.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
             ViewExpenseTable.Columns[0].Width = 50;
             ViewExpenseTable.Columns[0].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
