@@ -226,6 +226,7 @@ namespace IncomeExpenseApp.Controls
             databaseConnector = new DatabaseConnector(Program.DbConnectionString);
             string query = "delete from dbo.expense where exId =" + delete_id + "";
             databaseConnector.ExecuteNonQuery(query);
+            MessageBox.Show("Xóa lịch sử thành công");
             LoadData();
         }
     }

@@ -213,6 +213,7 @@ namespace IncomeExpenseApp.Controls
             databaseConnector = new DatabaseConnector(Program.DbConnectionString);
             string query = "delete from dbo.income where incId =" + delete_id + "";
             databaseConnector.ExecuteNonQuery(query);
+            MessageBox.Show("Xóa lịch sử thành công");
             LoadData();
         }
 
