@@ -21,11 +21,11 @@ namespace IncomeExpenseApp.Controls
         {
             InitializeComponent();
             databaseConnector = new DatabaseConnector(Program.DbConnectionString);
-            string connectionString = "Data Source=DESKTOP-69AE7RJ\\PC;Initial Catalog=IncomeExpense;Integrated Security=True;Encrypt=True;TrustServerCertificate=True";
+            
             string query = "select distinct exCategory from dbo.Expense";
             HashSet<string> uniqueValues = new HashSet<string>();
 
-            using (SqlConnection connection = new SqlConnection(connectionString))
+            using (SqlConnection connection = new SqlConnection(Program.DbConnectionString))
             {
                 using (SqlCommand cmd = new SqlCommand(query, connection))
                 {
