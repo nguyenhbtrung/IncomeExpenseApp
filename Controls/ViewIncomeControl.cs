@@ -39,7 +39,7 @@ namespace IncomeExpenseApp.Controls
         {
             //Kết nối với bảng dữ liệu tùy theo id tài khoản của người dùng, nạp dữ liệu vào đối tượng bảng để hiển thị trong phần mềm với điều kiện cho trước
             databaseConnector = new DatabaseConnector(Program.DbConnectionString);
-            String query = $"select * from dbo.Income where userId = {UserId} AND CONCAT(incName) like N'%" + valueToSearch + "%'";
+            String query = $"select * from dbo.Income where userId = {UserId} AND incName like N'%" + valueToSearch + "%'";
             DataTable dataTable = databaseConnector.ExecuteDataTableQuery(query);
             ViewIncomeTable.DataSource = dataTable;
 
@@ -51,7 +51,7 @@ namespace IncomeExpenseApp.Controls
             //Kết nối với bảng dữ liệu tùy theo id tài khoản của người dùng, nạp dữ liệu vào đối tượng bảng để hiển thị trong phần mềm với điều kiện cho trước
             databaseConnector = new DatabaseConnector(Program.DbConnectionString);
             String values = viewincomeCategoryComboBox.Text.ToString();
-            String query = $"select * from dbo.Income where userId = {UserId} AND CONCAT(incName, incCategory, incAmount, incDate, incDesciption) like N'%" + values + "%'";
+            String query = $"select * from dbo.Income where userId = {UserId} AND incCategory like N'%" + values + "%'";
             DataTable dataTable = databaseConnector.ExecuteDataTableQuery(query);
             ViewIncomeTable.DataSource = dataTable;
 
@@ -73,17 +73,6 @@ namespace IncomeExpenseApp.Controls
             LoadData();
         }
 
-        private void ViewIncomeTable_CellMouseUp(object sender, DataGridViewCellMouseEventArgs e)
-        {
-            //Lấy dữ liệu thuộc cột STT tại dòng mà người dùng bấm chuột phải vào, chuyển sang định dạng Int (số nguyên)
-            if (e.Button == MouseButtons.Right)
-            {
-                delete_id = Convert.ToInt32(ViewIncomeTable.Rows[e.RowIndex].Cells["STT"].Value.ToString());
-                this.contextMenuStrip1.Show(this.ViewIncomeTable, e.Location);
-                contextMenuStrip1.Show(Cursor.Position);
-            }
-        }
-
         private void contextMenuStrip1_Click_1(object sender, EventArgs e)
         {
             //Sử dụng dữ liệu lấy được từ hành động Click, đối chiếu theo bảng thuộc cơ sở dữ liệu để thực hiện câu lệnh SQL
@@ -97,7 +86,7 @@ namespace IncomeExpenseApp.Controls
         private void FormatDataGridView(DataGridView dataGridView)
         {
             // Đặt tên cột thuộc bảng
-            dataGridView.Columns["incId"].HeaderText = "STT";
+            dataGridView.Columns["incId"].HeaderText = "ID";
             dataGridView.Columns["incName"].HeaderText = "Tên khoản thu";
             dataGridView.Columns["incCategory"].HeaderText = "Danh mục";
             dataGridView.Columns["incAmount"].HeaderText = "Số tiền";
@@ -160,6 +149,46 @@ namespace IncomeExpenseApp.Controls
                     }
                 }
             }
+        }
+
+        private void ViewIncomeTable_CellMouseUp(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            //Lấy dữ liệu thuộc cột STT tại dòng mà người dùng bấm chuột phải vào, chuyển sang định dạng Int (số nguyên)
+            if (e.Button == MouseButtons.Right)
+            {
+                delete_id = Convert.ToInt32(ViewIncomeTable.Rows[e.RowIndex].Cells["incId"].Value.ToString());
+                this.contextMenuStrip1.Show(this.ViewIncomeTable, e.Location);
+                contextMenuStrip1.Show(Cursor.Position);
+            }
+        }
+
+        private void editButton_Click_1(object sender, EventArgs e)
+        {
+            ViewIncomeTable.ReadOnly = false;
+        }
+
+        private void saveButton_Click(object sender, EventArgs e)
+        {
+            databaseConnector = new DatabaseConnector(Program.DbConnectionString);
+            SqlConnection connection = new SqlConnection(Program.DbConnectionString);
+            for (int item = 0; item <= ViewIncomeTable.Rows.Count-1; item++) 
+            {
+                SqlCommand cmd = new SqlCommand($"update dbo.Income set incName=@incName, incCategory=@incCategory, incAmount=@incAmount, incDate=@incDate, incDesciption=@incDesciption where incId=@incId", connection);
+                cmd.Parameters.AddWithValue("@incName", ViewIncomeTable.Rows[item].Cells[1].Value);
+                cmd.Parameters.AddWithValue("@incCategory", ViewIncomeTable.Rows[item].Cells[2].Value);
+                cmd.Parameters.AddWithValue("@incAmount", ViewIncomeTable.Rows[item].Cells[3].Value);
+                cmd.Parameters.AddWithValue("@incDate", ViewIncomeTable.Rows[item].Cells[4].Value);
+                cmd.Parameters.AddWithValue("@incDesciption", ViewIncomeTable.Rows[item].Cells[5].Value);
+                cmd.Parameters.AddWithValue("incId", ViewIncomeTable.Rows[item].Cells[0].Value);
+
+                connection.Open();
+                cmd.ExecuteNonQuery();
+                connection.Close();
+
+                ViewIncomeTable.ReadOnly = true;
+            }
+
+
         }
     }
 }

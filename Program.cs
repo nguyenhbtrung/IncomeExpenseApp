@@ -11,7 +11,7 @@ namespace IncomeExpenseApp
 
     internal static class Program
     {
-        private static string dbConnectionString = "Data Source=desktop-2hbm7an\\laptop;Initial Catalog = IncomeExpense; Integrated Security = True; Encrypt=True;TrustServerCertificate=True";
+        private static string dbConnectionString = "Data Source=DESKTOP-69AE7RJ\\PC;Initial Catalog=IncomeExpense;Integrated Security=True;Encrypt=True;TrustServerCertificate=True";
 
         public static string DbConnectionString { get => dbConnectionString; }
         public static Login LoginForm { get; private set; }

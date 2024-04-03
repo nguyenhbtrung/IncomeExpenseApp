@@ -39,7 +39,7 @@ namespace IncomeExpenseApp.Controls
         {
             //Kết nối với bảng dữ liệu tùy theo id tài khoản của người dùng, nạp dữ liệu vào đối tượng bảng, hiển thị bất kì những hàng thuộc bảng có dữ liệu trùng với dữ liệu người dùng nhập 
             databaseConnector = new DatabaseConnector(Program.DbConnectionString);
-            String query = $"select * from dbo.Expense where userId = {UserId} AND CONCAT(exName, exCategory, exAmount, exDate, exDesciption) like N'%" + valueToSearch + "%'";
+            String query = $"select * from dbo.Expense where userId = {UserId} AND exName like N'%" + valueToSearch + "%'";
             DataTable dataTable = databaseConnector.ExecuteDataTableQuery(query);
             ViewExpenseTable.DataSource = dataTable;
 
@@ -51,7 +51,7 @@ namespace IncomeExpenseApp.Controls
             //Kết nối với bảng dữ liệu tùy theo id tài khoản của người dùng, nạp dữ liệu vào đối tượng bảng, hiển thị bất kì những hàng thuộc bảng có dữ liệu trùng với dữ liệu người dùng nhập 
             databaseConnector = new DatabaseConnector(Program.DbConnectionString);
             String values = viewexpenseCategoryComboBox.Text.ToString();
-            String query = $"select * from dbo.Expense where userId = {UserId} AND CONCAT(exName) like N'%" + values + "%'";
+            String query = $"select * from dbo.Expense where userId = {UserId} AND exCategory like N'%" + values + "%'";
             DataTable dataTable = databaseConnector.ExecuteDataTableQuery(query);
             ViewExpenseTable.DataSource = dataTable;
 
@@ -78,7 +78,7 @@ namespace IncomeExpenseApp.Controls
             //Lấy dữ liệu thuộc cột STT tại dòng mà người dùng bấm chuột phải vào, chuyển sang định dạng Int (số nguyên)
             if(e.Button == MouseButtons.Right)
             {
-                delete_id = Convert.ToInt32(ViewExpenseTable.Rows[e.RowIndex].Cells["STT"].Value.ToString());
+                delete_id = Convert.ToInt32(ViewExpenseTable.Rows[e.RowIndex].Cells["exID"].Value.ToString());
                 this.contextMenuStrip1.Show(this.ViewExpenseTable, e.Location);
                 contextMenuStrip1.Show(Cursor.Position);
             }
@@ -97,7 +97,7 @@ namespace IncomeExpenseApp.Controls
         private void FormatDataGridView(DataGridView dataGridView)
         {
             // Đặt tên cột thuộc bảng
-            dataGridView.Columns["exId"].HeaderText = "STT";
+            dataGridView.Columns["exId"].HeaderText = "ID";
             dataGridView.Columns["exName"].HeaderText = "Tên khoản thu";
             dataGridView.Columns["exCategory"].HeaderText = "Danh mục";
             dataGridView.Columns["exAmount"].HeaderText = "Số tiền";
@@ -159,6 +159,33 @@ namespace IncomeExpenseApp.Controls
                         }
                     }
                 }
+            }
+        }
+
+        private void editButton_Click(object sender, EventArgs e)
+        {
+            ViewExpenseTable.ReadOnly = false;
+        }
+
+        private void saveButton_Click(object sender, EventArgs e)
+        {
+            databaseConnector = new DatabaseConnector(Program.DbConnectionString);
+            SqlConnection connection = new SqlConnection(Program.DbConnectionString);
+            for (int item = 0; item <= ViewExpenseTable.Rows.Count - 1; item++)
+            {
+                SqlCommand cmd = new SqlCommand($"update dbo.Expense set exName=@exName, exCategory=@exCategory, exAmount=@exAmount, exDate=@exDate, exDesciption=@exDesciption where exId=@exId", connection);
+                cmd.Parameters.AddWithValue("@exName", ViewExpenseTable.Rows[item].Cells[1].Value);
+                cmd.Parameters.AddWithValue("@exCategory", ViewExpenseTable.Rows[item].Cells[2].Value);
+                cmd.Parameters.AddWithValue("@exAmount", ViewExpenseTable.Rows[item].Cells[3].Value);
+                cmd.Parameters.AddWithValue("@exDate", ViewExpenseTable.Rows[item].Cells[4].Value);
+                cmd.Parameters.AddWithValue("@exDesciption", ViewExpenseTable.Rows[item].Cells[5].Value);
+                cmd.Parameters.AddWithValue("exId", ViewExpenseTable.Rows[item].Cells[0].Value);
+
+                connection.Open();
+                cmd.ExecuteNonQuery();
+                connection.Close();
+
+                ViewExpenseTable.ReadOnly = true;
             }
         }
     }
