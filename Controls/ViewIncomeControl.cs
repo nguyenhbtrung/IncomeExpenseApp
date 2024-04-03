@@ -51,7 +51,7 @@ namespace IncomeExpenseApp.Controls
             //Kết nối với bảng dữ liệu tùy theo id tài khoản của người dùng, nạp dữ liệu vào đối tượng bảng để hiển thị trong phần mềm với điều kiện cho trước
             databaseConnector = new DatabaseConnector(Program.DbConnectionString);
             String values = viewincomeCategoryComboBox.Text.ToString();
-            String query = $"select * from dbo.Income where userId = {UserId} AND incCategory like N'%" + values + "%'";
+            String query = $"select * from dbo.Income where userId = {UserId} AND incCategory = N'{values}'";
             DataTable dataTable = databaseConnector.ExecuteDataTableQuery(query);
             ViewIncomeTable.DataSource = dataTable;
 

@@ -51,7 +51,7 @@ namespace IncomeExpenseApp.Controls
             //Kết nối với bảng dữ liệu tùy theo id tài khoản của người dùng, nạp dữ liệu vào đối tượng bảng, hiển thị bất kì những hàng thuộc bảng có dữ liệu trùng với dữ liệu người dùng nhập 
             databaseConnector = new DatabaseConnector(Program.DbConnectionString);
             String values = viewexpenseCategoryComboBox.Text.ToString();
-            String query = $"select * from dbo.Expense where userId = {UserId} AND exCategory like N'%" + values + "%'";
+            String query = $"select * from dbo.Expense where userId = {UserId} AND exCategory = N'{values}'";
             DataTable dataTable = databaseConnector.ExecuteDataTableQuery(query);
             ViewExpenseTable.DataSource = dataTable;
 
