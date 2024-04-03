@@ -22,37 +22,6 @@ namespace IncomeExpenseApp.Controls
         public ViewExpenseControl()
         {
             InitializeComponent();
-            //Kết nối với bảng dữ liệu tùy theo id tài khoản của người dùng
-            databaseConnector = new DatabaseConnector(Program.DbConnectionString);
-
-            //Duyệt cột danh mục trong cơ sở dữ liệu, nạp vào trong ComboBox, mục nào đã tồn tại thì không nạp
-            string query = $"select distinct exCategory from dbo.Expense";
-            HashSet<string> uniqueValues = new HashSet<string>();
-
-            //Duyệt cột danh mục trong cơ sở dữ liệu, nạp vào trong ComboBox, mục nào đã tồn tại thì không nạp
-            using (SqlConnection connection = new SqlConnection(Program.DbConnectionString))
-            {
-                using (SqlCommand cmd = new SqlCommand(query, connection))
-                {
-                    connection.Open();
-                    using (SqlDataReader reader = cmd.ExecuteReader())
-                    {
-                        while (reader.Read())
-                        {
-                            string value = reader.GetString(0);
-                            if (!uniqueValues.Contains(value))
-                            {
-                                viewexpenseCategoryComboBox.Items.Add(value);
-                                uniqueValues.Add(value);
-                            }
-                        }
-                    }
-                }
-            }
-
-            //Căn chỉnh hiển thị bảng
-            ViewExpenseTable.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            ViewExpenseTable.RowsDefaultCellStyle.Font = new Font("Time New Roman", 10);
         }
 
         public void LoadData()
@@ -63,44 +32,7 @@ namespace IncomeExpenseApp.Controls
             DataTable dataTable = databaseConnector.ExecuteDataTableQuery(query);
             ViewExpenseTable.DataSource = dataTable;
 
-            //Đặt tên cột thuộc bảng
-            dataTable.Columns["exId"].ColumnName = "STT";
-            dataTable.Columns["exName"].ColumnName = "Tên khoản chi";
-            dataTable.Columns["exCategory"].ColumnName = "Danh mục";
-            dataTable.Columns["exAmount"].ColumnName = "Số tiền";
-            dataTable.Columns["exDate"].ColumnName = "Thời gian";
-            dataTable.Columns["exDesciption"].ColumnName = "Chi tiết";
-            ViewExpenseTable.Columns["userId"].Visible = false;
-
-            //Tùy chỉnh hiển thị kích thước cột, kích thước văn bản trong cột
-            ViewExpenseTable.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
-            ViewExpenseTable.Columns[0].Width = 50;
-            ViewExpenseTable.Columns[0].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            ViewExpenseTable.Columns[0].SortMode = DataGridViewColumnSortMode.NotSortable;
-
-            ViewExpenseTable.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
-            ViewExpenseTable.Columns[1].Width = 220;
-            ViewExpenseTable.Columns[1].SortMode = DataGridViewColumnSortMode.NotSortable;
-
-            ViewExpenseTable.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
-            ViewExpenseTable.Columns[2].Width = 220;
-            ViewExpenseTable.Columns[2].SortMode = DataGridViewColumnSortMode.NotSortable;
-
-            ViewExpenseTable.Columns[3].AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
-            ViewExpenseTable.Columns[3].Width = 100;
-            ViewExpenseTable.Columns[3].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            ViewExpenseTable.Columns[3].SortMode = DataGridViewColumnSortMode.NotSortable;
-
-            ViewExpenseTable.Columns[4].AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
-            ViewExpenseTable.Columns[4].Width = 120;
-            ViewExpenseTable.Columns[4].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            ViewExpenseTable.Columns[4].SortMode = DataGridViewColumnSortMode.NotSortable;
-
-            ViewExpenseTable.Columns[5].AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
-            ViewExpenseTable.Columns[5].Width = 294;
-            ViewExpenseTable.Columns[5].SortMode = DataGridViewColumnSortMode.NotSortable;
-
-            ViewExpenseTable.EnableHeadersVisualStyles = false;
+            FormatDataGridView(ViewExpenseTable);
         }
 
         public void searchData(string valueToSearch)
@@ -111,42 +43,7 @@ namespace IncomeExpenseApp.Controls
             DataTable dataTable = databaseConnector.ExecuteDataTableQuery(query);
             ViewExpenseTable.DataSource = dataTable;
 
-            //Đặt tên cột thuộc bảng
-            dataTable.Columns["exId"].ColumnName = "STT";
-            dataTable.Columns["exName"].ColumnName = "Tên khoản thu";
-            dataTable.Columns["exCategory"].ColumnName = "Danh mục";
-            dataTable.Columns["exAmount"].ColumnName = "Số tiền";
-            dataTable.Columns["exDate"].ColumnName = "Thời gian";
-            dataTable.Columns["exDesciption"].ColumnName = "Chi tiết";
-            ViewExpenseTable.Columns["userId"].Visible = false;
-
-            //Tùy chỉnh hiển thị kích thước cột, kích thước văn bản trong cột
-            ViewExpenseTable.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
-            ViewExpenseTable.Columns[0].Width = 50;
-            ViewExpenseTable.Columns[0].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            ViewExpenseTable.Columns[0].SortMode = DataGridViewColumnSortMode.NotSortable;
-
-            ViewExpenseTable.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
-            ViewExpenseTable.Columns[1].Width = 220;
-            ViewExpenseTable.Columns[1].SortMode = DataGridViewColumnSortMode.NotSortable;
-
-            ViewExpenseTable.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
-            ViewExpenseTable.Columns[2].Width = 220;
-            ViewExpenseTable.Columns[2].SortMode = DataGridViewColumnSortMode.NotSortable;
-
-            ViewExpenseTable.Columns[3].AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
-            ViewExpenseTable.Columns[3].Width = 100;
-            ViewExpenseTable.Columns[3].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            ViewExpenseTable.Columns[3].SortMode = DataGridViewColumnSortMode.NotSortable;
-
-            ViewExpenseTable.Columns[4].AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
-            ViewExpenseTable.Columns[4].Width = 120;
-            ViewExpenseTable.Columns[4].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            ViewExpenseTable.Columns[4].SortMode = DataGridViewColumnSortMode.NotSortable;
-
-            ViewExpenseTable.Columns[5].AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
-            ViewExpenseTable.Columns[5].Width = 294;
-            ViewExpenseTable.Columns[5].SortMode = DataGridViewColumnSortMode.NotSortable;
+            FormatDataGridView(ViewExpenseTable);
         }
 
         private void viewexpenseCategoryComboBox_SelectedIndexChanged(object sender, EventArgs e)
@@ -154,46 +51,11 @@ namespace IncomeExpenseApp.Controls
             //Kết nối với bảng dữ liệu tùy theo id tài khoản của người dùng, nạp dữ liệu vào đối tượng bảng, hiển thị bất kì những hàng thuộc bảng có dữ liệu trùng với dữ liệu người dùng nhập 
             databaseConnector = new DatabaseConnector(Program.DbConnectionString);
             String values = viewexpenseCategoryComboBox.Text.ToString();
-            String query = $"select * from dbo.Expense where userId = {UserId} AND CONCAT(exName, exCategory, exAmount, exDate, exDesciption) like N'%" + values + "%'";
+            String query = $"select * from dbo.Expense where userId = {UserId} AND CONCAT(exName) like N'%" + values + "%'";
             DataTable dataTable = databaseConnector.ExecuteDataTableQuery(query);
             ViewExpenseTable.DataSource = dataTable;
 
-            //Đặt tên cột thuộc bảng
-            dataTable.Columns["exId"].ColumnName = "STT";
-            dataTable.Columns["exName"].ColumnName = "Tên khoản thu";
-            dataTable.Columns["exCategory"].ColumnName = "Danh mục";
-            dataTable.Columns["exAmount"].ColumnName = "Số tiền";
-            dataTable.Columns["exDate"].ColumnName = "Thời gian";
-            dataTable.Columns["exDesciption"].ColumnName = "Chi tiết";
-            ViewExpenseTable.Columns["userId"].Visible = false;
-
-            //Tùy chỉnh hiển thị kích thước cột, kích thước văn bản trong cột
-            ViewExpenseTable.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
-            ViewExpenseTable.Columns[0].Width = 50;
-            ViewExpenseTable.Columns[0].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            ViewExpenseTable.Columns[0].SortMode = DataGridViewColumnSortMode.NotSortable;
-
-            ViewExpenseTable.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
-            ViewExpenseTable.Columns[1].Width = 220;
-            ViewExpenseTable.Columns[1].SortMode = DataGridViewColumnSortMode.NotSortable;
-
-            ViewExpenseTable.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
-            ViewExpenseTable.Columns[2].Width = 220;
-            ViewExpenseTable.Columns[2].SortMode = DataGridViewColumnSortMode.NotSortable;
-
-            ViewExpenseTable.Columns[3].AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
-            ViewExpenseTable.Columns[3].Width = 100;
-            ViewExpenseTable.Columns[3].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            ViewExpenseTable.Columns[3].SortMode = DataGridViewColumnSortMode.NotSortable;
-
-            ViewExpenseTable.Columns[4].AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
-            ViewExpenseTable.Columns[4].Width = 120;
-            ViewExpenseTable.Columns[4].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            ViewExpenseTable.Columns[4].SortMode = DataGridViewColumnSortMode.NotSortable;
-
-            ViewExpenseTable.Columns[5].AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
-            ViewExpenseTable.Columns[5].Width = 294;
-            ViewExpenseTable.Columns[5].SortMode = DataGridViewColumnSortMode.NotSortable; 
+            FormatDataGridView(ViewExpenseTable);
         }
 
         private void SearchExpenseButton_Click(object sender, EventArgs e)
@@ -230,6 +92,74 @@ namespace IncomeExpenseApp.Controls
             databaseConnector.ExecuteNonQuery(query);
             MessageBox.Show("Xóa lịch sử thành công");
             LoadData();
+        }
+
+        private void FormatDataGridView(DataGridView dataGridView)
+        {
+            // Đặt tên cột thuộc bảng
+            dataGridView.Columns["exId"].HeaderText = "STT";
+            dataGridView.Columns["exName"].HeaderText = "Tên khoản thu";
+            dataGridView.Columns["exCategory"].HeaderText = "Danh mục";
+            dataGridView.Columns["exAmount"].HeaderText = "Số tiền";
+            dataGridView.Columns["exDate"].HeaderText = "Thời gian";
+            dataGridView.Columns["exDesciption"].HeaderText = "Chi tiết";
+            dataGridView.Columns["userId"].Visible = false;
+
+            // Tùy chỉnh hiển thị kích thước cột, kích thước văn bản trong cột
+            dataGridView.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
+            dataGridView.Columns[0].Width = 50;
+            dataGridView.Columns[0].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridView.Columns[0].SortMode = DataGridViewColumnSortMode.NotSortable;
+
+            dataGridView.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
+            dataGridView.Columns[1].Width = 220;
+            dataGridView.Columns[1].SortMode = DataGridViewColumnSortMode.NotSortable;
+
+            dataGridView.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
+            dataGridView.Columns[2].Width = 220;
+            dataGridView.Columns[2].SortMode = DataGridViewColumnSortMode.NotSortable;
+
+            dataGridView.Columns[3].AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
+            dataGridView.Columns[3].Width = 100;
+            dataGridView.Columns[3].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridView.Columns[3].SortMode = DataGridViewColumnSortMode.NotSortable;
+
+            dataGridView.Columns[4].AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
+            dataGridView.Columns[4].Width = 120;
+            dataGridView.Columns[4].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridView.Columns[4].SortMode = DataGridViewColumnSortMode.NotSortable;
+
+            dataGridView.Columns[5].AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
+            dataGridView.Columns[5].Width = 294;
+            dataGridView.Columns[5].SortMode = DataGridViewColumnSortMode.NotSortable;
+
+            dataGridView.EnableHeadersVisualStyles = false;
+            dataGridView.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridView.RowsDefaultCellStyle.Font = new Font("Time New Roman", 10);
+
+            viewexpenseCategoryComboBox.Items.Clear();
+            //Kết nối với bảng dữ liệu tùy theo id tài khoản của người dùng
+            databaseConnector = new DatabaseConnector(Program.DbConnectionString);
+
+            //Duyệt cột danh mục trong cơ sở dữ liệu, nạp vào trong ComboBox, mục nào đã tồn tại thì không nạp
+            string query = $"select distinct exCategory from dbo.Expense";
+
+            //Duyệt cột danh mục trong cơ sở dữ liệu, nạp vào trong ComboBox, mục nào đã tồn tại thì không nạp
+            using (SqlConnection connection = new SqlConnection(Program.DbConnectionString))
+            {
+                using (SqlCommand cmd = new SqlCommand(query, connection))
+                {
+                    connection.Open();
+                    using (SqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            string value = reader.GetString(0);
+                            viewexpenseCategoryComboBox.Items.Add(value);
+                        }
+                    }
+                }
+            }
         }
     }
 }
