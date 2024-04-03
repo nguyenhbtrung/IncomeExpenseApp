@@ -98,7 +98,7 @@ namespace IncomeExpenseApp.Controls
         {
             // Đặt tên cột thuộc bảng
             dataGridView.Columns["exId"].HeaderText = "ID";
-            dataGridView.Columns["exName"].HeaderText = "Tên khoản thu";
+            dataGridView.Columns["exName"].HeaderText = "Tên khoản chi";
             dataGridView.Columns["exCategory"].HeaderText = "Danh mục";
             dataGridView.Columns["exAmount"].HeaderText = "Số tiền";
             dataGridView.Columns["exDate"].HeaderText = "Thời gian";
