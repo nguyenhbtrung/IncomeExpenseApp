@@ -142,7 +142,7 @@ namespace IncomeExpenseApp.Controls
             databaseConnector = new DatabaseConnector(Program.DbConnectionString);
 
             //Duyệt cột danh mục trong cơ sở dữ liệu, nạp vào trong ComboBox, mục nào đã tồn tại thì không nạp
-            string query = $"select distinct exCategory from dbo.Expense";
+            string query = $"select distinct exCategory from dbo.Expense where userId = {UserId}";
 
             //Duyệt cột danh mục trong cơ sở dữ liệu, nạp vào trong ComboBox, mục nào đã tồn tại thì không nạp
             using (SqlConnection connection = new SqlConnection(Program.DbConnectionString))
